@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Profissional - Jalecos, Aventais e Batas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <h1>Catálogo Masculino YAHWEH EMPREENDIMENTOS</h1>
+            <p>Seu estilo e segurança em cada profissão.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="category-filter" id="categoryFilter">
+            <span class="close-menu" id="closeMenu"><i class="fas fa-times"></i></span>
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="cabeleireiro">Cabeleireiro</button>
+            <button class="filter-btn" data-category="fatosocial">Fato Social</button>
+            <button class="filter-btn" data-category="conjunto">Conjuntos Profissionais</button>
+            <a href="../index.html" class="filter-btn"> Home</a>
+            
+        </div>
+
+        <div class="catalog-container" id="catalog">
+            </div>
+    </main>
+
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <img class="modal-image" id="modalImage" src="" alt="Produto">
+            <div class="modal-details">
+                <div class="modal-model" id="modalModel"></div>
+                <div class="modal-price" id="modalPrice"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Catálogo Profissional. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="#" target="_blank">YAHWEH EMPREENDIMENTOS, LDA</a></p>
+            <p>Contato: <a href="mailto:oficinadafampa@outlook.com">oficinadafampa@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Array de dados dos produtos - APENAS 36 ITENS
+            const products = [
+                // --- Aventais de Cozinha (6 Itens: Modelos 001-006) ---
+                {
+                    id: 1,
+                    model: "MOD-001",
+                    title: "Jaleca",
+                    profession: "Cozinheiro(a) / Chef",
+                    category: "Jaleco",
+                    price: "31.820,00 AOA Kz",
+                    image: "img/img1.jpg", // Imagem diretamente da pasta img/
+                    description: "Avental clássico e resistente, ideal para o ambiente profissional da cozinha.",
+                    features: ["Tecido 100% Algodão", "Alça ajustável", "Bolso frontal", "Resistente a lavagens"],
+                    composition: "100% Algodão"
+                },
+                {
+                    id: 2,
+                    model: "MOD-002",
+                    title: "Avental Bistro Elegance",
+                    profession: "Garçom / Barista",
+                    category: "cozinha",
+                    price: "31.820,00 AOA Kz",
+                    image: "img/img2.jpg", // Imagem diretamente da pasta img/
+                    description: "Avental de cintura estilo bistrô, perfeito para um toque de elegância e praticidade.",
+                    features: ["Tecido misto", "Dois bolsos", "Tiras longas", "Acabamento profissional"],
+                    composition: "65% Poliéster / 35% Viscose"
+                },
+                {
+                    id: 3,
+                    model: "MOD-003",
+                    title: "Avental Couro Sintético",
+                    profession: "Churrasqueiro(a) / Artesão(ã)",
+                    category: "cozinha",
+                    price: "26.800,00 AOA Kz",
+                    image: "img/img3.png", // Imagem diretamente da pasta img/
+                    description: "Avental robusto em couro sintético, oferece excelente proteção contra respingos e calor.",
+                    features: ["Material impermeável", "Fácil de limpar", "Alças ajustáveis", "Bolso grande"],
+                    composition: "100% Couro Sintético (PU)"
+                },
+                {
+                    id: 4,
+                    model: "MOD-004",
+                    title: "Avental Jeans Denim",
+                    profession: "Barista / Cervejeiro(a)",
+                    category: "cozinha",
+                    price: "19.900,00 AOA Kz",
+                    image: "img/img4.png", // Imagem diretamente da pasta img/
+                    description: "Avental de jeans durável com detalhes em couro, ideal para um visual despojado e funcional.",
+                    features: ["Tecido jeans", "Detalhes em couro", "Vários bolsos", "Alças cruzadas"],
+                    composition: "100% Algodão Denim"
+                },
+                {
+                    id: 5,
+                    model: "MOD-005",
+                    title: "Avental de Padeiro",
+                    profession: "Padeiro(a) / Confeiteiro(a)",
+                    category: "cozinha",
+                    price: "19.900,00 AOA Kz",
+                    image: "img/img5.jpg", // Imagem diretamente da pasta img/
+                    description: "Avental desenhado para padeiros, com tecido robusto que protege contra farinha e massa.",
+                    features: ["Tecido grosso", "Ampla cobertura", "Dois bolsos", "Cor neutra"],
+                    composition: "100% Algodão Grosso"
+                },
+                {
+                    id: 6,
+                    model: "MOD-006",
+                    title: "Avental Colorido de Cozinha",
+                    profession: "Cozinheiro(a)",
+                    category: "cozinha",
+                    price: "19.900,00 AOA Kz",
+                    image: "img/img6.png", // Imagem diretamente da pasta img/
+                    description: "Avental vibrante e funcional. Perfeito para uso profissional ou doméstico.",
+                    features: ["Diversas cores vivas", "Tecido leve", "Fácil de lavar", "Bolso único"],
+                    composition: "100% Poliéster"
+                },
+
+                // --- Aventais para Cabeleireiros (6 Itens: Modelos 007-012) ---
+                {
+                    id: 7,
+                    model: "MOD-007",
+                    title: "Avental Cabeleireiro Clássico",
+                    profession: "Cabeleireiro(a) / Barbeiro(a)",
+                    category: "cabeleireiro",
+                    price: "213.700,00 AOA Kz",
+                    image: "img/img7.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Avental essencial para profissionais de cabelo, protegendo contra tinturas e cortes.",
+                    features: ["Impermeável", "Antiestático", "Fecho ajustável", "Fácil de limpar"],
+                    composition: "100% Poliéster com PVC"
+                },
+                {
+                    id: 8,
+                    model: "MOD-008",
+                    title: "Avental Barber Premium",
+                    profession: "Barbeiro(a)",
+                    category: "cabeleireiro",
+                    price: "213.700,00 AOA Kz",
+                    image: "img/img8.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Avental robusto com estilo vintage para barbeiros, com bolsos específicos para ferramentas.",
+                    features: ["Lona encerada", "Detalhes em couro", "Bolsos para tesouras", "Alças cruzadas"],
+                    composition: "80% Lona / 20% Couro Bovino"
+                },
+                {
+                    id: 9,
+                    model: "MOD-009",
+                    title: "Avental Esteticista Elegante",
+                    profession: "Esteticista / Maquiador(a)",
+                    category: "cabeleireiro",
+                    price: "87.900,00 AOA Kz",
+                    image: "img/img9.jpg", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Avental com design elegante e caimento suave, ideal para profissionais de estética e maquiagem.",
+                    features: ["Tecido leve", "Resistente a manchas", "Design moderno", "Bolsos discretos"],
+                    composition: "95% Poliéster / 5% Elastano"
+                },
+                {
+                    id: 10,
+                    model: "MOD-010",
+                    title: "Avental Coloração Capilar",
+                    profession: "Colorista",
+                    category: "cabeleireiro",
+                    price: "67.900,00 AOA Kz",
+                    image: "img/img10.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Avental extra-resistente a produtos químicos, garantindo a proteção total durante processos de coloração.",
+                    features: ["Material PVC durável", "Resistente a tintas", "Superfície fácil de limpar", "Longa vida útil"],
+                    composition: "100% PVC Reforçado"
+                },
+                {
+                    id: 11,
+                    model: "MOD-011",
+                    title: "Avental Maquiador Compacto",
+                    profession: "Maquiador(a) / Artista",
+                    category: "cabeleireiro",
+                    price: "58.300,00 AOA Kz",
+                    image: "img/img11.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Avental menor e mais discreto, ideal para maquiadores que precisam de mobilidade e fácil acesso a pincéis.",
+                    features: ["Tamanho compacto", "Bolsos organizadores", "Leve", "Design clean"],
+                    composition: "90% Poliéster / 10% Nylon"
+                },
+                {
+                    id: 12,
+                    model: "MOD-012",
+                    title: "Avental Unissex de Salão",
+                    profession: "Todos os Profissionais de Salão",
+                    category: "cabeleireiro",
+                    price: "79.900,00 AOA Kz",
+                    image: "img/img12.jpg", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Avental versátil e unissex para uso geral em salões de beleza, garantindo proteção para diversas tarefas.",
+                    features: ["Durável e resistente", "Ajuste universal", "Bolso frontal", "Secagem rápida"],
+                    composition: "65% Poliéster / 35% Algodão"
+                },
+
+                // --- Jalecos Clínicos (6 Itens: Modelos 013-018) ---
+                {
+                    id: 13,
+                    model: "MOD-013",
+                    title: "Jaleco Clínico Clássico",
+                    profession: "Clínico Geral",
+                    category: "medico",
+                    price: "38.900,00 AOA Kz",
+                    image: "img/img13.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco tradicional, proporcionando conforto e um visual profissional. Sem touca e avental.",
+                    features: ["Tecido de alta durabilidade", "3 bolsos", "Corte reto", "Resistente a descoloração"],
+                    composition: "65% Poliéster / 35% Algodão"
+                },
+                {
+                    id: 14,
+                    model: "MOD-014",
+                    title: "Jaleco Cirúrgico Completo",
+                    profession: "Cirurgião / Técnico",
+                    category: "medico",
+                    price: "48.900,00 AOA Kz",
+                    image: "img/img14.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Conjunto completo para ambientes cirúrgicos, máxima esterilidade e proteção. Inclui jaleco, touca e avental estéril.",
+                    features: ["Material estéril", "Descartável", "Resistente a fluidos", "Barreira bacteriana", "Inclui touca e avental"],
+                    composition: "100% Polipropileno SSMMS"
+                },
+                {
+                    id: 15,
+                    model: "MOD-015",
+                    title: "Jaleco Clínico Feminino Slim Fit",
+                    profession: "Especialista Clínico Feminino",
+                    category: "medico",
+                    price: "18.900,00 AOA Kz",
+                    image: "img/img15.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco com corte moderno e acinturado que valoriza a silhueta feminina. Sem touca e avental.",
+                    features: ["Design slim fit", "Tecido com elastano", "2 bolsos discretos", "Gola de lapela"],
+                    composition: "97% Poliéster / 3% Elastano"
+                },
+                {
+                    id: 16,
+                    model: "MOD-016",
+                    title: "Jaleco Clínico Masculino Esportivo",
+                    profession: "Fisioterapeuta / Educador Físico",
+                    category: "medico",
+                    price: "18.900,00 AOA Kz",
+                    image: "img/img16.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco com design mais esportivo e ergonômico. Acompanha touca.",
+                    features: ["Tecido stretch", "Design moderno", "Inclui touca", "Respirável"],
+                    composition: "90% Poliéster / 10% Elastano (Jaleco), 100% Poliéster (Touca)"
+                },
+                {
+                    id: 17,
+                    model: "MOD-017",
+                    title: "Jaleco Proteção Laboratório",
+                    profession: "Pesquisador / Químico",
+                    category: "medico",
+                    price: "153.700,00 AOA Kz",
+                    image: "img/img17.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco reforçado para laboratórios, proteção extra contra químicos e respingos. Acompanha avental impermeável.",
+                    features: ["Resistente a químicos", "Punhos ajustáveis", "Botões de pressão", "Inclui avental impermeável"],
+                    composition: "80% Poliéster / 20% Algodão (Jaleco), 100% PVC (Avental)"
+                },
+                {
+                    id: 18,
+                    model: "MOD-018",
+                    title: "Jaleco Clínico Unissex",
+                    profession: "Dentista / Auxiliar Clínico",
+                    category: "medico",
+                    price: "150.900,00 AOA Kz",
+                    image: "img/img18.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco prático e confortável para o dia a dia no ambiente clínico. Sem touca e avental.",
+                    features: ["Design unissex", "Tecido resistente", "Bolso para instrumentos", "Fácil esterilização"],
+                    composition: "70% Poliéster / 30% Algodão"
+                },
+
+                // --- Jalecos Enfermagem (6 Itens: Modelos 019-024) ---
+                {
+                    id: 19,
+                    model: "MOD-019",
+                    title: "Jaleco Enfermagem Essencial",
+                    profession: "Enfermeiro / Auxiliar de Enfermagem",
+                    category: "enfermagem",
+                    price: "37.900,00 AOA Kz",
+                    image: "img/img19.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco padrão para o setor de enfermagem, priorizando funcionalidade e conforto. Sem touca e avental.",
+                    features: ["Tecido fácil de desinfetar", "4 bolsos", "Resistente a manchas", "Design ergonômico"],
+                    composition: "65% Poliéster / 35% Algodão"
+                },
+                {
+                    id: 20,
+                    model: "MOD-020",
+                    title: "Jaleco Enfermagem Colorido",
+                    profession: "Enfermeiro Pediátrico",
+                    category: "enfermagem",
+                    price: "37.900,00 AOA Kz",
+                    image: "img/img20.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco colorido com touca combinando, ideal para ambientes que buscam um toque de alegria. Com touca.",
+                    features: ["Cores vibrantes", "Tecido macio", "Touca inclusa", "Fácil de lavar"],
+                    composition: "100% Algodão (Jaleco, Touca)"
+                },
+                {
+                    id: 21,
+                    model: "MOD-021",
+                    title: "Jaleco Enfermagem Proteção Extra",
+                    profession: "Enfermeiro UTI / Emergência",
+                    category: "enfermagem",
+                    price: "29.300,00 AOA Kz",
+                    image: "img/img21.jpg", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco reforçado com avental acoplado para proteção adicional em situações de alto risco. Apenas com avental.",
+                    features: ["Barreira a fluidos", "Avental removível e impermeável", "Punhos elásticos", "Segurança garantida"],
+                    composition: "70% Poliéster / 30% Algodão (Jaleco), 100% PVC (Avental)"
+                },
+                {
+                    id: 22,
+                    model: "MOD-022",
+                    title: "Jaleco Enfermagem Design Moderno",
+                    profession: "Enfermeiro Esteticista",
+                    category: "enfermagem",
+                    price: "37.900,00 AOA Kz",
+                    image: "img/img22.jpg", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco com corte contemporâneo e ajuste perfeito, ideal para profissionais que buscam um visual sofisticado. Sem touca e avental.",
+                    features: ["Corte slim", "Tecido com elastano", "Bolsos invisíveis", "Antimicrobiano"],
+                    composition: "95% Poliéster / 5% Elastano"
+                },
+                {
+                    id: 23,
+                    model: "MOD-023",
+                    title: "Jaleco Enfermagem Masculino",
+                    profession: "Enfermeiro Chefe",
+                    category: "enfermagem",
+                    price: "37.900,00 AOA Kz",
+                    image: "img/img23.jpg", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco masculino clássico, com corte que proporciona mobilidade e profissionalismo. Sem touca e avental.",
+                    features: ["Corte reto", "Tecido resistente a amassados", "Três bolsos", "Punhos com botão"],
+                    composition: "65% Poliéster / 35% Algodão"
+                },
+                {
+                    id: 24,
+                    model: "MOD-024",
+                    title: "Jaleco Enfermagem com Zíper",
+                    profession: "Enfermeiro Plantonista",
+                    category: "enfermagem",
+                    price: "37.800,00 AOA Kz",
+                    image: "img/img24.jpg", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco com zíper frontal para maior praticidade ao vestir e despir, ideal para plantões e emergências. Sem touca e avental.",
+                    features: ["Zíper frontal reforçado", "Secagem rápida", "Bolsos laterais com zíper", "Conforto para longas horas"],
+                    composition: "100% Poliéster"
+                },
+
+                // --- Jalecos de Pediatria (6 Itens: Modelos 025-030) ---
+                {
+                    id: 25,
+                    model: "MOD-025",
+                    title: "Jaleco Pediatria Super Heróis",
+                    profession: "Pediatra / Médico Infantil",
+                    category: "pediatria",
+                    price: "168.900,00 AOA Kz",
+                    image: "img/img25.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco com estampas de super-heróis e touca combinando, para tornar a consulta divertida. Com touca.",
+                    features: ["Estampas vibrantes", "Tecido macio e hipoalergênico", "Touca temática inclusa", "Fácil limpeza"],
+                    composition: "100% Algodão Premium (Jaleco, Touca)"
+                },
+                {
+                    id: 26,
+                    model: "MOD-026",
+                    title: "Jaleco Pediatria Bichinhos",
+                    profession: "Enfermeiro Pediátrico",
+                    category: "pediatria",
+                    price: "150.900,00 AOA Kz",
+                    image: "img/img26.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco com divertidas estampas de animais, ideal para criar um ambiente amigável e acolhedor. Sem touca e avental.",
+                    features: ["Padrão de animais fofos", "Tecido suave e resistente", "2 bolsos", "Lavável em máquina"],
+                    composition: "65% Poliéster / 35% Algodão"
+                },
+                {
+                    id: 27,
+                    model: "MOD-027",
+                    title: "Jaleco Pediatria Neutro",
+                    profession: "Fisioterapeuta Pediátrico",
+                    category: "pediatria",
+                    price: "27.900,00 AOA Kz",
+                    image: "img/img27.jpg", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco em cor neutra, com avental impermeável discreto, para profissionais que precisam de proteção. Apenas com avental.",
+                    features: ["Cor neutra", "Avental de proteção impermeável", "Tecido respirável", "Conforto para sessões"],
+                    composition: "70% Poliéster / 30% Algodão (Jaleco), 100% Poliuretano (Avental)"
+                },
+                {
+                    id: 28,
+                    model: "MOD-028",
+                    title: "Fato Social",
+                    profession: "Fato Social Elegante",
+                    category: "Fato social",
+                    price: "133.800,00 AOA Kz",
+                    image: "img/img28.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Conjunto completo com estampas de brinquedos, touca e avental, ideal para sessões lúdicas. Com touca e avental.",
+                    features: ["Estampas de brinquedos", "Tecido resistente", "Inclui touca e avental", "Estimula a interação"],
+                    composition: "80% Algodão / 20% Poliéster (Jaleco, Touca, Avental)"
+                },
+                {
+                    id: 29,
+                    model: "MOD-029",
+                    title: "Jaleco para Berçário",
+                    profession: "Cuidador de Berçário",
+                    category: "pediatria",
+                    price: "38.300,00 AOA Kz",
+                    image: "img/img29.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco leve e super macio, projetado para o conforto e a segurança em berçários. Sem touca e avental.",
+                    features: ["Tecido extra macio", "Hipoalergênico", "Fácil de lavar", "Sem peças soltas"],
+                    composition: "100% Algodão Jersey"
+                },
+                {
+                    id: 30,
+                    model: "MOD-030",
+                    title: "Jaleco  Espacial",
+                    profession: "Médico do Sono Infantil",
+                    category: "jaleco",
+                    price: "34.000,00 AOA Kz",
+                    image: "img/img30.png", // Imagem diretamente da pasta img/, formato JPG
+                    description: "Jaleco com tema espacial e touca estrelada, para ajudar as crianças a se sentirem em uma aventura. Com touca.",
+                    features: ["Estampa de planetas e estrelas", "Tecido respirável", "Touca temática", "Cores vibrantes"],
+                    composition: "60% Algodão / 40% Poliéster (Jaleco, Touca)"
+                },
+
+                
+            ];
+
+            // --- Gerenciamento de Elementos do DOM ---
+            const catalogContainer = document.getElementById('catalog');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productModal = document.getElementById('productModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalModel = document.getElementById('modalModel');
+            // Elementos do modal para título, profissão, descrição, features, composition não são mais preenchidos.
+            const modalPrice = document.getElementById('modalPrice');
+            const closeModal = document.getElementById('closeModal');
+            const menuToggle = document.getElementById('menuToggle');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const closeMenu = document.getElementById('closeMenu');
+
+            // --- Funções Principais do Catálogo ---
+
+            /**
+             * Gera e exibe os cards dos produtos no catálogo, aplicando filtros.
+             * @param {string} filter - A categoria para filtrar os produtos ('all' para todos).
+             */
+            function generateProductCards(filter = 'all') {
+                // Limpa o conteúdo atual do container do catálogo
+                catalogContainer.innerHTML = '';
+                
+                // Filtra os produtos com base na categoria selecionada
+                const filteredProducts = filter === 'all' 
+                    ? products 
+                    : products.filter(product => product.category === filter);
+                
+                // Itera sobre os produtos filtrados e cria um card para cada um
+                filteredProducts.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card'; // Adiciona a classe CSS
+                    // Preenche o HTML interno do card com os dados do produto
+                    productCard.innerHTML = `
+                        <div class="product-badge">${product.model}</div>
+                        <img src="${product.image}" alt="${product.title}" class="product-image">
+                        <div class="product-info">
+                            <div class="product-model">${product.model}</div>
+                            <div class="product-price">${product.price}</div>
+                        </div>
+                    `;
+                    
+                    // Adiciona um evento de clique ao card para abrir o modal de detalhes
+                    productCard.addEventListener('click', () => openProductModal(product));
+                    
+                    // Adiciona o card ao container do catálogo
+                    catalogContainer.appendChild(productCard);
+                });
+            }
+
+            /**
+             * Abre o modal de detalhes do produto e preenche com as informações do produto selecionado.
+             * No modal, apenas o modelo e o preço são exibidos, conforme solicitado.
+             * @param {object} product - O objeto do produto a ser exibido no modal.
+             */
+            function openProductModal(product) {
+                // Preenche os elementos do modal com os dados do produto
+                modalImage.src = product.image;
+                modalImage.alt = product.title; // Usar o título completo para o alt da imagem no modal, mas não visível
+                modalModel.textContent = product.model;
+                // modalTitle.textContent = product.title; // Oculto via CSS
+                // modalProfession.textContent = product.profession; // Oculto via CSS
+                modalPrice.textContent = product.price;
+                // modalDescription.textContent = product.description; // Oculto via CSS
+                
+                // Limpa as características anteriores e as composição, pois estão ocultas via CSS
+                // modalFeatures.innerHTML = ''; // Oculto via CSS
+                // modalComposition.textContent = ''; // Oculto via CSS
+                
+                // Adiciona a classe 'active' para mostrar o modal
+                productModal.classList.add('active');
+                // Impede o scroll do corpo da página enquanto o modal estiver aberto
+                document.body.style.overflow = 'hidden';
+            }
+
+            /**
+             * Fecha o modal de detalhes do produto.
+             */
+            function closeProductModal() {
+                // Remove a classe 'active' para esconder o modal
+                productModal.classList.remove('active');
+                // Restaura o scroll do corpo da página
+                document.body.style.overflow = 'auto';
+            }
+
+            // --- Event Listeners ---
+
+            // Adiciona evento de clique a cada botão de filtro de categoria
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove a classe 'active' de todos os botões de filtro
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Adiciona a classe 'active' ao botão clicado
+                    button.classList.add('active');
+                    // Obtém a categoria do atributo 'data-category' e filtra os produtos
+                    const category = button.getAttribute('data-category');
+                    generateProductCards(category);
+                    // Fecha o menu mobile após a seleção de uma categoria (se estiver aberto)
+                    categoryFilter.classList.remove('active');
+                });
+            });
+
+            // Evento para fechar o modal ao clicar no botão 'x'
+            closeModal.addEventListener('click', closeProductModal);
+            
+            // Evento para fechar o modal ao clicar fora do conteúdo do modal (overlay)
+            productModal.addEventListener('click', function(e) {
+                if (e.target === this) { // Verifica se o clique foi diretamente no overlay do modal
+                    closeProductModal();
+                }
+            });
+            
+            // Evento para fechar o modal com a tecla 'ESC'
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && productModal.classList.contains('active')) {
+                    closeProductModal();
+                }
+            });
+
+            // Evento para alternar a visibilidade do menu mobile (abrir)
+            menuToggle.addEventListener('click', () => {
+                categoryFilter.classList.add('active');
+            });
+
+            // Evento para fechar o menu mobile
+            closeMenu.addEventListener('click', () => {
+                categoryFilter.classList.remove('active');
+            });
+
+            // --- Inicialização ---
+            // Gera os cards dos produtos na carga inicial da página (mostra todos)
+            generateProductCards();
+        });
+    </script>
+</body>
+</html>
