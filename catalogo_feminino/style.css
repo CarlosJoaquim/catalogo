@@ -1,427 +1,309 @@
+/* Configurações básicas */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
 
-        /*
-         * Estilos Globais e Variáveis CSS
-         * Definindo as cores da paleta para fácil manutenção:
-         * Dourado: --primary-color
-         * Preto: --secondary-color
-         * Branco: --white-color
-         */
-        :root {
-            --primary-color: #DAA520; /* Dourado */
-            --secondary-color: #000000; /* Preto */
-            --text-color: #333; /* Cor padrão do texto para contraste */
-            --background-color: #f5f5f5; /* Fundo claro para o corpo */
-            --white-color: #FFFFFF; /* Branco puro */
-            --light-gray: #7f8c8d; /* Cinza claro para detalhes */
-            --success-color: #27ae60; /* Verde para sucesso/preços */
-            --error-color: #e74c3c; /* Vermelho para ações de erro/fechar */
-            --box-shadow-light: 0 2px 10px rgba(0,0,0,0.1);
-            --box-shadow-medium: 0 5px 15px rgba(0,0,0,0.1);
-            --box-shadow-heavy: 0 10px 20px rgba(0,0,0,0.15);
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        /* Reset básico para todos os elementos */
-        * {
-            box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
-            margin: 0; /* Remove margens padrão */
-            padding: 0; /* Remove preenchimentos padrão */
-        }
-        
-        /* Estilos do corpo da página */
-        body {
-            font-family: 'Arial', sans-serif; /* Fonte legível e comum */
-            background-color: var(--background-color); /* Fundo da página */
-            color: var(--text-color); /* Cor padrão do texto */
-            line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
-        }
-        
-        /* Container principal para centralizar o conteúdo */
-        .container {
-            width: 90%; /* Largura padrão de 90% */
-            max-width: 1200px; /* Largura máxima para evitar que o conteúdo se espalhe muito */
-            margin: 0 auto; /* Centraliza o container na página */
-            padding: 20px 0; /* Espaçamento superior e inferior */
-        }
-        
-        /* Estilos do cabeçalho */
-        header {
-            background-color: var(--secondary-color); /* Fundo preto */
-            color: var(--white-color); /* Texto branco */
-            padding: 25px 0; /* Espaçamento interno */
-            text-align: center; /* Centraliza o texto */
-            box-shadow: var(--box-shadow-light); /* Sombra suave */
-            position: relative; /* Necessário para posicionamento absoluto do menu toggle */
-        }
-        
-        /* Título principal no cabeçalho */
-        h1 {
-            font-size: 2.5rem; /* Tamanho da fonte */
-            margin-bottom: 10px; /* Margem inferior */
-            color: var(--primary-color); /* Cor dourada */
-            letter-spacing: 1px; /* Espaçamento entre letras */
-        }
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
 
-        /* Subtítulo no cabeçalho */
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Seção de filtros de categoria */
-        .category-filter {
-            display: flex; /* Layout flexbox para os botões */
-            justify-content: center; /* Centraliza os botões horizontalmente */
-            flex-wrap: wrap; /* Permite que os botões quebrem linha */
-            gap: 10px; /* Espaçamento entre os botões */
-            margin: 20px 0; /* Margem superior e inferior */
-            padding: 10px; /* Adiciona um pouco de padding */
-            background-color: var(--white-color); /* Fundo branco para a área de filtro */
-            border-radius: 8px; /* Cantos arredondados */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra leve */
-        }
-        
-        /* Estilos dos botões de filtro */
-        .filter-btn {
-            padding: 10px 20px; /* Preenchimento interno */
-            background-color: var(--secondary-color); /* Fundo preto */
-            color: var(--white-color); /* Texto branco */
-            border: none; /* Sem borda */
-            border-radius: 25px; /* Cantos bem arredondados (pill shape) */
-            cursor: pointer; /* Cursor de ponteiro ao passar por cima */
-            transition: all 0.3s ease; /* Transição suave para hover e active */
-            font-weight: bold; /* Texto em negrito */
-            font-size: 0.95rem; /* Tamanho da fonte */
-            text-transform: uppercase; /* Texto em maiúsculas */
-            letter-spacing: 0.5px; /* Espaçamento entre letras */
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background-color: var(--primary-color); /* Dourado no hover/active */
-            color: var(--secondary-color); /* Texto preto no hover/active */
-            transform: translateY(-2px); /* Pequeno efeito de elevação */
-        }
-        
-        /* Container dos cards de produtos (grid layout) */
-        .catalog-container {
-            display: grid; /* Layout de grade */
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Colunas responsivas */
-            gap: 25px; /* Espaçamento entre os cards */
-            padding: 30px 0; /* Espaçamento superior e inferior */
-        }
-        
-        /* Estilos do card de produto individual */
-        .product-card {
-            background: var(--white-color); /* Fundo branco */
-            border-radius: 10px; /* Cantos arredondados */
-            overflow: hidden; /* Garante que a imagem não saia dos limites */
-            box-shadow: var(--box-shadow-medium); /* Sombra média */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
-            cursor: pointer; /* Cursor de ponteiro */
-            position: relative; /* Para o badge do produto */
-            display: flex; /* Permite layout interno flexível */
-            flex-direction: column; /* Conteúdo em coluna */
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px); /* Elevação no hover */
-            box-shadow: var(--box-shadow-heavy); /* Sombra mais forte no hover */
-        }
-        
-        /* Badge de modelo no canto superior direito */
-        .product-badge {
-            position: absolute;
-            top: 15px; /* Posição do topo */
-            right: 15px; /* Posição da direita */
-            background-color: var(--primary-color); /* Fundo dourado */
-            color: var(--secondary-color); /* Texto preto */
-            padding: 6px 12px; /* Preenchimento */
-            border-radius: 6px; /* Cantos arredondados */
-            font-size: 0.85rem; /* Tamanho da fonte */
-            font-weight: bold; /* Negrito */
-            z-index: 5; /* Garante que fique acima da imagem */
-        }
-        
-        /* Imagem do produto no card */
-        .product-image {
-            width: 100%; /* Ocupa toda a largura do card */
-            height: 300px; /* Altura fixa */
-            object-fit: cover; /* Recorta a imagem para cobrir o espaço */
-            border-bottom: 1px solid #eee; /* Linha sutil na parte inferior */
-        }
-        
-        /* Informações do produto no card */
-        .product-info {
-            padding: 15px 20px; /* Preenchimento */
-            flex-grow: 1; /* Permite que ocupe o espaço restante */
-            display: flex; /* Layout flex para alinhar o conteúdo */
-            flex-direction: column; /* Conteúdo em coluna */
-            justify-content: space-between; /* Espaço entre os itens */
-        }
-        
-        /*
-         * Esconde os elementos de título e profissão no card
-         * para exibir apenas modelo e preço.
-         */
-        .product-model {
-            font-size: 1.25rem; /* Aumenta o tamanho para destaque */
-            color: var(--secondary-color); /* Cor preta para o modelo */
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            font-weight: bold; /* Modelo em negrito */
-        }
-        
-        .product-title, .product-profession {
-            display: none; /* Oculta título e profissão */
-        }
-        
-        .product-price {
-            font-weight: bold;
-            color: var(--success-color);
-            font-size: 1.4rem;
-            margin-top: auto; /* Empurra o preço para baixo */
-        }
-        
-        /* Modal de detalhes do produto */
-        .product-modal {
-            position: fixed; /* Fixa o modal na tela */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8); /* Fundo escuro semi-transparente */
-            display: flex; /* Layout flex para centralizar o conteúdo */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; /* Garante que fique acima de todo o resto */
-            opacity: 0; /* Esconde o modal por padrão */
-            visibility: hidden; /* Torna o modal inacessível por padrão */
-            transition: all 0.3s ease; /* Transição suave para aparecer/desaparecer */
-        }
-        
-        .product-modal.active {
-            opacity: 1; /* Mostra o modal */
-            visibility: visible; /* Torna o modal acessível */
-        }
-        
-        .modal-content {
-            background: var(--white-color); /* Fundo branco */
-            width: 90%;
-            max-width: 800px; /* Largura máxima do conteúdo do modal */
-            border-radius: 10px; /* Cantos arredondados */
-            overflow: hidden; /* Esconde conteúdo que transborda */
-            position: relative; /* Para o botão de fechar */
-            max-height: 90vh; /* Altura máxima para caber na tela */
-            overflow-y: auto; /* Adiciona scroll se o conteúdo for muito longo */
-            transform: scale(0.9); /* Inicia menor para a animação */
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação de entrada elástica */
-        }
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
 
-        .product-modal.active .modal-content {
-            transform: scale(1); /* Expande para o tamanho normal */
-        }
-        
-        .modal-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .modal-details {
-            padding: 25px 30px; /* Preenchimento maior no modal */
-        }
-        
-        .modal-model {
-            font-size: 1.8rem; /* Aumenta o modelo no modal */
-            color: var(--secondary-color);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        
-        .modal-title, .modal-profession, .modal-description, .product-features, .composition {
-            display: none; /* Oculta todos os detalhes extras no modal */
-        }
-        
-        .modal-price {
-            font-size: 2.2rem; /* Aumenta o preço no modal */
-            color: var(--success-color);
-            font-weight: bold;
-            margin-bottom: 0; /* Remove margem inferior se não houver outros itens abaixo */
-            text-align: center; /* Centraliza o preço no modal */
-            padding-top: 20px; /* Adiciona um pouco de espaço superior */
-            border-top: 1px dashed #eee; /* Linha tracejada acima do preço no modal */
-        }
-        
-        /* Botão de fechar do modal */
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.6rem; /* Tamanho do ícone de fechar */
-            color: var(--secondary-color);
-            cursor: pointer;
-            background: var(--white-color);
-            width: 45px; /* Largura do botão circular */
-            height: 45px; /* Altura do botão circular */
-            border-radius: 50%; /* Torna-o circular */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Sombra para destacá-lo */
-            transition: all 0.3s ease;
-            z-index: 10; /* Garante que fique acima de outros elementos do modal */
-        }
-        
-        .close-modal:hover {
-            background-color: var(--error-color); /* Fundo vermelho no hover */
-            color: var(--white-color); /* Texto branco no hover */
-            transform: rotate(90deg); /* Pequena rotação no hover */
-        }
+header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #ccc;
+}
 
-        /* Rodapé */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            text-align: center;
-            padding: 25px 0;
-            margin-top: 40px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            font-size: 0.9rem;
-        }
+/* Menu de categorias e filtros */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-        footer p {
-            margin-bottom: 5px;
-        }
+.filter-btn {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+}
 
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.filter-btn:hover, .filter-btn.active {
+    background-color: #333;
+    color: white;
+}
 
-        footer a:hover {
-            color: var(--white-color);
-        }
+/* Catálogo de produtos */
+.catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 
-        /* Estilos específicos para o menu mobile */
-        .menu-toggle {
-            display: none; /* Escondido por padrão em desktop */
-            font-size: 2rem;
-            color: var(--primary-color);
-            cursor: pointer;
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10; /* Garante que fique acima de outros elementos no cabeçalho */
-        }
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s;
+}
 
-        @media (max-width: 768px) {
-            /* Ajustes para telas menores (tablets e celulares) */
-            h1 {
-                font-size: 2rem; /* Tamanho de fonte menor para o título */
-            }
+.product-card:hover {
+    transform: translateY(-5px);
+}
 
-            header p {
-                font-size: 1rem;
-            }
+/* Novo estilo para a imagem e o botão de zoom */
+.product-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Cria um contêiner quadrado para a imagem */
+    overflow: hidden;
+}
 
-            .menu-toggle {
-                display: block; /* Mostra o botão do menu mobile */
-            }
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorcer */
+    object-position: center;
+    transition: transform 0.3s ease;
+}
 
-            .category-filter {
-                flex-direction: column; /* Botões em coluna no mobile */
-                align-items: center; /* Centraliza os botões */
-                position: fixed; /* Fixa o menu na tela */
-                top: 0;
-                left: -100%; /* Esconde o menu fora da tela */
-                width: 70%; /* Largura do menu lateral */
-                max-width: 300px; /* Largura máxima para não ser muito grande em tablets */
-                height: 100%; /* Altura total da tela */
-                background-color: var(--secondary-color); /* Fundo preto do menu */
-                padding-top: 80px; /* Espaço para o cabeçalho/botão de fechar */
-                box-shadow: 2px 0 15px rgba(0,0,0,0.5); /* Sombra mais forte para o menu lateral */
-                transition: left 0.3s ease-in-out; /* Transição suave para abrir/fechar */
-                z-index: 999; /* Garante que fique acima de tudo, exceto o modal */
-                overflow-y: auto; /* Adiciona scroll se houver muitos botões */
-                border-right: 3px solid var(--primary-color); /* Borda dourada lateral */
-            }
+.product-card:hover .product-image {
+    transform: scale(1.05); /* Pequeno efeito de zoom no hover */
+}
 
-            .category-filter.active {
-                left: 0; /* Move o menu para dentro da tela */
-            }
+.zoom-btn {
+    position: absolute;
+    bottom: 10px; /* Posiciona o botão no canto inferior direito da imagem */
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
 
-            .category-filter .filter-btn {
-                width: 90%; /* Ocupa mais largura no menu mobile */
-                margin-bottom: 12px; /* Mais espaço entre os botões */
-                background-color: var(--secondary-color);
-                color: var(--white-color);
-                border: 1px solid var(--primary-color); /* Borda dourada nos botões */
-                padding: 12px 15px; /* Preenchimento maior nos botões */
-            }
+.product-card:hover .zoom-btn {
+    opacity: 1;
+}
 
-            .category-filter .filter-btn:hover, .category-filter .filter-btn.active {
-                background-color: var(--primary-color);
-                color: var(--secondary-color);
-            }
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
 
-            .close-menu {
-                display: block; /* Mostra o botão de fechar no menu mobile */
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 2.2rem; /* Tamanho maior para o ícone de fechar */
-                color: var(--white-color);
-                cursor: pointer;
-                background: none; /* Sem fundo */
-                border: none; /* Sem borda */
-                padding: 0;
-                transition: color 0.3s ease;
-            }
+.product-info {
+    padding: 15px;
+    text-align: left;
+}
 
-            .close-menu:hover {
-                color: var(--error-color); /* Cor vermelha no hover */
-            }
+.product-model {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
 
-            .catalog-container {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colunas um pouco menores em mobile */
-                gap: 20px; /* Espaçamento ligeiramente menor */
-            }
-            
-            .modal-content {
-                width: 95%; /* Modal um pouco mais largo em mobile */
-                margin: 0 10px; /* Pequena margem lateral */
-            }
+.product-price {
+    color: #666;
+    margin-top: 5px;
+    font-size: 14px;
+}
 
-            .modal-model {
-                font-size: 1.5rem; /* Ajusta o tamanho do modelo no modal para mobile */
-            }
-            .modal-price {
-                font-size: 1.8rem; /* Ajusta o tamanho do preço no modal para mobile */
-            }
-        }
+/* Modal de produto (melhorias) */
+.product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
 
-        @media (max-width: 480px) {
-            /* Ajustes finos para celulares pequenos */
-            h1 {
-                font-size: 1.8rem;
-            }
-            .filter-btn {
-                font-size: 0.9rem;
-                padding: 10px 15px;
-            }
-            .product-image {
-                height: 250px; /* Altura da imagem um pouco menor */
-            }
-            .product-model {
-                font-size: 1.1rem; /* Ajusta o tamanho do modelo no card para mobile */
-            }
-            .modal-details {
-                padding: 15px 20px;
-            }
-            .modal-image {
-                max-height: 250px;
-            }
-        }
+.product-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain; /* Ajusta a imagem para caber no contêiner do modal */
+    margin-bottom: 20px;
+}
+
+.modal-details {
+    text-align: center;
+}
+
+.modal-model {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-price {
+    font-size: 16px;
+    color: #666;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Mobile-first: ajustes para telas pequenas */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.close-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding-top: 60px;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .category-filter {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #fff;
+        padding: 60px 20px 20px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+    
+    .category-filter.active {
+        left: 0;
+    }
+
+    .close-menu {
+        display: block;
+    }
+
+    .filter-btn {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .modal-content {
+        max-width: 95%;
+    }
+}
