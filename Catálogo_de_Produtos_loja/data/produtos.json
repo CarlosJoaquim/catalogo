@@ -11,16 +11,16 @@
     {
       "id": 2,
       "title": "Jogo Americano Luxo Linho Fino",
-      "description": "Jogo americano em linho fino premium com detalhes em renda portuguesa. Design exclusivo para ocasiões especiais.",
+      "description": "Jogo americano em.",
       "price": "32.800 Kz",
       "image": "jogos-americanos/2.jpg",
       "ref": "JA002"
     },
     {
       "id": 3,
-      "title": "Jogo Americano Algodão Biológico",
-      "description": "Jogo americano em algodão biológico orgânico com padrão geométrico moderno. Ecológico e sustentável.",
-      "price": "22.750 Kz",
+      "title": "Jogo Americano em Linho",
+      "description": "Jogo americano em Linho.",
+      "price": "24.000 Kz",
       "image": "jogos-americanos/3.jpg",
       "ref": "JA003"
     },
