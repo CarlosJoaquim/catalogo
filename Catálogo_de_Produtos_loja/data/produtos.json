@@ -3,9 +3,9 @@
     {
       "id": 1,
       "title": "Jogo Americano Premium Linho Grosso",
-      "description": "Jogo americano em linho grosso de alta qualidade com bordados tradicionais. Resistente e elegante, perfeito para refeições sofisticadas.",
+      "description": "Jogo americano em linho grosso Resistente e elegante, perfeito para refeições sofisticadas.",
       "price": "25.450 Kz",
-      "image": "../imagens/jogos-americanos/1.jpeg",
+      "image": "imagens/jogos-americanos/1.jpeg",
       "ref": "JA001"
     },
     {

@@ -1,5 +1,5 @@
 // Lógica principal do catálogo
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Elementos DOM
     const categoryCards = document.querySelectorAll('.category-card');
     const productsModal = document.getElementById('productsModal');
@@ -15,55 +15,125 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentCategory = '';
     let currentPage = 1;
     const productsPerPage = 9;
+    let dataLoaded = false;
 
-    // Event Listeners
-    categoryCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const category = card.getAttribute('data-category');
-            openProductsModal(category);
+    // Inicializar a API e carregar dados
+    await initializeData();
+
+    // Configurar event listeners
+    setupEventListeners();
+
+    // Função para inicializar dados
+    async function initializeData() {
+        try {
+            // Mostrar loading
+            document.body.classList.add('loading');
+            
+            // Inicializar a API de produtos
+            await window.productsAPI.init();
+            
+            // Carregar e exibir categorias
+            await loadCategories();
+            
+            dataLoaded = true;
+            console.log('Dados inicializados com sucesso');
+            
+        } catch (error) {
+            console.error('Erro ao inicializar dados:', error);
+            showError('Erro ao carregar dados. Recarregue a página.');
+        } finally {
+            document.body.classList.remove('loading');
+        }
+    }
+
+    // Configurar event listeners
+    function setupEventListeners() {
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                if (!dataLoaded) {
+                    showError('Dados ainda não carregados. Aguarde.');
+                    return;
+                }
+                const category = card.getAttribute('data-category');
+                openProductsModal(category);
+            });
         });
-    });
 
-    closeModalBtn.addEventListener('click', closeProductsModal);
+        closeModalBtn.addEventListener('click', closeProductsModal);
+        closeImageModalBtn.addEventListener('click', closeImageModal);
 
-    closeImageModalBtn.addEventListener('click', () => {
-        imageModal.classList.remove('active');
+        // Fechar modais ao clicar fora do conteúdo
+        window.addEventListener('click', (e) => {
+            if (e.target === productsModal) closeProductsModal();
+            if (e.target === imageModal) closeImageModal();
+        });
+    }
+
+    // Função para carregar categorias
+    async function loadCategories() {
+        try {
+            const categoriesData = await window.dataLoader.loadCategories();
+            const categories = categoriesData.categorias;
+            
+            // Atualizar contadores
+            const counts = window.productsAPI.getProductsCount();
+            document.getElementById('jogosCount').textContent = `${counts["jogos-americanos"]} produtos`;
+            document.getElementById('toalhasCount').textContent = `${counts["toalhas-mesa"]} produtos`;
+            document.getElementById('loucasCount').textContent = `${counts["loucas"]} produtos`;
+
+            // Atualizar imagens das categorias se existirem no JSON
+            categories.forEach(category => {
+                const card = document.querySelector(`[data-category="${category.id}"]`);
+                if (card && category.imagem) {
+                    const img = card.querySelector('.category-image img');
+                    if (img) img.src = category.imagem;
+                }
+            });
+        } catch (error) {
+            console.error('Erro ao carregar categorias:', error);
+        }
+    }
+
+    // Função para mostrar erro
+    function showError(message) {
+        // Criar ou atualizar elemento de erro
+        let errorDiv = document.getElementById('loadError');
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.id = 'loadError';
+            errorDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #ff4444;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                z-index: 10000;
+                max-width: 300px;
+            `;
+            document.body.appendChild(errorDiv);
+        }
+        
+        errorDiv.textContent = message;
+        
+        // Remover após 5 segundos
         setTimeout(() => {
-            imageModal.style.display = 'none';
-        }, 400);
-    });
+            if (errorDiv) errorDiv.remove();
+        }, 5000);
+    }
 
-    // Fechar modais ao clicar fora do conteúdo
-    window.addEventListener('click', (e) => {
-        if (e.target === productsModal) {
-            closeProductsModal();
-        }
-        if (e.target === imageModal) {
-            imageModal.classList.remove('active');
-            setTimeout(() => {
-                imageModal.style.display = 'none';
-            }, 400);
-        }
-    });
-
-    // Funções
+    // Funções de modal
     function openProductsModal(category) {
         currentCategory = category;
         currentPage = 1;
         
         // Definir título da modal conforme a categoria
-        const categoryTitles = {
-            'jogos-americanos': 'Jogos Americanos',
-            'toalhas-mesa': 'Toalhas de Mesa',
-            'loucas': 'Louças'
-        };
+        const categoryInfo = window.dataLoader.getCategoryInfo(category);
+        modalCategoryTitle.textContent = categoryInfo ? categoryInfo.nome : category;
         
-        modalCategoryTitle.textContent = categoryTitles[category];
-        
-        // Renderizar produtos
         renderProducts();
         
-        // Mostrar a modal com animação
         productsModal.style.display = 'block';
         setTimeout(() => {
             productsModal.classList.add('active');
@@ -79,19 +149,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 400);
     }
 
+    function closeImageModal() {
+        imageModal.classList.remove('active');
+        setTimeout(() => {
+            imageModal.style.display = 'none';
+        }, 400);
+    }
+
     function renderProducts() {
-        // Limpar grid de produtos
         productsGrid.innerHTML = '';
         
-        // Obter produtos da categoria atual
         const products = window.productsAPI.getProductsByCategory(currentCategory);
         
-        // Calcular índices dos produtos a mostrar
+        if (products.length === 0) {
+            productsGrid.innerHTML = `
+                <div class="no-products">
+                    <h3>Nenhum produto encontrado</h3>
+                    <p>Não há produtos disponíveis nesta categoria.</p>
+                </div>
+            `;
+            pagination.innerHTML = '';
+            return;
+        }
+        
         const startIndex = (currentPage - 1) * productsPerPage;
         const endIndex = Math.min(startIndex + productsPerPage, products.length);
         const productsToShow = products.slice(startIndex, endIndex);
         
-        // Renderizar cada produto
         productsToShow.forEach(product => {
             const productCard = document.createElement('div');
             productCard.className = 'product-card';
@@ -100,7 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="product-image">
                     <img src="${product.image}" 
                          alt="${product.title}" 
-                         data-src="${product.image}">
+                         data-src="${product.image}"
+                         onerror="this.src='https://placehold.co/300x200/FFFFFF/D4AF37?text=Imagem+Não+Disponível'">
                 </div>
                 <div class="product-info">
                     <div class="product-title">${product.title}</div>
@@ -110,7 +195,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             
-            // Adicionar evento de clique para ampliar imagem
             const productImage = productCard.querySelector('.product-image');
             productImage.addEventListener('click', () => {
                 expandedImage.src = productImage.querySelector('img').getAttribute('data-src');
@@ -124,18 +208,16 @@ document.addEventListener('DOMContentLoaded', function() {
             productsGrid.appendChild(productCard);
         });
         
-        // Renderizar paginação
         renderPagination(products.length);
     }
 
     function renderPagination(totalProducts) {
-        // Limpar paginação existente
         pagination.innerHTML = '';
         
-        // Calcular número total de páginas
         const totalPages = Math.ceil(totalProducts / productsPerPage);
         
-        // Botão Anterior
+        if (totalPages <= 1) return;
+        
         if (currentPage > 1) {
             const prevButton = document.createElement('button');
             prevButton.innerHTML = '&laquo; Anterior';
@@ -147,7 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
             pagination.appendChild(prevButton);
         }
         
-        // Números de página
         for (let i = 1; i <= totalPages; i++) {
             const pageButton = document.createElement('button');
             pageButton.textContent = i;
@@ -162,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
             pagination.appendChild(pageButton);
         }
         
-        // Botão Próximo
         if (currentPage < totalPages) {
             const nextButton = document.createElement('button');
             nextButton.innerHTML = 'Próximo &raquo;';
