@@ -88,6 +88,54 @@ class ProductsAPI {
         }
     }
 
+    // Exportar para JSON
+    exportToJSON() {
+        try {
+            const dataStr = JSON.stringify(this.productsData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportFileDefaultName = 'produtos.json';
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+            
+            return true;
+        } catch (e) {
+            console.error('Erro ao exportar JSON:', e);
+            return false;
+        }
+    }
+
+    // Importar de JSON
+    importFromJSON(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const jsonData = JSON.parse(e.target.result);
+                    
+                    // Validar a estrutura dos dados
+                    if (jsonData && jsonData["jogos-americanos"] && jsonData["toalhas-mesa"] && jsonData["loucas"]) {
+                        this.productsData = jsonData;
+                        if (this.saveToLocalStorage()) {
+                            resolve(true);
+                        } else {
+                            reject(new Error('Erro ao salvar dados importados.'));
+                        }
+                    } else {
+                        reject(new Error('Formato de ficheiro JSON inválido.'));
+                    }
+                } catch (e) {
+                    reject(new Error('Erro ao analisar JSON: ' + e.message));
+                }
+            };
+            reader.onerror = () => reject(new Error('Erro ao ler o ficheiro.'));
+            reader.readAsText(file);
+        });
+    }
+
     // Obter produtos por categoria
     getProductsByCategory(category) {
         return this.productsData[category] || [];
@@ -130,20 +178,6 @@ class ProductsAPI {
             "toalhas-mesa": this.productsData["toalhas-mesa"].length,
             "loucas": this.productsData["loucas"].length
         };
-    }
-
-    // Obter todos os dados
-    getAllData() {
-        return this.productsData;
-    }
-
-    // Carregar dados de um objeto JSON
-    loadFromDataObject(data) {
-        if (data && data["jogos-americanos"] && data["toalhas-mesa"] && data["loucas"]) {
-            this.productsData = data;
-            return this.saveToLocalStorage();
-        }
-        return false;
     }
 }
 

@@ -1,4 +1,3 @@
-// Painel Administrativo
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos DOM
     const adminToggle = document.getElementById('adminToggle');
@@ -243,3 +242,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+
