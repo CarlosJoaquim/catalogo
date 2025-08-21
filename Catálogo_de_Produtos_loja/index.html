@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAHWEH EMPREENDIMENTOS - Catálogo de Produtos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <button class="admin-toggle" id="adminToggle">Modo Admin</button>
+        <div class="logo-container">
+            <div class="logo">YAHWEH EMPREENDIMENTOS, LDA</div>
+            <div class="tagline">Produtos de Qualidade para a Sua Casa</div>
+        </div>
+        <div class="contact-info">
+            <a href="mailto:oficinadafampa@outlook.com"><i class="fas fa-envelope"></i> oficinadafampa@outlook.com</a>
+            <a href="https://wa.me/244931575486"><i class="fab fa-whatsapp"></i> +244 931 575 486</a>
+        </div>
+    </header>
+    
+    <!-- Painel Administrativo -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="container">
+            <div class="admin-header">
+                <h2 class="admin-title">Painel Administrativo</h2>
+                <div class="admin-controls">
+                    <select class="admin-category-select" id="adminCategorySelect">
+                        <option value="jogos-americanos">Jogos Americanos</option>
+                        <option value="toalhas-mesa">Toalhas de Mesa</option>
+                        <option value="loucas">Louças</option>
+                    </select>
+                    <div class="admin-buttons">
+                        <button class="admin-btn btn-primary" id="addProductBtn">Adicionar Produto</button>
+                        <button class="admin-btn btn-success" id="saveJsonBtn">Guardar em JSON</button>
+                        <button class="admin-btn btn-warning" id="loadJsonBtn">Carregar de JSON</button>
+                        <button class="admin-btn btn-danger" id="resetDataBtn">Repor Dados</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="statusMessage" class="status-message" style="display: none;"></div>
+            
+            <!-- Formulário para adicionar/editar produtos -->
+            <div class="admin-form" id="adminForm">
+                <h3 id="formTitle">Adicionar Novo Produto</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productTitle">Título do Produto</label>
+                        <input type="text" id="productTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Preço (Kz)</label>
+                        <input type="number" id="productPrice" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Descrição</label>
+                    <textarea id="productDescription" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productImage">Imagem (caminho/nome do arquivo)</label>
+                        <input type="text" id="productImage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productRef">Referência</label>
+                        <input type="text" id="productRef" required>
+                    </div>
+                </div>
+                <div class="admin-buttons">
+                    <button class="admin-btn btn-success" id="submitProductBtn">Guardar Produto</button>
+                    <button class="admin-btn btn-danger" id="cancelProductBtn">Cancelar</button>
+                </div>
+                <input type="hidden" id="editingProductId" value="">
+            </div>
+            
+            <!-- Lista de produtos para edição -->
+            <div class="admin-products" id="adminProductsList">
+                <!-- Os produtos serão carregados aqui via JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Nossas Categorias</h2>
+            
+            <div class="category-card" data-category="jogos-americanos">
+                <div class="category-image">
+                    <img src="https://placehold.co/400x300/FFFFFF/D4AF37?text=Jogos+Americanos" alt="Jogos Americanos">
+                </div>
+                <div class="category-title">
+                    Jogos Americanos
+                    <span class="category-count" id="jogosCount">0 produtos</span>
+                </div>
+            </div>
+            
+            <div class="category-card" data-category="toalhas-mesa">
+                <div class="category-image">
+                    <img src="https://placehold.co/400x300/FFFFFF/D4AF37?text=Toalhas+de+Mesa" alt="Toalhas de Mesa">
+                </div>
+                <div class="category-title">
+                    Toalhas de Mesa
+                    <span class="category-count" id="toalhasCount">0 produtos</span>
+                </div>
+            </div>
+            
+            <div class="category-card" data-category="loucas">
+                <div class="category-image">
+                    <img src="https://placehold.co/400x300/FFFFFF/D4AF37?text=Louças" alt="Louças">
+                </div>
+                <div class="category-title">
+                    Louças
+                    <span class="category-count" id="loucasCount">0 produtos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="products-modal" id="productsModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title" id="modalCategoryTitle"></h2>
+            <div class="products-grid" id="productsGrid"></div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </div>
+    
+    <div class="image-modal" id="imageModal">
+        <span class="close-image-modal">&times;</span>
+        <div class="image-modal-content">
+            <img id="expandedImage" src="" alt="Imagem Ampliada">
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">YAHWEH EMPREENDIMENTOS, LDA</div>
+                <div class="footer-contact">
+                    <a href="mailto:oficinadafampa@outlook.com"><i class="fas fa-envelope"></i> oficinadafampa@outlook.com</a>
+                    <a href="https://wa.me/244931575486"><i class="fab fa-whatsapp"></i> +244 931 575 486</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 YAHWEH EMPREENDIMENTOS, LDA. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

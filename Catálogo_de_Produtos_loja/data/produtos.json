@@ -1,0 +1,728 @@
+{
+  "jogos-americanos": [
+    {
+      "id": 1,
+      "title": "Jogo Americano Premium Linho Grosso",
+      "description": "Jogo americano em linho grosso de alta qualidade com bordados tradicionais. Resistente e elegante, perfeito para refeições sofisticadas.",
+      "price": "25.450 Kz",
+      "image": "jogos-americanos/1.jpg",
+      "ref": "JA001"
+    },
+    {
+      "id": 2,
+      "title": "Jogo Americano Luxo Linho Fino",
+      "description": "Jogo americano em linho fino premium com detalhes em renda portuguesa. Design exclusivo para ocasiões especiais.",
+      "price": "32.800 Kz",
+      "image": "jogos-americanos/2.jpg",
+      "ref": "JA002"
+    },
+    {
+      "id": 3,
+      "title": "Jogo Americano Algodão Biológico",
+      "description": "Jogo americano em algodão biológico orgânico com padrão geométrico moderno. Ecológico e sustentável.",
+      "price": "22.750 Kz",
+      "image": "jogos-americanos/3.jpg",
+      "ref": "JA003"
+    },
+    {
+      "id": 4,
+      "title": "Jogo Americano Bordado à Mão",
+      "description": "Jogo americano artesanal com bordados feitos à mão. Design único e exclusivo para os paladares mais refinados.",
+      "price": "36.900 Kz",
+      "image": "jogos-americanos/4.jpg",
+      "ref": "JA004"
+    },
+    {
+      "id": 5,
+      "title": "Jogo Americano Jacquard Elegante",
+      "description": "Jogo americano em tecido jacquard com padrão clássico e sofisticado. Perfeito para mesas de jantar formais.",
+      "price": "29.500 Kz",
+      "image": "jogos-americanos/5.jpg",
+      "ref": "JA005"
+    },
+    {
+      "id": 6,
+      "title": "Jogo Americano Minimalista",
+      "description": "Jogo americano em algodão egípcio com design minimalista e cores neutras. Ideal para decoração contemporânea.",
+      "price": "21.300 Kz",
+      "image": "jogos-americanos/6.jpg",
+      "ref": "JA006"
+    },
+    {
+      "id": 7,
+      "title": "Jogo Americano Floral Vintage",
+      "description": "Jogo americano com estampa floral vintage e acabamento em renda. Charmoso e romântico.",
+      "price": "27.600 Kz",
+      "image": "jogos-americanos/7.jpg",
+      "ref": "JA007"
+    },
+    {
+      "id": 8,
+      "title": "Jogo Americano Listrado Clássico",
+      "description": "Jogo americano em linho com listras clássicas em tons de azul e branco. Elegante e atemporal.",
+      "price": "24.900 Kz",
+      "image": "jogos-americanos/8.jpg",
+      "ref": "JA008"
+    },
+    {
+      "id": 9,
+      "title": "Jogo Americano Rustico",
+      "description": "Jogo americano em tecido rústico com padrão campestre. Ideal para refeições informais e descontraídas.",
+      "price": "19.800 Kz",
+      "image": "jogos-americanos/9.jpg",
+      "ref": "JA009"
+    },
+    {
+      "id": 10,
+      "title": "Jogo Americano Premium Dourado",
+      "description": "Jogo americano de luxo com fios dourados e detalhes em relevo. Para ocasiões especiais e celebrações.",
+      "price": "38.500 Kz",
+      "image": "jogos-americanos/10.jpg",
+      "ref": "JA010"
+    },
+    {
+      "id": 11,
+      "title": "Jogo Americano Moderno",
+      "description": "Jogo americano com design moderno e cores vibrantes. Perfeito para mesas contemporâneas.",
+      "price": "23.700 Kz",
+      "image": "jogos-americanos/11.jpg",
+      "ref": "JA011"
+    },
+    {
+      "id": 12,
+      "title": "Jogo Americano Tradicional",
+      "description": "Jogo americano em algodão com padrão tradicional português. Autêntico e charmoso.",
+      "price": "26.200 Kz",
+      "image": "jogos-americanos/12.jpg",
+      "ref": "JA012"
+    },
+    {
+      "id": 13,
+      "title": "Jogo Americano Festivo",
+      "description": "Jogo americano temático para festas e celebrações. Colorido e alegre.",
+      "price": "20.500 Kz",
+      "image": "jogos-americanos/13.jpg",
+      "ref": "JA013"
+    },
+    {
+      "id": 14,
+      "title": "Jogo Americano Luxo Bordado",
+      "description": "Jogo americano de luxo com bordados elaborados e detalhes em seda. Sofisticação absoluta.",
+      "price": "41.200 Kz",
+      "image": "jogos-americanos/14.jpg",
+      "ref": "JA014"
+    },
+    {
+      "id": 15,
+      "title": "Jogo Americano Simples",
+      "description": "Jogo americano em algodão simples e funcional. Perfeito para uso diário.",
+      "price": "17.900 Kz",
+      "image": "jogos-americanos/15.jpg",
+      "ref": "JA015"
+    },
+    {
+      "id": 16,
+      "title": "Jogo Americano Natalino",
+      "description": "Jogo americano temático de Natal com motivos festivos. Perfeito para ceias natalícias.",
+      "price": "28.300 Kz",
+      "image": "jogos-americanos/16.jpg",
+      "ref": "JA016"
+    },
+    {
+      "id": 17,
+      "title": "Jogo Americano Vermelho Passion",
+      "description": "Jogo americano em vermelho vibrante com detalhes em dourado. Elegante e apaixonante.",
+      "price": "31.600 Kz",
+      "image": "jogos-americanos/17.jpg",
+      "ref": "JA017"
+    },
+    {
+      "id": 18,
+      "title": "Jogo Americano Azul Royal",
+      "description": "Jogo americano em azul royal com padrões geométricos. Sofisticado e moderno.",
+      "price": "27.100 Kz",
+      "image": "jogos-americanos/18.jpg",
+      "ref": "JA018"
+    },
+    {
+      "id": 19,
+      "title": "Jogo Americano Verde Natureza",
+      "description": "Jogo americano em tons de verde com inspiração na natureza. Fresco e harmonioso.",
+      "price": "24.400 Kz",
+      "image": "jogos-americanos/19.jpg",
+      "ref": "JA019"
+    },
+    {
+      "id": 20,
+      "title": "Jogo Americano Dourado Premium",
+      "description": "Jogo americano com fios dourados e detalhes luxuosos. Para ocasiões especiais.",
+      "price": "39.800 Kz",
+      "image": "jogos-americanos/20.jpg",
+      "ref": "JA020"
+    },
+    {
+      "id": 21,
+      "title": "Jogo Americano Preto Elegante",
+      "description": "Jogo americano em preto com detalhes em prata. Moderno e sofisticado.",
+      "price": "30.200 Kz",
+      "image": "jogos-americanos/21.jpg",
+      "ref": "JA021"
+    },
+    {
+      "id": 22,
+      "title": "Jogo Americano Branco Puro",
+      "description": "Jogo americano em branco imaculado com textura em relevo. Pureza e elegância.",
+      "price": "26.900 Kz",
+      "image": "jogos-americanos/22.jpg",
+      "ref": "JA022"
+    },
+    {
+      "id": 23,
+      "title": "Jogo Americano Casamento",
+      "description": "Jogo americano especial para mesas de casamento. Design romântico e refinado.",
+      "price": "35.400 Kz",
+      "image": "jogos-americanos/23.jpg",
+      "ref": "JA023"
+    },
+    {
+      "id": 24,
+      "title": "Jogo Americano Infantil",
+      "description": "Jogo americano com estampas divertidas para crianças. Colorido e alegre.",
+      "price": "19.200 Kz",
+      "image": "jogos-americanos/24.jpg",
+      "ref": "JA024"
+    },
+    {
+      "id": 25,
+      "title": "Jogo Americano Retrô",
+      "description": "Jogo americano com design retrô e cores vintage. Charmoso e nostálgico.",
+      "price": "27.800 Kz",
+      "image": "jogos-americanos/25.jpg",
+      "ref": "JA025"
+    },
+    {
+      "id": 26,
+      "title": "Jogo Americano Oriental",
+      "description": "Jogo americano com inspiração oriental e padrões exóticos. Único e elegante.",
+      "price": "33.500 Kz",
+      "image": "jogos-americanos/26.jpg",
+      "ref": "JA026"
+    },
+    {
+      "id": 27,
+      "title": "Jogo Americano Masculino",
+      "description": "Jogo americano com design sóbrio e masculino. Ideal para ambientes formais.",
+      "price": "26.700 Kz",
+      "image": "jogos-americanos/27.jpg",
+      "ref": "JA027"
+    },
+    {
+      "id": 28,
+      "title": "Jogo Americano Feminino",
+      "description": "Jogo americano com design delicado e feminino. Romântico e encantador.",
+      "price": "28.100 Kz",
+      "image": "jogos-americanos/28.jpg",
+      "ref": "JA028"
+    },
+    {
+      "id": 29,
+      "title": "Jogo Americano Praia",
+      "description": "Jogo americano com temas marítimos e cores frescas. Perfeito para verão.",
+      "price": "22.400 Kz",
+      "image": "jogos-americanos/29.jpg",
+      "ref": "JA029"
+    },
+    {
+      "id": 30,
+      "title": "Jogo Americano Exclusive",
+      "description": "Jogo americano exclusivo com design limitado. Para os mais exigentes.",
+      "price": "45.000 Kz",
+      "image": "jogos-americanos/30.jpg",
+      "ref": "JA030"
+    }
+  ],
+  "toalhas-mesa": [
+    {
+      "id": 1,
+      "title": "Toalha de Mesa para 4 lugares",
+      "description": "Toalha de mesa para 4 lugares em algodão egípcio de alta qualidade. Ideal para jantares íntimos e ocasiões especiais.",
+      "price": "187.000 Kz",
+      "image": "toalhas-mesa/1.jpg",
+      "ref": "TM001"
+    },
+    {
+      "id": 2,
+      "title": "Toalha de Mesa para 6 lugares",
+      "description": "Toalha de mesa para 6 lugares em linho premium com borda delicada. Perfeita para reuniões familiares.",
+      "price": "245.000 Kz",
+      "image": "toalhas-mesa/2.jpg",
+      "ref": "TM002"
+    },
+    {
+      "id": 3,
+      "title": "Toalha de Mesa para 8 lugares",
+      "description": "Toalha de mesa para 8 lugares em mescla de algodão e poliéster. Resistente e elegante para jantares formais.",
+      "price": "295.000 Kz",
+      "image": "toalhas-mesa/3.jpg",
+      "ref": "TM003"
+    },
+    {
+      "id": 4,
+      "title": "Toalha de Mesa para 10 lugares",
+      "description": "Toalha de mesa para 10 lugares em jacquard elegante. Ideal para celebrações e eventos especiais.",
+      "price": "355.000 Kz",
+      "image": "toalhas-mesa/4.jpg",
+      "ref": "TM004"
+    },
+    {
+      "id": 5,
+      "title": "Toalha de Mesa para 12 lugares",
+      "description": "Toalha de mesa para 12 lugares em tecido com fio dourado. Luxuosa e impressionante para grandes eventos.",
+      "price": "420.000 Kz",
+      "image": "toalhas-mesa/5.jpg",
+      "ref": "TM005"
+    },
+    {
+      "id": 6,
+      "title": "Toalha de Mesa para 14 lugares",
+      "description": "Toalha de mesa para 14 lugares em algodão orgânico sustentável. Grande e elegante para banquetes.",
+      "price": "485.000 Kz",
+      "image": "toalhas-mesa/6.jpg",
+      "ref": "TM006"
+    },
+    {
+      "id": 7,
+      "title": "Toalha de Mesa Redonda",
+      "description": "Toalha de mesa redonda para 6 pessoas em linho fino. Perfeita para mesas redondas.",
+      "price": "265.000 Kz",
+      "image": "toalhas-mesa/7.jpg",
+      "ref": "TM007"
+    },
+    {
+      "id": 8,
+      "title": "Toalha de Mesa Oval",
+      "description": "Toalha de mesa oval para 8 pessoas em algodão egípcio. Elegante para mesas ovais.",
+      "price": "325.000 Kz",
+      "image": "toalhas-mesa/8.jpg",
+      "ref": "TM008"
+    },
+    {
+      "id": 9,
+      "title": "Toalha de Mesa Retangular Luxo",
+      "description": "Toalha de mesa retangular de luxo para 10 pessoas com detalhes bordados. Sofisticação absoluta.",
+      "price": "395.000 Kz",
+      "image": "toalhas-mesa/9.jpg",
+      "ref": "TM009"
+    },
+    {
+      "id": 10,
+      "title": "Toalha de Mesa Quadrada",
+      "description": "Toalha de mesa quadrada para 4 pessoas em tecido misto. Prática e moderna.",
+      "price": "210.000 Kz",
+      "image": "toalhas-mesa/10.jpg",
+      "ref": "TM010"
+    },
+    {
+      "id": 11,
+      "title": "Toalha de Mesa com Bordados",
+      "description": "Toalha de mesa com bordados artesanais para 6 pessoas. Trabalho manual detalhado.",
+      "price": "375.000 Kz",
+      "image": "toalhas-mesa/11.jpg",
+      "ref": "TM011"
+    },
+    {
+      "id": 12,
+      "title": "Toalha de Mesa Jacquard",
+      "description": "Toalha de mesa em jacquard para 8 pessoas. Padrões elaborados e textura premium.",
+      "price": "340.000 Kz",
+      "image": "toalhas-mesa/12.jpg",
+      "ref": "TM012"
+    },
+    {
+      "id": 13,
+      "title": "Toalha de Mesa Festiva",
+      "description": "Toalha de mesa temática para festas para 10 pessoas. Colorida e alegre.",
+      "price": "290.000 Kz",
+      "image": "toalhas-mesa/13.jpg",
+      "ref": "TM013"
+    },
+    {
+      "id": 14,
+      "title": "Toalha de Mesa Natalina",
+      "description": "Toalha de mesa especial de Natal para 8 pessoas. Motivos festivos e acolhedores.",
+      "price": "315.000 Kz",
+      "image": "toalhas-mesa/14.jpg",
+      "ref": "TM014"
+    },
+    {
+      "id": 15,
+      "title": "Toalha de Mesa Casamento",
+      "description": "Toalha de mesa elegante para casamentos para 12 pessoas. Design romântico e refinado.",
+      "price": "450.000 Kz",
+      "image": "toalhas-mesa/15.jpg",
+      "ref": "TM015"
+    },
+    {
+      "id": 16,
+      "title": "Toalha de Mesa Rustica",
+      "description": "Toalha de mesa rústica para 6 pessoas em tecido natural. Charmosa e acolhedora.",
+      "price": "235.000 Kz",
+      "image": "toalhas-mesa/16.jpg",
+      "ref": "TM016"
+    },
+    {
+      "id": 17,
+      "title": "Toalha de Mesa Moderna",
+      "description": "Toalha de mesa com design moderno para 8 pessoas. Cores vibrantes e padrões geométricos.",
+      "price": "275.000 Kz",
+      "image": "toalhas-mesa/17.jpg",
+      "ref": "TM017"
+    },
+    {
+      "id": 18,
+      "title": "Toalha de Mesa Clássica",
+      "description": "Toalha de mesa clássica para 10 pessoas. Design atemporal e elegante.",
+      "price": "330.000 Kz",
+      "image": "toalhas-mesa/18.jpg",
+      "ref": "TM018"
+    },
+    {
+      "id": 19,
+      "title": "Toalha de Mesa Minimalista",
+      "description": "Toalha de mesa minimalista para 6 pessoas. Design limpo e contemporâneo.",
+      "price": "250.000 Kz",
+      "image": "toalhas-mesa/19.jpg",
+      "ref": "TM019"
+    },
+    {
+      "id": 20,
+      "title": "Toalha de Mesa Luxury",
+      "description": "Toalha de mesa de luxo para 12 pessoas com detalhes em seda. Máxima sofisticação.",
+      "price": "520.000 Kz",
+      "image": "toalhas-mesa/20.jpg",
+      "ref": "TM020"
+    },
+    {
+      "id": 21,
+      "title": "Toalha de Mesa Verde Natureza",
+      "description": "Toalha de mesa em tons de verde para 8 pessoas. Inspirada na natureza e serenidade.",
+      "price": "305.000 Kz",
+      "image": "toalhas-mesa/21.jpg",
+      "ref": "TM021"
+    },
+    {
+      "id": 22,
+      "title": "Toalha de Mesa Azul Marinho",
+      "description": "Toalha de mesa em azul marinho para 10 pessoas. Elegante e serena.",
+      "price": "345.000 Kz",
+      "image": "toalhas-mesa/22.jpg",
+      "ref": "TM022"
+    },
+    {
+      "id": 23,
+      "title": "Toalha de Mesa Vermelha Passion",
+      "description": "Toalha de mesa em vermelho vibrante para 8 pessoas. Paixão e energia.",
+      "price": "320.000 Kz",
+      "image": "toalhas-mesa/23.jpg",
+      "ref": "TM023"
+    },
+    {
+      "id": 24,
+      "title": "Toalha de Mesa Branca Pura",
+      "description": "Toalha de mesa em branco imaculado para 10 pessoas. Pureza e elegância.",
+      "price": "335.000 Kz",
+      "image": "toalhas-mesa/24.jpg",
+      "ref": "TM024"
+    },
+    {
+      "id": 25,
+      "title": "Toalha de Mesa Dourada",
+      "description": "Toalha de mesa com detalhes dourados para 12 pessoas. Luxo e brilho.",
+      "price": "480.000 Kz",
+      "image": "toalhas-mesa/25.jpg",
+      "ref": "TM025"
+    },
+    {
+      "id": 26,
+      "title": "Toalha de Mesa Prateada",
+      "description": "Toalha de mesa com detalhes prateados para 10 pessoas. Moderna e sofisticada.",
+      "price": "460.000 Kz",
+      "image": "toalhas-mesa/26.jpg",
+      "ref": "TM026"
+    },
+    {
+      "id": 27,
+      "title": "Toalha de Mesa Infantil",
+      "description": "Toalha de mesa infantil para 6 pessoas com estampas divertidas. Colorida e alegre.",
+      "price": "225.000 Kz",
+      "image": "toalhas-mesa/27.jpg",
+      "ref": "TM027"
+    },
+    {
+      "id": 28,
+      "title": "Toalha de Mesa Praia",
+      "description": "Toalha de mesa com tema praiano para 8 pessoas. Fresca e descontraída.",
+      "price": "265.000 Kz",
+      "image": "toalhas-mesa/28.jpg",
+      "ref": "TM028"
+    },
+    {
+      "id": 29,
+      "title": "Toalha de Mesa Outonal",
+      "description": "Toalha de mesa com cores outonais para 10 pessoas. Aconchegante e quente.",
+      "price": "310.000 Kz",
+      "image": "toalhas-mesa/29.jpg",
+      "ref": "TM029"
+    },
+    {
+      "id": 30,
+      "title": "Toalha de Mesa Exclusive",
+      "description": "Toalha de mesa exclusiva para 14 pessoas. Design único e limitado.",
+      "price": "550.000 Kz",
+      "image": "toalhas-mesa/30.jpg",
+      "ref": "TM030"
+    }
+  ],
+  "loucas": [
+    {
+      "id": 1,
+      "title": "Conjunto de Jantar Wolf Premium",
+      "description": "Conjunto de jantar Wolf em porcelana fina com 32 peças. Inclui pratos, travessas, taças e servir.",
+      "price": "850.000 Kz",
+      "image": "loucas/1.jpg",
+      "ref": "LC001"
+    },
+    {
+      "id": 2,
+      "title": "Conjunto de Chá Boehemia Crystal",
+      "description": "Conjunto de chá Boehemia em cristal lapidado com 20 peças. Elegância e transparência perfeita.",
+      "price": "720.000 Kz",
+      "image": "loucas/2.jpg",
+      "ref": "LC002"
+    },
+    {
+      "id": 3,
+      "title": "Conjunto de Café Vista Alegre",
+      "description": "Conjunto de café Vista Alegre em porcelana translúcida com 16 peças. Design contemporâneo e refinado.",
+      "price": "680.000 Kz",
+      "image": "loucas/3.jpg",
+      "ref": "LC003"
+    },
+    {
+      "id": 4,
+      "title": "Taças de Cristal Wolf",
+      "description": "Conjunto de 12 taças de cristal Wolf para vinho tinto, branco e água. Brilho e elegância incomparáveis.",
+      "price": "450.000 Kz",
+      "image": "loucas/4.jpg",
+      "ref": "LC004"
+    },
+    {
+      "id": 5,
+      "title": "Conjunto de Jantar Boehemia Gold",
+      "description": "Conjunto de jantar Boehemia com detalhes em ouro 24k, 40 peças. Luxo absoluto e sofisticação.",
+      "price": "1.200.000 Kz",
+      "image": "loucas/5.jpg",
+      "ref": "LC005"
+    },
+    {
+      "id": 6,
+      "title": "Conjunto de Chá Premium Wolf",
+      "description": "Conjunto de chá Wolf em porcelana bone china com 24 peças. Leveza e resistência premium.",
+      "price": "780.000 Kz",
+      "image": "loucas/6.jpg",
+      "ref": "LC006"
+    },
+    {
+      "id": 7,
+      "title": "Conjunto de Jantar Vista Alegre Classic",
+      "description": "Conjunto de jantar Vista Alegre em grés premium com 36 peças. Design clássico e atemporal.",
+      "price": "920.000 Kz",
+      "image": "loucas/7.jpg",
+      "ref": "LC007"
+    },
+    {
+      "id": 8,
+      "title": "Conjunto de Café Boehemia Elegance",
+      "description": "Conjunto de café Boehemia com padrões elegantes, 18 peças. Perfeito para receções sofisticadas.",
+      "price": "650.000 Kz",
+      "image": "loucas/8.jpg",
+      "ref": "LC008"
+    },
+    {
+      "id": 9,
+      "title": "Taças de Champagne Crystal",
+      "description": "Conjunto de 8 taças de champagne em cristal premium. Para celebrações especiais.",
+      "price": "380.000 Kz",
+      "image": "loucas/9.jpg",
+      "ref": "LC009"
+    },
+    {
+      "id": 10,
+      "title": "Conjunto de Jantar Luxury Gold",
+      "description": "Conjunto de jantar de luxo com detalhes em ouro, 48 peças. Para os mais exigentes.",
+      "price": "1.500.000 Kz",
+      "image": "loucas/10.jpg",
+      "ref": "LC010"
+    },
+    {
+      "id": 11,
+      "title": "Conjunto de Chá Clássico",
+      "description": "Conjunto de chá clássico em porcelana fina com 22 peças. Design tradicional e elegante.",
+      "price": "590.000 Kz",
+      "image": "loucas/11.jpg",
+      "ref": "LC011"
+    },
+    {
+      "id": 12,
+      "title": "Conjunto de Café Moderno",
+      "description": "Conjunto de café com design moderno, 14 peças. Linhas clean e contemporâneas.",
+      "price": "520.000 Kz",
+      "image": "loucas/12.jpg",
+      "ref": "LC012"
+    },
+    {
+      "id": 13,
+      "title": "Pratos de Serviço Wolf",
+      "description": "Conjunto de 6 pratos de serviço Wolf em porcelana premium. Para apresentações sofisticadas.",
+      "price": "420.000 Kz",
+      "image": "loucas/13.jpg",
+      "ref": "LC013"
+    },
+    {
+      "id": 14,
+      "title": "Conjunto de Jantar Boehemia Blue",
+      "description": "Conjunto de jantar Boehemia em azul cobalto, 32 peças. Cor intensa e elegante.",
+      "price": "880.000 Kz",
+      "image": "loucas/14.jpg",
+      "ref": "LC014"
+    },
+    {
+      "id": 15,
+      "title": "Conjunto de Chá Floral",
+      "description": "Conjunto de chá com estampas florais, 20 peças. Romântico e encantador.",
+      "price": "610.000 Kz",
+      "image": "loucas/15.jpg",
+      "ref": "LC015"
+    },
+    {
+      "id": 16,
+      "title": "Conjunto de Café Vintage",
+      "description": "Conjunto de café com estilo vintage, 16 peças. Charmoso e nostálgico.",
+      "price": "570.000 Kz",
+      "image": "loucas/16.jpg",
+      "ref": "LC016"
+    },
+    {
+      "id": 17,
+      "title": "Taças de Vinho Premium",
+      "description": "Conjunto de 12 taças de vinho em cristal lead-free. Qualidade premium para enólogos.",
+      "price": "480.000 Kz",
+      "image": "loucas/17.jpg",
+      "ref": "LC017"
+    },
+    {
+      "id": 18,
+      "title": "Conjunto de Jantar White Gold",
+      "description": "Conjunto de jantar em branco com detalhes em ouro, 36 peças. Elegância atemporal.",
+      "price": "1.100.000 Kz",
+      "image": "loucas/18.jpg",
+      "ref": "LC018"
+    },
+    {
+      "id": 19,
+      "title": "Conjunto de Chá Modern",
+      "description": "Conjunto de chá com design moderno, 18 peças. Para apreciadores de design contemporâneo.",
+      "price": "630.000 Kz",
+      "image": "loucas/19.jpg",
+      "ref": "LC019"
+    },
+    {
+      "id": 20,
+      "title": "Conjunto de Café Elegance",
+      "description": "Conjunto de café com linhas elegantes, 12 peças. Sofisticação em cada peça.",
+      "price": "540.000 Kz",
+      "image": "loucas/20.jpg",
+      "ref": "LC020"
+    },
+    {
+      "id": 21,
+      "title": "Saladeiras Premium",
+      "description": "Conjunto de 3 saladeiras em porcelana premium. Perfeitas para saladas e aperitivos.",
+      "price": "320.000 Kz",
+      "image": "loucas/21.jpg",
+      "ref": "LC021"
+    },
+    {
+      "id": 22,
+      "title": "Conjunto de Jantar Black Edition",
+      "description": "Conjunto de jantar em preto premium, 28 peças. Ousado e sofisticado.",
+      "price": "950.000 Kz",
+      "image": "loucas/22.jpg",
+      "ref": "LC022"
+    },
+    {
+      "id": 23,
+      "title": "Conjunto de Chá Royal",
+      "description": "Conjunto de chá royal com detalhes dourados, 24 peças. Para experiências reais.",
+      "price": "850.000 Kz",
+      "image": "loucas/23.jpg",
+      "ref": "LC023"
+    },
+    {
+      "id": 24,
+      "title": "Conjunto de Café Diário",
+      "description": "Conjunto de café para uso diário, 14 peças. Prático e elegante.",
+      "price": "430.000 Kz",
+      "image": "loucas/24.jpg",
+      "ref": "LC024"
+    },
+    {
+      "id": 25,
+      "title": "Taças de Licor Crystal",
+      "description": "Conjunto de 8 taças de licor em cristal. Perfeitas para digestivos.",
+      "price": "290.000 Kz",
+      "image": "loucas/25.jpg",
+      "ref": "LC025"
+    },
+    {
+      "id": 26,
+      "title": "Conjunto de Jantar Family",
+      "description": "Conjunto de jantar familiar, 40 peças. Completo e funcional para o dia a dia.",
+      "price": "780.000 Kz",
+      "image": "loucas/26.jpg",
+      "ref": "LC026"
+    },
+    {
+      "id": 27,
+      "title": "Conjunto de Chá Romance",
+      "description": "Conjunto de chá romântico com estampas delicadas, 20 peças. Encantador e delicado.",
+      "price": "670.000 Kz",
+      "image": "loucas/27.jpg",
+      "ref": "LC027"
+    },
+    {
+      "id": 28,
+      "title": "Conjunto de Café Premium",
+      "description": "Conjunto de café premium, 16 peças. Alta qualidade para exigentes.",
+      "price": "710.000 Kz",
+      "image": "loucas/28.jpg",
+      "ref": "LC028"
+    },
+    {
+      "id": 29,
+      "title": "Pratos Sobremesa Luxury",
+      "description": "Conjunto de 12 pratos de sobremesa luxury. Para finalizar refeições com elegância.",
+      "price": "380.000 Kz",
+      "image": "loucas/29.jpg",
+      "ref": "LC029"
+    },
+    {
+      "id": 30,
+      "title": "Conjunto Completo Exclusive",
+      "description": "Conjunto completo exclusive com 60 peças. Tudo o que precisa para receber com luxo.",
+      "price": "2.200.000 Kz",
+      "image": "loucas/30.jpg",
+      "ref": "LC030"
+    }
+  ]
+}
