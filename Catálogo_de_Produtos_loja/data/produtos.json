@@ -255,7 +255,7 @@
       "title": "Toalha de Mesa para 6 lugares",
       "description": "Toalha de mesa para 6 lugares em linho premium com borda delicada. Perfeita para reuniões familiares.",
       "price": "245.000 Kz",
-      "image": "toalhas-mesa/2.jpg",
+      "image": "toalhas-mesa/2.png",
       "ref": "TM002"
     },
     {
@@ -263,15 +263,15 @@
       "title": "Toalha de Mesa para 8 lugares",
       "description": "Toalha de mesa para 8 lugares em mescla de algodão e poliéster. Resistente e elegante para jantares formais.",
       "price": "295.000 Kz",
-      "image": "toalhas-mesa/3.jpg",
+      "image": "toalhas-mesa/3.png",
       "ref": "TM003"
     },
     {
       "id": 4,
-      "title": "Toalha de Mesa para 10 lugares",
+      "title": "Toalha de Mesa para 8 lugares",
       "description": "Toalha de mesa para 10 lugares em jacquard elegante. Ideal para celebrações e eventos especiais.",
       "price": "355.000 Kz",
-      "image": "toalhas-mesa/4.jpg",
+      "image": "toalhas-mesa/4.png",
       "ref": "TM004"
     },
     {
