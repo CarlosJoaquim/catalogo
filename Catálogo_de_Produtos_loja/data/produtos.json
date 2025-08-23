@@ -35,15 +35,15 @@
     {
       "id": 5,
       "title": "Jogo Americano Jacquard Elegante",
-      "description": "Jogo americano em tecido jacquard com padrão clássico e sofisticado. Perfeito para mesas de jantar formais.",
-      "price": "29.500 Kz",
+      "description": "Jogo americano ...",
+      "price": "23.500 Kz",
       "image": "jogos-americanos/5.jpg",
       "ref": "JA005"
     },
     {
       "id": 6,
       "title": "Jogo Americano Minimalista",
-      "description": "Jogo americano em algodão egípcio com design minimalista e cores neutras. Ideal para decoração contemporânea.",
+      "description": "Jogo americano ...",
       "price": "21.300 Kz",
       "image": "jogos-americanos/6.jpg",
       "ref": "JA006"
@@ -51,31 +51,31 @@
     {
       "id": 7,
       "title": "Jogo Americano Floral Vintage",
-      "description": "Jogo americano com estampa floral vintage e acabamento em renda. Charmoso e romântico.",
-      "price": "27.600 Kz",
+      "description": "Jogo americano ...",
+      "price": "20.600 Kz",
       "image": "jogos-americanos/7.jpg",
       "ref": "JA007"
     },
     {
       "id": 8,
-      "title": "Jogo Americano Listrado Clássico",
-      "description": "Jogo americano em linho com listras clássicas em tons de azul e branco. Elegante e atemporal.",
-      "price": "24.900 Kz",
+      "title": "Jogo Americano ",
+      "description": "Jogo americano em linho com .",
+      "price": "27.900 Kz",
       "image": "jogos-americanos/8.jpg",
       "ref": "JA008"
     },
     {
       "id": 9,
       "title": "Jogo Americano Rustico",
-      "description": "Jogo americano em tecido rústico com padrão campestre. Ideal para refeições informais e descontraídas.",
-      "price": "19.800 Kz",
+      "description": "Jogo americano...",
+      "price": "24.900 Kz",
       "image": "jogos-americanos/9.jpg",
       "ref": "JA009"
     },
     {
       "id": 10,
-      "title": "Jogo Americano Premium Dourado",
-      "description": "Jogo americano de luxo com fios dourados e detalhes em relevo. Para ocasiões especiais e celebrações.",
+      "title": "Jogo Americano ",
+      "description": "Jogo americano ...",
       "price": "38.500 Kz",
       "image": "jogos-americanos/10.jpg",
       "ref": "JA010"
@@ -83,7 +83,7 @@
     {
       "id": 11,
       "title": "Jogo Americano Moderno",
-      "description": "Jogo americano com design moderno e cores vibrantes. Perfeito para mesas contemporâneas.",
+      "description": "Jogo americano ...",
       "price": "23.700 Kz",
       "image": "jogos-americanos/11.jpg",
       "ref": "JA011"
@@ -91,7 +91,7 @@
     {
       "id": 12,
       "title": "Jogo Americano Tradicional",
-      "description": "Jogo americano em algodão com padrão tradicional português. Autêntico e charmoso.",
+      "description": "Jogo americano ...",
       "price": "26.200 Kz",
       "image": "jogos-americanos/12.jpg",
       "ref": "JA012"
@@ -99,7 +99,7 @@
     {
       "id": 13,
       "title": "Jogo Americano Festivo",
-      "description": "Jogo americano temático para festas e celebrações. Colorido e alegre.",
+      "description": "Jogo americano temático...",
       "price": "20.500 Kz",
       "image": "jogos-americanos/13.jpg",
       "ref": "JA013"
@@ -308,7 +308,7 @@
     },
     {
       "id": 9,
-      "title": "Toalha de Mesa Retangular Luxo",
+      "title": "Toalha de Mesa ",
       "description": "Toalha de mesa retangular de luxo para 10 pessoas com detalhes bordados. Sofisticação absoluta.",
       "price": "395.000 Kz",
       "image": "toalhas-mesa/9.jpg",
