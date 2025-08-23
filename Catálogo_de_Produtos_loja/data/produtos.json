@@ -92,7 +92,7 @@
       "id": 12,
       "title": "Jogo Americano Tradicional",
       "description": "Jogo americano ...",
-      "price": "26.200 Kz",
+      "price": "20.200 Kz",
       "image": "jogos-americanos/12.jpg",
       "ref": "JA012"
     },
@@ -100,7 +100,7 @@
       "id": 13,
       "title": "Jogo Americano Festivo",
       "description": "Jogo americano temático...",
-      "price": "20.500 Kz",
+      "price": "33.400 Kz",
       "image": "jogos-americanos/13.jpg",
       "ref": "JA013"
     },
@@ -108,7 +108,7 @@
       "id": 14,
       "title": "Jogo Americano Luxo Bordado",
       "description": "Jogo americano de luxo com bordados elaborados e detalhes em seda. Sofisticação absoluta.",
-      "price": "41.200 Kz",
+      "price": "18.000 Kz",
       "image": "jogos-americanos/14.jpg",
       "ref": "JA014"
     },
@@ -116,7 +116,7 @@
       "id": 15,
       "title": "Jogo Americano Simples",
       "description": "Jogo americano em algodão simples e funcional. Perfeito para uso diário.",
-      "price": "17.900 Kz",
+      "price": "18.000 Kz",
       "image": "jogos-americanos/15.jpg",
       "ref": "JA015"
     },
@@ -124,7 +124,7 @@
       "id": 16,
       "title": "Jogo Americano Natalino",
       "description": "Jogo americano temático de Natal com motivos festivos. Perfeito para ceias natalícias.",
-      "price": "28.300 Kz",
+      "price": "18.000 Kz",
       "image": "jogos-americanos/16.jpg",
       "ref": "JA016"
     },
@@ -132,31 +132,31 @@
       "id": 17,
       "title": "Jogo Americano Vermelho Passion",
       "description": "Jogo americano em vermelho vibrante com detalhes em dourado. Elegante e apaixonante.",
-      "price": "31.600 Kz",
+      "price": "20.600 Kz",
       "image": "jogos-americanos/17.jpg",
       "ref": "JA017"
     },
     {
       "id": 18,
-      "title": "Jogo Americano Azul Royal",
-      "description": "Jogo americano em azul royal com padrões geométricos. Sofisticado e moderno.",
-      "price": "27.100 Kz",
+      "title": "Jogo Americano ",
+      "description": "Jogo americano ...",
+      "price": "19.300 Kz",
       "image": "jogos-americanos/18.jpg",
       "ref": "JA018"
     },
     {
       "id": 19,
-      "title": "Jogo Americano Verde Natureza",
-      "description": "Jogo americano em tons de verde com inspiração na natureza. Fresco e harmonioso.",
-      "price": "24.400 Kz",
+      "title": "Jogo Americano ",
+      "description": "Jogo americano ...",
+      "price": "20.400 Kz",
       "image": "jogos-americanos/19.jpg",
       "ref": "JA019"
     },
     {
       "id": 20,
       "title": "Jogo Americano Dourado Premium",
-      "description": "Jogo americano com fios dourados e detalhes luxuosos. Para ocasiões especiais.",
-      "price": "39.800 Kz",
+      "description": "Jogo americano com  detalhes de Coral. Para ocasiões especiais.",
+      "price": "24.000 Kz",
       "image": "jogos-americanos/20.jpg",
       "ref": "JA020"
     },
