@@ -244,8 +244,8 @@
   "toalhas-mesa": [
     {
       "id": 1,
-      "title": "Toalha de Mesa para 4 lugares",
-      "description": "Toalha de mesa para 4 lugares em algodão egípcio de alta qualidade. Ideal para jantares íntimos e ocasiões especiais.",
+      "title": "Toalha de Mesa para 8 lugares",
+      "description": "Toalha de mesa para 8 lugares em algodão egípcio de alta qualidade. Ideal para jantares íntimos e ocasiões especiais.",
       "price": "187.000 Kz",
       "image": "toalhas-mesa/1.jpg",
       "ref": "TM001"
@@ -253,7 +253,7 @@
     {
       "id": 2,
       "title": "Toalha de Mesa para 8 lugares",
-      "description": "Toalha de mesa para 6 lugares em linho premium com borda delicada. Perfeita para reuniões familiares.",
+      "description": "Toalha de mesa para 8 lugares premium vichy. Perfeita para ocasiões familiares.",
       "price": "243.000 Kz",
       "image": "toalhas-mesa/2.png",
       "ref": "TM002"
@@ -261,7 +261,7 @@
     {
       "id": 3,
       "title": "Toalha de Mesa para 8 lugares",
-      "description": "Toalha de mesa para 8 lugares em mescla de algodão e poliéster. Resistente e elegante para jantares formais.",
+      "description": "Toalha de mesa para 8 lugares . Resistente e elegante para jantares formais.",
       "price": "243.000 Kz",
       "image": "toalhas-mesa/3.png",
       "ref": "TM003"
@@ -269,7 +269,7 @@
     {
       "id": 4,
       "title": "Toalha de Mesa para 8 lugares",
-      "description": "Toalha de mesa para 10 lugares em jacquard elegante. Ideal para celebrações e eventos especiais.",
+      "description": "Toalha de mesa para 10 lugares . Ideal para celebrações e eventos especiais.",
       "price": "355.000 Kz",
       "image": "toalhas-mesa/4.jpg",
       "ref": "TM004"
@@ -293,7 +293,7 @@
     {
       "id": 7,
       "title": "Toalha de Mesa Redonda",
-      "description": "Toalha de mesa redonda para 6 pessoas em linho fino. Perfeita para mesas redondas.",
+      "description": "Toalha de mesa redonda para 6 lugares em jacquard elegante. Perfeita para mesas redondas.",
       "price": "265.000 Kz",
       "image": "toalhas-mesa/7.jpg",
       "ref": "TM007"
