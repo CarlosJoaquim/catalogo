@@ -1,14 +1,45 @@
 {
   "categorias": [
     {
-      "id": "jogos-americanos",
-      "nome": "Jogos Americanos",
-      "descricao": "Jogos americanos de alta qualidade em diversos materiais como linho grosso, linho fino, algodão biológico e tecidos mistos. Perfeitos para proteger sua mesa e adicionar elegância às suas refeições.",
-      "imagem": "https://placehold.co/400x300/FFFFFF/D4AF37?text=Jogos+Americanos",
+      "id": "jogos-americanos-richelieu",
+      "nome": "Jogos Americanos - Richelieu",
+      "descricao": "Jogos americanos com detalhes em técnica Richelieu, um trabalho artesanal de alta qualidade que adiciona sofisticação e elegância à sua mesa.",
+      "imagem": "../imagens/jogos-americanos-richelieu/5.jpeg",
       "quantidade": 30,
-      "preco_minimo": "17.000 Kz",
-      "preco_maximo": "45.000 Kz",
-      "materiais": ["Linho Grosso", "Linho Fino", "Algodão Egípcio", "Algodão Biológico", "Tecido Misto", "Jacquard"]
+      "preco_minimo": "18.000 kz",
+      "preco_maximo": "42.000 kz",
+      "materiais": ["Linho Fino", "Algodão Egípcio", "Richelieu Artesanal"]
+    },
+    {
+      "id": "jogos-americanos-linho-com-renda",
+      "nome": "Jogos Americanos - Linho com Renda",
+      "descricao": "Jogos americanos em linho com delicadas aplicações de renda, perfeitos para ocasiões especiais e para adicionar um toque de romantismo à sua mesa.",
+      "imagem": "../imagens/jogos-americanos-linho-com-renda/2.jpg",
+      "quantidade": 30,
+      "preco_minimo": "18.000 kz",
+      "preco_maximo": "42.000 kz",
+      "materiais": ["Linho", "Renda", "Algodão"]
+    },
+    
+    {
+      "id": "jogos-americanos-linho",
+      "nome": "Jogos Americanos - Linho ",
+      "descricao": "Jogos americanos em linho , perfeitos para ocasiões especiais e para adicionar um toque de romantismo à sua mesa.",
+      "imagem": "../imagens/linho/2.jpg",
+      "quantidade": 30,
+      "preco_minimo": "18.000 kz",
+      "preco_maximo": "42.000 kz",
+      "materiais": ["Linho", "Algodão"]
+    },
+    {
+      "id": "jogos-americanos-toile-de-jouy",
+      "nome": "Jogos Americanos - Toile de Jouy",
+      "descricao": "Jogos americanos com padrões clássicos Toile de Jouy, caracterizados por cenas narrativas e padrões tradicionalmente franceses em cores contrastantes.",
+      "imagem": "../imagens/jogos-americanos-toile-de-jouy/1.jpeg",
+      "quantidade": 30,
+      "preco_minimo": "18.000 kz",
+      "preco_maximo": "42.000 kz",
+      "materiais": ["Algodão", "Linho", "Tecido Misto"]
     },
     {
       "id": "toalhas-mesa",
@@ -27,7 +58,7 @@
       "descricao": "Conjuntos de louças das melhores marcas como Wolf, Boehemia e Vista Alegre. Inclui conjuntos de jantar, chá, café, taças de cristal e peças de serviço de alta qualidade.",
       "imagem": "https://placehold.co/400x300/FFFFFF/D4AF37?text=Louças",
       "quantidade": 30,
-      "preco_minimo": "290.000 Kz",
+      "preco_minimo": "390.000 Kz",
       "preco_maximo": "2.200.000 Kz",
       "marcas": ["Wolf", "Boehemia", "Vista Alegre", "Costa Verde", "Herend", "Royal Copenhagen"],
       "tipos": ["Conjuntos de Jantar", "Conjuntos de Chá", "Conjuntos de Café", "Taças de Cristal", "Pratos de Serviço", "Saladeiras"]
