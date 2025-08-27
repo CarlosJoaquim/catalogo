@@ -2,7 +2,7 @@
   "categorias": [
     {
       "id": "masculino",
-      "nome": "Uniformes Masculino",
+      "nome": "Uniformes Masculinos",
       "descricao": "Uniformes profissionais para equipes de segurança, fabricados com tecidos de alta resistência e durabilidade..",
       "imagem": "imagens/homem/12.jpg",
       "quantidade": 30,
@@ -12,7 +12,7 @@
     },
     {
       "id": "femenino",
-      "nome": "Uniformes Feminino",
+      "nome": "Uniformes Femininos",
       "descricao": "Os uniformes femininos  desenvolvidos para aliar conforto, funcionalidade e estilo, atendendo às necessidades de mulheres que atuam em diferentes áreas profissionais.",
       "imagem": "imagens/femenino/1.jpg",
       "quantidade": 30,
