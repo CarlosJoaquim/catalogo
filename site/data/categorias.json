@@ -23,8 +23,8 @@
     
     {
       "id": "toalha",
-      "nome": "Toalhas de Mesa",
-      "descricao": "toalhas de mesa são itens essenciais para valorizar qualquer ambiente, oferecendo proteção, organização e elegância à sua mesa.",
+      "nome": "Toalhas de Mesas",
+      "descricao": "toalhas de mesas são itens essenciais para valorizar qualquer ambiente, oferecendo proteção, organização e elegância à sua mesa.",
       "imagem": "imagens/toalhas-mesa/6.jpeg",
       "quantidade": 30,
       "preco_minimo": "",
