@@ -1,0 +1,639 @@
+{
+  "femenino": [
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/1.jpg",
+      "ref": "JATJ001"
+    },
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/2.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/3.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/4.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/5.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/6.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/7.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/8.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/9.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/10.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/11.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/12.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/13.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/14.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/15.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/16.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/17.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/18.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/19.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/20.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/21.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/22.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/23.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/24.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/25.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/26.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Uniforme Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/femenino/27.jpg",
+      "ref": "JATJ001"
+    }
+  ]
+,
+
+"masculino": [
+    {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/1.jpg",
+      "ref": "JATJ001"
+    },
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/2.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/3.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/4.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/5.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/6.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/7.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/8.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/9.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/10.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/11.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/12.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/13.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/14.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/15.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/16.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/17.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/18.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 1,
+      "title": "Uniforme Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/homem/19.jpg",
+      "ref": "JATJ001"
+    }
+  ]
+,
+
+
+  "toalha": [
+    {
+      "id": 1,
+      "title": "Toalhas de Mesa ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/1.jpeg",
+      "ref": "JATJ001"
+    },
+     {
+      "id": 2,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/2.png",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 3,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/3.png",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 4,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/4.jpeg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/5.jpeg",
+      "ref": "JATJ001"
+    }
+    ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/6.jpeg",
+      "ref": "JATJ001"
+    }
+     ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/7.jpeg",
+      "ref": "JATJ001"
+    }
+     ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/8.jpeg",
+      "ref": "JATJ001"
+    }
+     ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/9.jpeg",
+      "ref": "JATJ001"
+    }
+     ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/10.jpeg",
+      "ref": "JATJ001"
+    }
+     ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/11.jpeg",
+      "ref": "JATJ001"
+    }
+     ,
+     {
+      "id": 5,
+      "title": "Toalhas de Mesa  ",
+      "description": "",
+      "price": "",
+      "image": "imagens/Toalhas-mesa/12.jpeg",
+      "ref": "JATJ001"
+    }
+  ],
+
+  "social": [
+    {
+      "id": 1,
+      "title": "Fato Social Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social/1.jpg",
+      "ref": "JATJ001"
+    },
+    {
+      "id": 1,
+      "title": "Fato Social Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social/2.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social/3.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social/4.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social/5.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Masculino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social/6.jpg",
+      "ref": "JATJ001"
+    }
+  ],
+  "social-femenino": [
+    {
+      "id": 1,
+      "title": "Fato Social Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social-femenino/1.jpg",
+      "ref": "JATJ001"
+    },
+    {
+      "id": 1,
+      "title": "Fato Social Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social-femenino/2.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social-femenino/3.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social-femenino/4.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social-femenino/5.jpg",
+      "ref": "JATJ001"
+    }
+    ,
+    {
+      "id": 1,
+      "title": "Fato Social Femenino ",
+      "description": "",
+      "price": "",
+      "image": "imagens/social-femenino/6.jpg",
+      "ref": "JATJ001"
+    }
+  ]
+
+}

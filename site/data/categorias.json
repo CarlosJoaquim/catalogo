@@ -1,0 +1,63 @@
+{
+  "categorias": [
+    {
+      "id": "masculino",
+      "nome": "Uniformes Masculino",
+      "descricao": "Uniformes profissionais para equipes de segurança, fabricados com tecidos de alta resistência e durabilidade..",
+      "imagem": "imagens/homem/12.jpg",
+      "quantidade": 30,
+      "preco_minimo": "",
+      "preco_maximo": "",
+      "materiais": ["Linho Fino", "Algodão Egípcio", "Richelieu Artesanal"]
+    },
+    {
+      "id": "femenino",
+      "nome": "Uniformes Femenino",
+      "descricao": "Os uniformes femininos  desenvolvidos para aliar conforto, funcionalidade e estilo, atendendo às necessidades de mulheres que atuam em diferentes áreas profissionais.",
+      "imagem": "imagens/femenino/1.jpg",
+      "quantidade": 30,
+      "preco_minimo": "",
+      "preco_maximo": "",
+      "materiais": ["Linho", "Renda", "Algodão"]
+    },
+    
+    {
+      "id": "toalha",
+      "nome": "Toalhas de Mesa",
+      "descricao": "toalhas de mesa são itens essenciais para valorizar qualquer ambiente, oferecendo proteção, organização e elegância à sua mesa.",
+      "imagem": "imagens/toalhas-mesa/6.jpeg",
+      "quantidade": 30,
+      "preco_minimo": "",
+      "preco_maximo": "",
+      "materiais": ["Linho", "Algodão"]
+    },
+    {
+      "id": "social",
+      "nome": "Fato social masculino",
+      "descricao": "Eleve seu estilo com este fato social masculino, perfeito para qualquer ocasião formal. Confortável, elegante e feito com materiais de alta qualidade, garante um visual moderno e sofisticado que impressiona em todos os momentos.",
+      "imagem": "imagens/social/1.jpg",
+      "quantidade": 30,
+      "preco_minimo": "",
+      "preco_maximo": "",
+      "materiais": ["Algodão", "Linho", "Tecido Misto"]
+    }
+    ,
+    {
+      "id": "social-femenino",
+      "nome": "Fato social Femenino",
+      "descricao": "Eleve seu estilo com este fato social Femenino, perfeito para qualquer ocasião formal. Confortável, elegante e feito com materiais de alta qualidade, garante um visual moderno e sofisticado que impressiona em todos os momentos.",
+      "imagem": "imagens/social-femenino/1.jpg",
+      "quantidade": 30,
+      "preco_minimo": "",
+      "preco_maximo": "",
+      "materiais": ["Algodão", "Linho", "Tecido Misto"]
+    }
+  ],
+  "empresa": {
+    "nome": "YAHWEH EMPREENDIMENTOS, LDA",
+    "email": "oficinadafampa@outlook.com",
+    "telefone": "+244 931 575 486",
+    "endereco": "Luanda, Angola",
+    "descricao": "Produtos de Qualidade para a Sua Casa"
+  }
+}
