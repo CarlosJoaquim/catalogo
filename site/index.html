@@ -326,6 +326,31 @@
             font-size: 1.8rem;
         }
         
+        /* Navegação de subcategorias */
+        .subcategory-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .subcategory-btn {
+            padding: 8px 15px;
+            border: 1px solid var(--primary-color);
+            background-color: var(--white);
+            color: var(--primary-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .subcategory-btn:hover,
+        .subcategory-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -561,6 +586,16 @@
                 width: 95%;
                 margin: 20px auto;
             }
+            
+            .subcategory-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .subcategory-btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -582,7 +617,7 @@
         </div>
     </header>
     
-    <!-- Painel Administrativo (simplificado para visualização) -->
+    <!-- Painel Administrativo -->
     <div class="admin-panel" id="adminPanel">
         <div class="container">
             <div class="admin-header">
@@ -617,6 +652,10 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2 class="modal-title" id="modalCategoryTitle"></h2>
+            
+            <!-- Navegação de subcategorias -->
+            <div class="subcategory-nav" id="subcategoryNav"></div>
+            
             <div class="products-grid" id="productsGrid"></div>
             <div class="pagination" id="pagination"></div>
         </div>
@@ -637,7 +676,7 @@
                 <div class="footer-contact">
                     <a href="mailto:oficinadafampa@outlook.com"><i class="fas fa-envelope"></i> oficinadafampa@outlook.com</a>
                     <a href="https://wa.me/244938534066"><i class="fab fa-whatsapp"></i> +244 938 534 066</a>
-                     <a href="https://wa.me/244931575486"><i class="fab fa-whatsapp"></i> +244 931 575 486</a>
+                    <a href="https://wa.me/244931575486"><i class="fab fa-whatsapp"></i> +244 931 575 486</a>
                 </div>
                 <div class="copyright">
                     &copy; 2025 YAHWEH EMPREENDIMENTOS, LDA. Todos os direitos reservados.
@@ -645,14 +684,16 @@
             </div>
         </div>
     </footer>
-<script src="js/check-images.js"></script>
+
     <script>
         // Variáveis globais
         let categoriesData = [];
         let productsData = {};
         let currentCategory = '';
+        let currentSubcategory = '';
         let currentPage = 1;
         const productsPerPage = 9;
+        let currentSubcategories = [];
         
         // Elementos DOM
         const categoriesGrid = document.getElementById('categoriesGrid');
@@ -660,6 +701,7 @@
         const adminCategorySelect = document.getElementById('adminCategorySelect');
         const productsModal = document.getElementById('productsModal');
         const modalCategoryTitle = document.getElementById('modalCategoryTitle');
+        const subcategoryNav = document.getElementById('subcategoryNav');
         const productsGrid = document.getElementById('productsGrid');
         const pagination = document.getElementById('pagination');
         const closeModalBtn = document.querySelector('.close-modal');
@@ -703,12 +745,22 @@
             }
             
             // Preencher o dropdown do admin
-            adminCategorySelect.innerHTML = '';
+            adminCategorySelect.innerHTML = '<option value="">Selecione uma categoria</option>';
             categoriesData.forEach(category => {
                 const option = document.createElement('option');
                 option.value = category.id;
                 option.textContent = category.nome;
                 adminCategorySelect.appendChild(option);
+                
+                // Adicionar opções para subcategorias também
+                if (category.subcategorias && category.subcategorias.length > 0) {
+                    category.subcategorias.forEach(subcategory => {
+                        const subOption = document.createElement('option');
+                        subOption.value = subcategory.id;
+                        subOption.textContent = `${category.nome} - ${subcategory.nome}`;
+                        adminCategorySelect.appendChild(subOption);
+                    });
+                }
             });
             
             // Renderizar categorias na página
@@ -721,10 +773,21 @@
             categoriesGrid.innerHTML = '';
             
             categoriesData.forEach(category => {
-                // Contar produtos nesta categoria
+                // Contar produtos nesta categoria (incluindo subcategorias)
                 let productCount = 0;
+                
+                // Produtos na categoria principal
                 if (productsData[category.id]) {
-                    productCount = productsData[category.id].length;
+                    productCount += productsData[category.id].length;
+                }
+                
+                // Produtos nas subcategorias
+                if (category.subcategorias) {
+                    category.subcategorias.forEach(subcategory => {
+                        if (productsData[subcategory.id]) {
+                            productCount += productsData[subcategory.id].length;
+                        }
+                    });
                 }
                 
                 const categoryCard = document.createElement('div');
@@ -747,7 +810,7 @@
                 
                 // Adicionar evento de clique para abrir produtos da categoria
                 categoryCard.addEventListener('click', () => {
-                    openProductsModal(category.id, category.nome);
+                    openProductsModal(category.id, category.nome, category.subcategorias);
                 });
                 
                 categoriesGrid.appendChild(categoryCard);
@@ -755,18 +818,36 @@
         }
         
         // Função para abrir modal de produtos
-        function openProductsModal(categoryId, categoryName) {
+        function openProductsModal(categoryId, categoryName, subcategories = []) {
             currentCategory = categoryId;
+            currentSubcategory = categoryId; // Inicialmente mostra produtos da categoria principal
+            currentSubcategories = subcategories || [];
             currentPage = 1;
             
             // Verificar se existem produtos para esta categoria
-            if (!productsData[categoryId] || productsData[categoryId].length === 0) {
+            const hasProductsInMainCategory = productsData[categoryId] && productsData[categoryId].length > 0;
+            
+            // Verificar se existem produtos nas subcategorias
+            let hasProductsInSubcategories = false;
+            if (subcategories && subcategories.length > 0) {
+                for (const subcategory of subcategories) {
+                    if (productsData[subcategory.id] && productsData[subcategory.id].length > 0) {
+                        hasProductsInSubcategories = true;
+                        break;
+                    }
+                }
+            }
+            
+            if (!hasProductsInMainCategory && !hasProductsInSubcategories) {
                 alert(`Não existem produtos disponíveis na categoria ${categoryName}.`);
                 return;
             }
             
             // Definir título do modal
             modalCategoryTitle.textContent = categoryName;
+            
+            // Renderizar navegação de subcategorias, se houver
+            renderSubcategoryNav(categoryId, categoryName, subcategories);
             
             // Renderizar produtos
             renderProducts();
@@ -777,6 +858,47 @@
                 productsModal.classList.add('active');
             }, 10);
             document.body.style.overflow = 'hidden';
+        }
+        
+        // Função para renderizar navegação de subcategorias
+        function renderSubcategoryNav(categoryId, categoryName, subcategories = []) {
+            subcategoryNav.innerHTML = '';
+            
+            // Sempre mostrar botão para a categoria principal, se houver produtos
+            const hasMainProducts = productsData[categoryId] && productsData[categoryId].length > 0;
+            if (hasMainProducts) {
+                const mainCategoryBtn = document.createElement('button');
+                mainCategoryBtn.className = `subcategory-btn ${currentSubcategory === categoryId ? 'active' : ''}`;
+                mainCategoryBtn.textContent = 'Todos';
+                mainCategoryBtn.addEventListener('click', () => {
+                    currentSubcategory = categoryId;
+                    currentPage = 1;
+                    renderSubcategoryNav(categoryId, categoryName, subcategories);
+                    renderProducts();
+                });
+                subcategoryNav.appendChild(mainCategoryBtn);
+            }
+            
+            // Botões para subcategorias
+            if (subcategories && subcategories.length > 0) {
+                subcategories.forEach(subcategory => {
+                    const hasProducts = productsData[subcategory.id] && productsData[subcategory.id].length > 0;
+                    
+                    // Só mostrar subcategorias que têm produtos
+                    if (hasProducts) {
+                        const subcategoryBtn = document.createElement('button');
+                        subcategoryBtn.className = `subcategory-btn ${currentSubcategory === subcategory.id ? 'active' : ''}`;
+                        subcategoryBtn.textContent = subcategory.nome;
+                        subcategoryBtn.addEventListener('click', () => {
+                            currentSubcategory = subcategory.id;
+                            currentPage = 1;
+                            renderSubcategoryNav(categoryId, categoryName, subcategories);
+                            renderProducts();
+                        });
+                        subcategoryNav.appendChild(subcategoryBtn);
+                    }
+                });
+            }
         }
         
         // Função para fechar modal de produtos
@@ -800,13 +922,13 @@
         function renderProducts() {
             productsGrid.innerHTML = '';
             
-            const products = productsData[currentCategory];
+            const products = productsData[currentSubcategory] || [];
             
             if (products.length === 0) {
                 productsGrid.innerHTML = `
                     <div class="no-products">
                         <h3>Nenhum produto encontrado</h3>
-                        <p>Não há produtos disponíveis nesta categoria.</p>
+                        <p>Não há produtos disponíveis nesta subcategoria.</p>
                     </div>
                 `;
                 pagination.innerHTML = '';

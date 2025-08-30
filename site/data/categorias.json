@@ -3,57 +3,196 @@
     {
       "id": "masculino",
       "nome": "Uniformes Masculinos",
-      "descricao": "Uniformes profissionais para equipes de segurança, fabricados com tecidos de alta resistência e durabilidade..",
+      "descricao": "Vestuário padronizado concebido para transmitir identidade, organização e conforto.",
       "imagem": "imagens/homem/12.jpg",
       "quantidade": 30,
       "preco_minimo": "",
       "preco_maximo": "",
-      "materiais": ["Linho Fino", "Algodão Egípcio", "Richelieu Artesanal"]
+      "materiais": ["Linho Fino", "Algodão Egípcio", "Richelieu Artesanal"],
+      "subcategorias": [
+        {
+          "id": "administracao-masculino",
+          "nome": "Administração",
+          "imagem": "imagens/homem/administracao.jpg",
+          "descricao": "Uniformes masculinos para o setor administrativo, combinando elegância e profissionalismo."
+        },
+        {
+          "id": "saude-masculino",
+          "nome": "Saúde",
+          "imagem": "imagens/homem/saude.jpg",
+          "descricao": "Uniformes masculinos para profissionais de saúde, com foco em funcionalidade e conforto."
+        },
+        {
+          "id": "seguranca-masculino",
+          "nome": "Segurança",
+          "imagem": "imagens/homem/seguranca.jpg",
+          "descricao": "Uniformes de segurança masculinos, duráveis e com design profissional."
+        },
+        {
+          "id": "cozinha",
+          "nome": "Cozinha",
+          "imagem": "imagens/homem/hotelaria.jpg",
+          "descricao": "Uniformes para cozinha, elegantes e confortáveis."
+        },
+        {
+          "id":"uniforme_diversos",
+           "nome": "Diversos",
+          "imagem": "imagens/homem/hotelaria.jpg",
+          "descricao": "Uniformes para cozinha, elegantes e confortáveis."
+        }
+        ,
+        {
+          "id":"colete",
+           "nome": "Coletes",
+          "imagem": "imagens/homem/hotelaria.jpg",
+          "descricao": "Uniformes para cozinha, elegantes e confortáveis."
+        }
+      ]
     },
     {
       "id": "femenino",
       "nome": "Uniformes Femininos",
-      "descricao": "Os uniformes femininos  desenvolvidos para aliar conforto, funcionalidade e estilo, atendendo às necessidades de mulheres que atuam em diferentes áreas profissionais.",
+      "descricao": "Vestuário padronizado concebido para transmitir identidade, organização e conforto..",
       "imagem": "imagens/femenino/1.jpg",
       "quantidade": 30,
       "preco_minimo": "",
       "preco_maximo": "",
-      "materiais": ["Linho", "Renda", "Algodão"]
+      "materiais": ["Linho", "Renda", "Algodão"],
+      "subcategorias": [
+        {
+          "id": "administracao-feminino",
+          "nome": "Administração",
+          "imagem": "imagens/femenino/administracao.jpg",
+          "descricao": "Uniformes femininos elegantes para o ambiente administrativo."
+        },
+        {
+          "id": "saude-feminino",
+          "nome": "Saúde",
+          "imagem": "imagens/femenino/saude.jpg",
+          "descricao": "Uniformes para profissionais de saúde femininas, práticos e confortáveis."
+        },
+        {
+          "id": "cozinha-feminino",
+          "nome": "Cozinha",
+          "imagem": "imagens/femenino/restauracao.jpg",
+          "descricao": "Uniformes para o setor de restauração, funcionais e modernos."
+        },
+        {
+          "id": "diversos-feminino",
+          "nome": "Diversos",
+          "imagem": "imagens/femenino/beleza.jpg",
+          "descricao": "Uniformes para profissionais de beleza, com estilo e praticidade."
+        }
+      ]
     },
-    
-    
     {
       "id": "social",
       "nome": "Fato social masculino",
-      "descricao": "Eleve seu estilo com este fato social masculino, perfeito para qualquer ocasião formal. Confortável, elegante e feito com materiais de alta qualidade, garante um visual moderno e sofisticado que impressiona em todos os momentos.",
+      "descricao": "Eleve seu estilo com este fato social masculino, perfeito para qualquer ocasião formal. Confortável e elegante garante um visual moderno e sofisticado que impressiona em todos os momentos.",
       "imagem": "imagens/social/1.jpg",
       "quantidade": 30,
       "preco_minimo": "",
       "preco_maximo": "",
-      "materiais": ["Algodão", "Linho", "Tecido Misto"]
-    }
-    ,
+      "materiais": ["Algodão", "Linho", "Tecido Misto"],
+      "subcategorias": [
+        {
+          "id": "social-casamentos",
+          "nome": "Casamentos",
+          "imagem": "imagens/social/casamentos.jpg",
+          "descricao": "Fatós sociais elegantes para cerimónias de casamento."
+        },
+        {
+          "id": "social-eventos",
+          "nome": "Eventos Corporativos",
+          "imagem": "imagens/social/eventos.jpg",
+          "descricao": "Fatós apropriados para eventos corporativos e formais."
+        },
+        {
+          "id": "social-gala",
+          "nome": "Cerimónias de Gala",
+          "imagem": "imagens/social/gala.jpg",
+          "descricao": "Fatós sofisticados para eventos de gala e cerimónias especiais."
+        },
+        {
+          "id": "social-diplomatico",
+          "nome": "Uso Diplomático",
+          "imagem": "imagens/social/diplomatico.jpg",
+          "descricao": "Fatós formais para ocasiões diplomáticas e oficiais."
+        }
+      ]
+    },
     {
       "id": "social-feminino",
       "nome": "Fato social Feminino",
-      "descricao": "Eleve seu estilo com este fato social Feminino, perfeito para qualquer ocasião formal. Confortável, elegante e feito com materiais de alta qualidade, garante um visual moderno e sofisticado que impressiona em todos os momentos.",
+      "descricao": "Eleve seu estilo com este fato social Feminino, perfeito para qualquer ocasião formal. Confortável e elegante, garante um visual moderno e sofisticado que impressiona em todos os momentos.",
       "imagem": "imagens/social-femenino/1.jpg",
       "quantidade": 30,
       "preco_minimo": "",
       "preco_maximo": "",
-      "materiais": ["Algodão", "Linho", "Tecido Misto"]
+      "materiais": ["Algodão", "Linho", "Tecido Misto"],
+      "subcategorias": [
+        {
+          "id": "social-feminino-casamentos",
+          "nome": "Casamentos",
+          "imagem": "imagens/social-femenino/casamentos.jpg",
+          "descricao": "Fatós sociais elegantes para noivas e convidadas de casamento."
+        },
+        {
+          "id": "social-feminino-coquetel",
+          "nome": "Coquetéis",
+          "imagem": "imagens/social-femenino/coquetel.jpg",
+          "descricao": "Vestidos formais para eventos de coquetel e recepções."
+        },
+        {
+          "id": "social-feminino-gala",
+          "nome": "Cerimónias de Gala",
+          "imagem": "imagens/social-femenino/gala.jpg",
+          "descricao": "Vestidos de gala sofisticados para eventos especiais."
+        },
+        {
+          "id": "social-feminino-profissional",
+          "nome": "Profissional",
+          "imagem": "imagens/social-femenino/profissional.jpg",
+          "descricao": "Conjuntos formais para o ambiente profissional corporativo."
+        }
+      ]
     },
     {
       "id": "toalha",
       "nome": "Toalhas de Mesas",
-      "descricao": "toalhas de mesas são itens essenciais para valorizar qualquer ambiente, oferecendo proteção, organização e elegância à sua mesa.",
+      "descricao": "Toalhas de mesas são itens essenciais para valorizar qualquer ambiente, oferecendo proteção, organização e elegância à sua mesa.",
       "imagem": "imagens/toalhas-mesa/6.jpeg",
       "quantidade": 30,
       "preco_minimo": "",
       "preco_maximo": "",
-      "materiais": ["Linho", "Algodão"]
-    }
-    ,
+      "materiais": ["Linho", "Algodão"],
+      "subcategorias": [
+        {
+          "id": "toalha-restauracao",
+          "nome": "Restauração",
+          "imagem": "imagens/toalhas-mesa/restauracao.jpg",
+          "descricao": "Toalhas resistentes e funcionais para restaurantes e cafés."
+        },
+        {
+          "id": "toalha-eventos",
+          "nome": "Eventos",
+          "imagem": "imagens/toalhas-mesa/eventos.jpg",
+          "descricao": "Toalhas elegantes para eventos sociais e corporativos."
+        },
+        {
+          "id": "toalha-hoteis",
+          "nome": "Hotéis",
+          "imagem": "imagens/toalhas-mesa/hoteis.jpg",
+          "descricao": "Toalhas de alta qualidade para a hotelaria e turismo."
+        },
+        {
+          "id": "toalha-personalizadas",
+          "nome": "Personalizadas",
+          "imagem": "imagens/toalhas-mesa/personalizadas.jpg",
+          "descricao": "Toalhas personalizadas com logotipos e designs exclusivos."
+        }
+      ]
+    },
     {
       "id": "texteis",
       "nome": "Têxteis Personalizados",
@@ -62,7 +201,33 @@
       "quantidade": 30,
       "preco_minimo": "",
       "preco_maximo": "",
-      "materiais": ["Algodão", "Linho", "Tecido Misto"]
+      "materiais": ["Algodão", "Linho", "Tecido Misto"],
+      "subcategorias": [
+        {
+          "id": "texteis-toalhas",
+          "nome": "Toalhas Personalizadas",
+          "imagem": "imagens/texte/toalhas.jpg",
+          "descricao": "Toalhas de banho e rosto personalizadas com bordados exclusivos."
+        },
+        {
+          "id": "texteis-tapetes",
+          "nome": "Tapetes",
+          "imagem": "imagens/texte/tapetes.jpg",
+          "descricao": "Tapetes personalizados para diversos ambientes e ocasiões."
+        },
+        {
+          "id": "texteis-guardanapos",
+          "nome": "Guardanapos",
+          "imagem": "imagens/texte/guardanapos.jpg",
+          "descricao": "Guardanapos personalizados para eventos e estabelecimentos."
+        },
+        {
+          "id": "texteis-babetes",
+          "nome": "Babetes",
+          "imagem": "imagens/texte/babetes.jpg",
+          "descricao": "Babetes personalizados para bebés e crianças."
+        }
+      ]
     }
   ],
   "empresa": {
