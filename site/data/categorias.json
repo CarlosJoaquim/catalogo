@@ -35,16 +35,17 @@
           "descricao": "Uniformes para cozinha, elegantes e confortáveis."
         }
         ,
+        {
+          "id":"colete",
+           "nome": "Coletes",
+          "imagem": "imagens/homem/hotelaria.jpg",
+          "descricao": "Uniformes para cozinha, elegantes e confortáveis."
+        }
+        ,
         
         {
           "id":"uniforme_diversos",
            "nome": "Diversos",
-          "imagem": "imagens/homem/hotelaria.jpg",
-          "descricao": "Uniformes para cozinha, elegantes e confortáveis."
-        },
-        {
-          "id":"colete",
-           "nome": "Coletes",
           "imagem": "imagens/homem/hotelaria.jpg",
           "descricao": "Uniformes para cozinha, elegantes e confortáveis."
         }
