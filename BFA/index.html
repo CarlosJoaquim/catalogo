@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahweh Empreendimentos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --gold: #D4AF37;
+            --light-gold: #F5E8C8;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 1.2rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        header.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--gold);
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%), url('img/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 12rem 0 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            color: var(--black);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Sections comuns */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--black);
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sobre */
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Serviços */
+        .services {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Catálogos */
+        .catalogs {
+            background: var(--white);
+        }
+
+        .catalogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .catalog-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .catalog-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), transparent);
+        }
+
+        .catalog-content {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .catalog-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .catalog-content p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Galeria */
+        .gallery {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .gallery-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .category-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .category-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), transparent);
+        }
+
+        .category-content {
+            padding: 2rem;
+        }
+
+        .category-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .category-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 2px solid transparent;
+            color: var(--black);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            box-shadow: var(--shadow);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            color: var(--black);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 280px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-item img,
+        .gallery-item .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover .video-thumbnail {
+            transform: scale(1.1);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--black);
+        }
+
+        .play-button {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-item:hover .play-button {
+            background: var(--gold);
+            transform: scale(1.1);
+        }
+
+        /* Clientes */
+        .clients {
+            background: var(--white);
+        }
+
+        .clients-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .client-logo {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Contato */
+        .contact {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            border-radius: 2px;
+        }
+
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-details i {
+            color: var(--gold);
+            font-size: 1.3rem;
+            width: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--black), var(--dark-gray));
+            color: var(--white);
+            padding: 4rem 0 1rem;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 1.8rem;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Modal Moderno */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: 300;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 2001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+            background: rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .close-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: rotate(90deg);
+        }
+
+        /* Video Player Moderno */
+        .video-player {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-player.show {
+            opacity: 1;
+        }
+
+        .video-container {
+            position: relative;
+            width: 85%;
+            max-width: 900px;
+            background: var(--black);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .video-player.show .video-container {
+            transform: scale(1);
+        }
+
+        .custom-video {
+            width: 100%;
+            display: block;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .video-controls {
+            display: flex;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem;
+            border-radius: 0 0 20px 20px;
+            gap: 1rem;
+        }
+
+        .play-pause {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .play-pause:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .time {
+            color: var(--white);
+            font-size: 0.9rem;
+            min-width: 100px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .volume-control button {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .volume-control button:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+        }
+
+        .fullscreen-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .fullscreen-btn:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem 0;
+                gap: 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1rem 0;
+                font-size: 1.1rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .video-container {
+                width: 95%;
+            }
+
+            .gallery-filters {
+                gap: 0.8rem;
+            }
+
+            .filter-btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 10rem 0 6rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid,
+            .catalogs-grid,
+            .gallery-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">⚜️</span>
+                <h1>Yahweh Empreendimentos</h1>
+            </div>
+            <button class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#catalogs">Catálogos</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#clients">Clientes</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h2>Yahweh Empreendimentos</h2>
+            <p>12 anos de excelência em confecção e produção de materiais têxteis diversos, uniformes, fardas e muito mais.</p>
+            <a href="#contact" class="btn">
+                <i class="fas fa-paper-plane"></i>
+                Solicitar Orçamento
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nós</h2>
+                <p>Conheça nossa história e compromisso com a qualidade</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Somos a Yahweh Empreendimentos Lda., empresa angolana registada sob o NIF nº 5417207357, responsável pela marca Oficina da Fampa.</p>
+                    <p>Actuamos há 12 anos na área de confecção e produção de materiais têxteis diversos, estampagens, confecção de uniformes, fardas, vestuário sob medida masculino e feminino, bordados e fornecimento de louças e enxovais.</p>
+                    <p>Os nossos produtos são feitos especialmente para quem busca qualidade e confecção cuidada, desenvolvida no mercado nacional, com o diferencial de uma aposta no capital humano nacional, com qualificação de técnicos jovens do nosso País.</p>
+                </div>
+                <div class="about-image">
+                    <img src="img/about.png" alt="Sobre a Yahweh Empreendimentos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Excelência em cada detalhe dos nossos produtos</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👕</div>
+                    <h3>Confecção de Uniformes</h3>
+                    <p>Produção de uniformes corporativos de alta qualidade para diversos setores.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👔</div>
+                    <h3>Vestuário Sob Medida</h3>
+                    <p>Roupas masculinas e femininas feitas sob medida para atender suas necessidades específicas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧵</div>
+                    <h3>Bordados Personalizados</h3>
+                    <p>Serviços de bordado de alta qualidade para personalizar seus produtos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Estampagens</h3>
+                    <p>Estampagem de tecidos com designs exclusivos e de alta durabilidade.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Louças e Enxovais</h3>
+                    <p>Fornecimento de louças e enxovais para hotéis, restaurantes e residências.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogos -->
+    <section id="catalogs" class="catalogs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Catálogos</h2>
+                <p>Explore nossas coleções exclusivas</p>
+            </div>
+            <div class="catalogs-grid">
+                <div class="catalog-card">
+                    <div class="catalog-image">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Catálogo Oficina da Fampa</h3>
+                        <p>Explore nossa coleção completa de produtos e serviços com qualidade excepcional.</p>
+                        <a href="https://catalogooficinadafampa.vercel.app/site/index.html" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Catálogo
+                        </a>
+                    </div>
+                </div>
+                <div class="catalog-card">
+                    <div class="catalog-image">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Catálogo Natal 2025</h3>
+                        <p>Descubra nossas ofertas especiais e coleções exclusivas para a época natalícia.</p>
+                        <a href="https://catalogo-natal2025.vercel.app/" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Catálogo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeria</h2>
+                <p>Conheça nosso trabalho através de imagens e vídeos</p>
+            </div>
+            
+            <!-- Categorias da galeria -->
+            <div class="gallery-categories">
+                <div class="category-card" id="imagesCategory">
+                    <div class="category-image">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Imagens</h3>
+                        <p>Visualize nossa coleção de fotos dos produtos e projetos realizados</p>
+                    </div>
+                </div>
+                <div class="category-card" id="videosCategory">
+                    <div class="category-image">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Vídeos</h3>
+                        <p>Assista aos nossos vídeos demonstrativos e projetos em ação</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Galeria de Imagens (inicialmente oculta) -->
+            <div id="imagesGallery" style="display: none;">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="uniforme">Uniformes</button>
+                    <button class="filter-btn" data-filter="vestuario">Vestuário</button>
+                    <button class="filter-btn" data-filter="bordado">Bordados</button>
+                </div>
+                
+                <div class="gallery-grid" id="imagesGrid">
+                    <!-- Imagens serão carregadas aqui via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Galeria de Vídeos (inicialmente oculta) -->
+            <div id="videosGallery" style="display: none;">
+                <div class="gallery-grid" id="videosGrid">
+                    <!-- Vídeos serão carregados aqui via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clientes -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Clientes</h2>
+                <p>Empresas que confiam no nosso trabalho</p>
+            </div>
+            <div class="clients-logos">
+                <div class="client-logo">ENDIAMA, E.P.</div>
+                <div class="client-logo">CATOCA</div>
+                <div class="client-logo">Empresa Mineira LUELE</div>
+                <div class="client-logo">Polícia Nacional</div>
+                <div class="client-logo">Instituições de Ensino</div>
+                <div class="client-logo">Empresas de Restauração</div>
+                <div class="client-logo">Clínicas e SPA's</div>
+                <div class="client-logo">Empresas de Segurança</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Estamos prontos para atender suas necessidades</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-details">
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            Tel: 938534066 / 931575486
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            Email: oficinadafampa@outlook.com
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Endereço: Patriota - Rua 51 - Ao Lado do Condomínio Vale do Talatona
+                        </p>
+                        <p>
+                            <i class="fas fa-city"></i>
+                            Luanda - Angola
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envie-nos uma Mensagem</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Yahweh Empreendimentos</h3>
+                    <p>12 anos de excelência em confecção e produção de materiais têxteis diversos, sempre priorizando qualidade e satisfação do cliente.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                        <li><a href="#catalogs"><i class="fas fa-chevron-right"></i> Catálogos</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Galeria</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Confecção de Uniformes</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Vestuário Sob Medida</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Bordados Personalizados</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Estampagens</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Louças e Enxovais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 938534066 / 931575486</li>
+                        <li><i class="fas fa-envelope"></i> oficinadafampa@outlook.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Patriota - Rua 51 - Talatona</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Yahweh Empreendimentos Lda. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para Imagens -->
+    <div id="imageModal" class="modal">
+        <button class="close-btn">&times;</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Video Player -->
+    <div id="videoPlayer" class="video-player">
+        <button class="close-btn">&times;</button>
+        <div class="video-container">
+            <video id="customVideo" class="custom-video">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <div class="video-controls">
+                <button class="play-pause">⏸️</button>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="time">0:00 / 0:00</div>
+                <div class="volume-control">
+                    <button class="volume-btn">🔊</button>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
+                </div>
+                <button class="fullscreen-btn">⛶</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Menu móvel
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pela sua mensagem! Entraremos em contato em breve.');
+            this.reset();
+        });
+
+        // Dados das imagens
+        const imagesData = [
+            { src: 'img/1.png', category: 'uniforme', alt: 'Uniforme Corporativo' },
+            { src: 'img/2.png', category: 'uniforme', alt: 'Uniforme Empresarial' },
+            { src: 'img/3.png', category: 'vestuario', alt: 'Vestuário Sob Medida' },
+            { src: 'img/4.png', category: 'vestuario', alt: 'Roupa Personalizada' },
+            { src: 'img/5.png', category: 'bordado', alt: 'Bordado Personalizado' },
+            { src: 'img/6.png', category: 'bordado', alt: 'Trabalho de Bordado' },
+            { src: 'img/7.jpg', category: 'uniforme', alt: 'Farda Profissional' },
+            { src: 'img/8.jpg', category: 'vestuario', alt: 'Vestuário Elegante' },
+            { src: 'img/9.jpg', category: 'bordado', alt: 'Detalhe de Bordado' },
+            { src: 'img/10.jpg', category: 'uniforme', alt: 'Uniforme Completo' }
+        ];
+
+        // Dados dos vídeos
+        const videosData = [
+            { src: 'video/1.mp4', title: 'Vídeo Demonstrativo 1' },
+            { src: 'video/2.mp4', title: 'Vídeo Demonstrativo 2' },
+            { src: 'video/3.mp4', title: 'Vídeo Demonstrativo 3' },
+            { src: 'video/4.mp4', title: 'Vídeo Demonstrativo 4' },
+            { src: 'video/5.mp4', title: 'Vídeo Demonstrativo 5' },
+            { src: 'video/6.mp4', title: 'Vídeo Demonstrativo 6' },
+            { src: 'video/7.mp4', title: 'Vídeo Demonstrativo 7' },
+            { src: 'video/8.mp4', title: 'Vídeo Demonstrativo 8' },
+            { src: 'video/9.mp4', title: 'Vídeo Demonstrativo 9' },
+            { src: 'video/10.mp4', title: 'Vídeo Demonstrativo 10' }
+        ];
+
+        // Carregar galeria de imagens
+        function loadImagesGallery() {
+            const imagesGrid = document.getElementById('imagesGrid');
+            imagesGrid.innerHTML = '';
+            
+            imagesData.forEach(image => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = `gallery-item image-item ${image.category}-item`;
+                galleryItem.setAttribute('data-type', 'image');
+                galleryItem.setAttribute('data-src', image.src);
+                
+                galleryItem.innerHTML = `
+                    <img src="${image.src}" alt="${image.alt}" loading="lazy">
+                `;
+                
+                imagesGrid.appendChild(galleryItem);
+            });
+            
+            // Adicionar eventos aos itens da galeria
+            document.querySelectorAll('.gallery-item[data-type="image"]').forEach(item => {
+                item.addEventListener('click', function() {
+                    const imageSrc = this.getAttribute('data-src');
+                    modalImage.src = imageSrc;
+                    imageModal.style.display = 'flex';
+                    setTimeout(() => {
+                        imageModal.classList.add('show');
+                    }, 10);
+                });
+            });
+            
+            // Adicionar eventos aos filtros
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const imageItems = document.querySelectorAll('.image-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Adiciona active class ao botão clicado
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    imageItems.forEach(item => {
+                        if (filter === 'all') {
+                            item.style.display = 'block';
+                        } else if (item.classList.contains(`${filter}-item`)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Carregar galeria de vídeos
+        function loadVideosGallery() {
+            const videosGrid = document.getElementById('videosGrid');
+            videosGrid.innerHTML = '';
+            
+            videosData.forEach(video => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item video-item';
+                galleryItem.setAttribute('data-type', 'video');
+                galleryItem.setAttribute('data-src', video.src);
+                
+                galleryItem.innerHTML = `
+                    <div class="video-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                `;
+                
+                videosGrid.appendChild(galleryItem);
+            });
+            
+            // Adicionar eventos aos itens da galeria de vídeos
+            document.querySelectorAll('.gallery-item[data-type="video"]').forEach(item => {
+                item.addEventListener('click', function() {
+                    const videoSrc = this.getAttribute('data-src');
+                    customVideo.src = videoSrc;
+                    videoPlayer.style.display = 'flex';
+                    setTimeout(() => {
+                        videoPlayer.classList.add('show');
+                    }, 10);
+                    customVideo.play();
+                    updatePlayPauseButton();
+                });
+            });
+        }
+
+        // Navegação entre categorias
+        document.getElementById('imagesCategory').addEventListener('click', function() {
+            document.getElementById('imagesGallery').style.display = 'block';
+            document.getElementById('videosGallery').style.display = 'none';
+            loadImagesGallery();
+        });
+
+        document.getElementById('videosCategory').addEventListener('click', function() {
+            document.getElementById('videosGallery').style.display = 'block';
+            document.getElementById('imagesGallery').style.display = 'none';
+            loadVideosGallery();
+        });
+
+        // Modal para imagens
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModalBtn = document.querySelector('#imageModal .close-btn');
+
+        closeModalBtn.addEventListener('click', function() {
+            imageModal.classList.remove('show');
+            setTimeout(() => {
+                imageModal.style.display = 'none';
+            }, 300);
+        });
+
+        imageModal.addEventListener('click', function(e) {
+            if (e.target === imageModal) {
+                imageModal.classList.remove('show');
+                setTimeout(() => {
+                    imageModal.style.display = 'none';
+                }, 300);
+            }
+        });
+
+        // Player de vídeo personalizado
+        const videoPlayer = document.getElementById('videoPlayer');
+        const customVideo = document.getElementById('customVideo');
+        const closeVideoBtn = document.querySelector('#videoPlayer .close-btn');
+        const playPauseBtn = document.querySelector('.play-pause');
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = document.querySelector('.progress');
+        const timeDisplay = document.querySelector('.time');
+        const volumeBtn = document.querySelector('.volume-btn');
+        const volumeSlider = document.querySelector('.volume-slider');
+        const fullscreenBtn = document.querySelector('.fullscreen-btn');
+
+        closeVideoBtn.addEventListener('click', function() {
+            videoPlayer.classList.remove('show');
+            setTimeout(() => {
+                videoPlayer.style.display = 'none';
+                customVideo.pause();
+            }, 300);
+        });
+
+        videoPlayer.addEventListener('click', function(e) {
+            if (e.target === videoPlayer) {
+                videoPlayer.classList.remove('show');
+                setTimeout(() => {
+                    videoPlayer.style.display = 'none';
+                    customVideo.pause();
+                }, 300);
+            }
+        });
+
+        // Controles do vídeo
+        playPauseBtn.addEventListener('click', function() {
+            if (customVideo.paused) {
+                customVideo.play();
+            } else {
+                customVideo.pause();
+            }
+            updatePlayPauseButton();
+        });
+
+        customVideo.addEventListener('play', updatePlayPauseButton);
+        customVideo.addEventListener('pause', updatePlayPauseButton);
+
+        function updatePlayPauseButton() {
+            playPauseBtn.innerHTML = customVideo.paused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
+        }
+
+        customVideo.addEventListener('timeupdate', function() {
+            const progressPercent = (customVideo.currentTime / customVideo.duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+            
+            const currentTime = formatTime(customVideo.currentTime);
+            const duration = formatTime(customVideo.duration);
+            timeDisplay.textContent = `${currentTime} / ${duration}`;
+        });
+
+        progressBar.addEventListener('click', function(e) {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            customVideo.currentTime = percent * customVideo.duration;
+        });
+
+        volumeBtn.addEventListener('click', function() {
+            if (customVideo.volume > 0) {
+                customVideo.volume = 0;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                volumeSlider.value = 0;
+            } else {
+                customVideo.volume = 1;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                volumeSlider.value = 1;
+            }
+        });
+
+        volumeSlider.addEventListener('input', function() {
+            customVideo.volume = volumeSlider.value;
+            volumeBtn.innerHTML = volumeSlider.value > 0 ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
+        });
+
+        fullscreenBtn.addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                videoPlayer.requestFullscreen().catch(err => {
+                    console.log(`Erro ao tentar entrar em modo tela cheia: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // Inicializar animações quando a página carregar
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
