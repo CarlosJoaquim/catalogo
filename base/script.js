@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             // Carregar imagens (1.jpg a 20.jpg)
             images = [];
-            for (let i = 1; i <= 20; i++) {
+            for (let i = 1; i <= 22; i++) {
                 images.push({
                     type: 'image',
                     src: `img/base/${i}.jpg`,
