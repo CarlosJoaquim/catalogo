@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahweh Empreendimentos - Jogos Americanos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Yahweh Empreendimentos</h1>
+                <p>Jogos Americanos</p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li class="dropdown">
+                        <a href="#">Outros Catálogos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://catalogooficinadafampa.vercel.app/site/index.html" target="_blank">Produtos Diversos</a></li>
+                            <li><a href="https://catalogo-natal2025.vercel.app/" target="_blank">Natal</a></li>
+                            <li><a href="https://catalogooficinadafampa.vercel.app/BFA/index.html" target="_blank">Empresas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Catálogo de Jogos Americanos</h2>
+            <p>Descubra nossa coleção </p>
+            <a href="#catalogo" class="btn">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <section id="catalogo" class="catalogo-section">
+            <div class="container">
+                <h2>Nossos Modelos</h2>
+                <p class="instruction">Clique em qualquer imagem para visualizá-la em tamanho maior</p>
+                <div class="catalogo-grid" id="catalogo-grid">
+                    <!-- As imagens serão carregadas via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Yahweh Empreendimentos</h3>
+                    <p>Qualidade e sofisticação em produtos para seu lar</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Outros Catálogos</h4>
+                    <ul>
+                        <li><a href="https://catalogooficinadafampa.vercel.app/site/index.html" target="_blank">Produtos Diversos</a></li>
+                        <li><a href="https://catalogo-natal2025.vercel.app/" target="_blank">Natal</a></li>
+                        <li><a href="https://catalogooficinadafampa.vercel.app/BFA/index.html" target="_blank">Empresas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yahweh Empreendimentos, LDA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para visualização de imagem -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="Imagem ampliada">
+            </div>
+            <div class="modal-nav">
+                <button id="prevBtn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextBtn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
