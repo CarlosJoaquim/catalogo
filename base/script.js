@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             images = [];
             
-            // Gerar array de imagens de 1 a 20
-            for (let i = 1; i <= 20; i++) {
+            // Gerar array de imagens de 1 a 25
+            for (let i = 1; i <= 25; i++) {
                 images.push({
                     src: `img/base/${i}.jpg`,
                     modelo: `Modelo ${i.toString().padStart(2, '0')}`,
