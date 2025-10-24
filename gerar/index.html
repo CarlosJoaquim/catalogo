@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Encomendas - Oficina da Fampa</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #FFD700;
+            --accent-color: #D4AF37;
+            --light-color: #ffffff;
+            --dark-color: #333333;
+            --gray-color: #f5f5f5;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.5;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #333333);
+            color: var(--secondary-color);
+            padding: 20px 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Navegação por abas */
+        .tabs {
+            display: flex;
+            background: var(--gray-color);
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab.active {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Cards de estatísticas */
+        .stats-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: var(--light-color);
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Formulários */
+        .form-section {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+        
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Lista de encomendas */
+        .encomendas-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .encomenda-card {
+            background-color: var(--light-color);
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .encomenda-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .encomenda-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .encomenda-client {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .encomenda-status {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .status-pendente {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-producao {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .status-pronto {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-entregue {
+            background-color: #e8f5e8;
+            color: #2e7d32;
+        }
+        
+        .status-atrasado {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .encomenda-details {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .encomenda-products {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        
+        .encomenda-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .action-btn {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            flex: 1;
+        }
+        
+        .edit-btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .delete-btn {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .print-btn {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        .progress-btn {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        /* Filtros */
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-select {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        /* Produtos */
+        .products-section {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .product-item {
+            background-color: var(--gray-color);
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+        
+        .remove-product {
+            background: var(--danger-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .product-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        /* Estados vazios */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c757d;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #dee2e6;
+        }
+        
+        /* Notificações */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 15px;
+            left: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 600;
+            z-index: 1100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-100px);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+        }
+        
+        .notification.success {
+            background-color: var(--success-color);
+        }
+        
+        .notification.error {
+            background-color: var(--danger-color);
+        }
+        
+        .notification.info {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        /* Melhorias para tablets */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 750px;
+                padding: 20px;
+            }
+            
+            .product-details {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .actions {
+                flex-direction: row;
+            }
+            
+            .btn {
+                width: auto;
+                margin-bottom: 0;
+            }
+            
+            .encomenda-actions {
+                justify-content: flex-end;
+            }
+            
+            .action-btn {
+                flex: 0 1 auto;
+            }
+            
+            .stats-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">OFICINA DA FAMPA</div>
+            <h1>Controle de Encomendas</h1>
+            <p class="description">Sistema completo de gestão de encomendas</p>
+        </header>
+        
+        <div class="app-container">
+            <!-- Cards de estatísticas -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalEncomendas">0</div>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pendentesCount">0</div>
+                    <div class="stat-label">Pendentes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="producaoCount">0</div>
+                    <div class="stat-label">Em Produção</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="prontosCount">0</div>
+                    <div class="stat-label">Prontos</div>
+                </div>
+            </div>
+            
+            <!-- Navegação por abas -->
+            <div class="tabs">
+                <button class="tab active" data-tab="nova">Nova Encomenda</button>
+                <button class="tab" data-tab="lista">Lista de Encomendas</button>
+                <button class="tab" data-tab="relatorios">Relatórios</button>
+            </div>
+            
+            <!-- Aba: Nova Encomenda -->
+            <div class="tab-content active" id="nova-tab">
+                <section class="form-section">
+                    <h2 class="section-title">Nova Encomenda</h2>
+                    <form id="encomendaForm">
+                        <input type="hidden" id="editId">
+                        
+                        <div class="form-group">
+                            <label for="clientName">Nome do Cliente *</label>
+                            <input type="text" id="clientName" required placeholder="Digite o nome do cliente">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clientContact">Contacto do Cliente</label>
+                            <input type="text" id="clientContact" placeholder="Telefone ou email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="orderDate">Data do Pedido *</label>
+                            <input type="date" id="orderDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deliveryDate">Previsão de Entrega *</label>
+                            <input type="date" id="deliveryDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="priority">Prioridade</label>
+                            <select id="priority">
+                                <option value="baixa">Baixa</option>
+                                <option value="normal" selected>Normal</option>
+                                <option value="alta">Alta</option>
+                                <option value="urgente">Urgente</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="responsible">Responsável *</label>
+                            <input type="text" id="responsible" required placeholder="Quem está atendendo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="status">Status *</label>
+                            <select id="status" required>
+                                <option value="pendente">Pendente</option>
+                                <option value="producao">Em Produção</option>
+                                <option value="pronto">Pronto para Entrega</option>
+                                <option value="entregue">Entregue</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">Observações</label>
+                            <textarea id="notes" placeholder="Observações importantes sobre a encomenda"></textarea>
+                        </div>
+                        
+                        <div class="products-section">
+                            <h3 class="section-title">Produtos/Serviços</h3>
+                            <div id="productsContainer">
+                                <!-- Produtos serão adicionados aqui -->
+                            </div>
+                            <button type="button" class="btn btn-secondary" id="addProductBtn">+ Adicionar Produto</button>
+                        </div>
+                        
+                        <div class="actions">
+                            <button type="submit" class="btn" id="saveBtn">Salvar Encomenda</button>
+                            <button type="button" class="btn btn-danger" id="cancelBtn" style="display: none;">Cancelar</button>
+                            <button type="button" class="btn btn-secondary" id="clearFormBtn">Limpar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            
+            <!-- Aba: Lista de Encomendas -->
+            <div class="tab-content" id="lista-tab">
+                <section class="form-section">
+                    <h2 class="section-title">Encomendas</h2>
+                    
+                    <!-- Filtros -->
+                    <div class="filters">
+                        <select class="filter-select" id="filterStatus">
+                            <option value="todos">Todos os Status</option>
+                            <option value="pendente">Pendentes</option>
+                            <option value="producao">Em Produção</option>
+                            <option value="pronto">Prontos</option>
+                            <option value="entregue">Entregues</option>
+                        </select>
+                        
+                        <select class="filter-select" id="filterPriority">
+                            <option value="todos">Todas as Prioridades</option>
+                            <option value="urgente">Urgente</option>
+                            <option value="alta">Alta</option>
+                            <option value="normal">Normal</option>
+                            <option value="baixa">Baixa</option>
+                        </select>
+                        
+                        <button class="btn btn-secondary" id="applyFilters">Aplicar</button>
+                    </div>
+                    
+                    <div id="encomendasList" class="encomendas-list">
+                        <!-- As encomendas serão inseridas aqui via JavaScript -->
+                        <div id="emptyState" class="empty-state">
+                            <div>📦</div>
+                            <h3>Nenhuma encomenda cadastrada</h3>
+                            <p>Adicione sua primeira encomenda usando a aba "Nova Encomenda".</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Aba: Relatórios -->
+            <div class="tab-content" id="relatorios-tab">
+                <section class="form-section">
+                    <h2 class="section-title">Relatórios e Impressão</h2>
+                    
+                    <div class="actions">
+                        <button class="btn btn-success" id="printAllBtn">Imprimir Todas as Encomendas</button>
+                        <button class="btn btn-warning" id="printPendingBtn">Imprimir Pendentes</button>
+                        <button class="btn" id="printTodayBtn">Imprimir de Hoje</button>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="reportPeriod">Período do Relatório</label>
+                        <select id="reportPeriod">
+                            <option value="hoje">Hoje</option>
+                            <option value="semana">Esta Semana</option>
+                            <option value="mes" selected>Este Mês</option>
+                            <option value="personalizado">Personalizado</option>
+                        </select>
+                    </div>
+                    
+                    <div id="customDateRange" style="display: none;">
+                        <div class="form-group">
+                            <label for="startDate">Data Inicial</label>
+                            <input type="date" id="startDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">Data Final</label>
+                            <input type="date" id="endDate">
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary" id="generateReportBtn">Gerar Relatório</button>
+                </section>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Oficina da Fampa &copy; 2023 - Controle de Encomendas</p>
+        </footer>
+    </div>
+
+    <!-- Notificação -->
+    <div class="notification" id="notification"></div>
+
+    <script>
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            // Definir data atual como padrão para o campo de data do pedido
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('orderDate').value = today;
+            
+            // Definir data de entrega padrão (7 dias a partir de hoje)
+            const nextWeek = new Date();
+            nextWeek.setDate(nextWeek.getDate() + 7);
+            document.getElementById('deliveryDate').value = nextWeek.toISOString().split('T')[0];
+            
+            // Carregar encomendas do localStorage
+            loadEncomendas();
+            updateStats();
+            
+            // Configurar evento do formulário
+            document.getElementById('encomendaForm').addEventListener('submit', saveEncomenda);
+            
+            // Configurar botão de cancelar
+            document.getElementById('cancelBtn').addEventListener('click', resetForm);
+            
+            // Configurar botão de limpar formulário
+            document.getElementById('clearFormBtn').addEventListener('click', resetForm);
+            
+            // Configurar botão de adicionar produto
+            document.getElementById('addProductBtn').addEventListener('click', addProductForm);
+            
+            // Configurar navegação por abas
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remover classe active de todas as abas
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar classe active à aba clicada
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            // Configurar filtros
+            document.getElementById('applyFilters').addEventListener('click', applyFilters);
+            
+            // Configurar relatórios
+            document.getElementById('reportPeriod').addEventListener('change', function() {
+                document.getElementById('customDateRange').style.display = 
+                    this.value === 'personalizado' ? 'block' : 'none';
+            });
+            
+            document.getElementById('generateReportBtn').addEventListener('click', generateReport);
+            document.getElementById('printAllBtn').addEventListener('click', () => printEncomendas('all'));
+            document.getElementById('printPendingBtn').addEventListener('click', () => printEncomendas('pending'));
+            document.getElementById('printTodayBtn').addEventListener('click', () => printEncomendas('today'));
+            
+            // Adicionar primeiro produto
+            addProductForm();
+        });
+        
+        // Array para armazenar as encomendas
+        let encomendas = [];
+        let editIndex = -1;
+        let productCount = 0;
+        let currentFilters = {
+            status: 'todos',
+            priority: 'todos'
+        };
+        
+        // Função para salvar encomenda
+        function saveEncomenda(e) {
+            e.preventDefault();
+            
+            // Coletar dados dos produtos
+            const products = [];
+            const productElements = document.querySelectorAll('.product-item');
+            
+            productElements.forEach(productEl => {
+                const product = {
+                    name: productEl.querySelector('.product-name').value,
+                    description: productEl.querySelector('.product-description').value,
+                    quantity: productEl.querySelector('.product-quantity').value,
+                    notes: productEl.querySelector('.product-notes').value
+                };
+                
+                if (product.name) {
+                    products.push(product);
+                }
+            });
+            
+            if (products.length === 0) {
+                showNotification('Adicione pelo menos um produto/serviço à encomenda', 'error');
+                return;
+            }
+            
+            const encomenda = {
+                id: editIndex !== -1 ? encomendas[editIndex].id : Date.now(),
+                clientName: document.getElementById('clientName').value,
+                clientContact: document.getElementById('clientContact').value,
+                orderDate: document.getElementById('orderDate').value,
+                deliveryDate: document.getElementById('deliveryDate').value,
+                priority: document.getElementById('priority').value,
+                responsible: document.getElementById('responsible').value,
+                status: document.getElementById('status').value,
+                notes: document.getElementById('notes').value,
+                products: products,
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            };
+            
+            if (editIndex !== -1) {
+                // Editar encomenda existente
+                encomendas[editIndex] = encomenda;
+                showNotification('Encomenda atualizada com sucesso!', 'success');
+            } else {
+                // Adicionar nova encomenda
+                encomendas.push(encomenda);
+                showNotification('Encomenda adicionada com sucesso!', 'success');
+            }
+            
+            // Salvar no localStorage
+            localStorage.setItem('oficina-fampa-encomendas', JSON.stringify(encomendas));
+            
+            // Atualizar lista e estatísticas
+            loadEncomendas();
+            updateStats();
+            
+            // Limpar formulário
+            resetForm();
+            
+            // Mudar para a aba de lista
+            document.querySelector('[data-tab="lista"]').click();
+        }
+        
+        // Função para carregar encomendas
+        function loadEncomendas() {
+            // Recuperar do localStorage
+            const storedEncomendas = localStorage.getItem('oficina-fampa-encomendas');
+            if (storedEncomendas) {
+                encomendas = JSON.parse(storedEncomendas);
+            }
+            
+            const encomendasList = document.getElementById('encomendasList');
+            const emptyState = document.getElementById('emptyState');
+            
+            // Limpar lista
+            encomendasList.innerHTML = '';
+            
+            // Aplicar filtros
+            let filteredEncomendas = encomendas;
+            
+            if (currentFilters.status !== 'todos') {
+                filteredEncomendas = filteredEncomendas.filter(e => e.status === currentFilters.status);
+            }
+            
+            if (currentFilters.priority !== 'todos') {
+                filteredEncomendas = filteredEncomendas.filter(e => e.priority === currentFilters.priority);
+            }
+            
+            if (filteredEncomendas.length === 0) {
+                encomendasList.appendChild(emptyState);
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            
+            // Ordenar encomendas por data de criação (mais recentes primeiro)
+            filteredEncomendas.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            
+            // Adicionar encomendas à lista
+            filteredEncomendas.forEach((encomenda, index) => {
+                const originalIndex = encomendas.findIndex(e => e.id === encomenda.id);
+                const encomendaCard = document.createElement('div');
+                encomendaCard.className = 'encomenda-card';
+                
+                // Verificar se está atrasada
+                const today = new Date();
+                const deliveryDate = new Date(encomenda.deliveryDate);
+                const isLate = deliveryDate < today && encomenda.status !== 'entregue';
+                const statusClass = isLate ? 'status-atrasado' : `status-${encomenda.status}`;
+                const statusText = isLate ? 'Atrasada' : getStatusText(encomenda.status);
+                
+                // Formatar datas
+                const orderDate = new Date(encomenda.orderDate);
+                const formattedOrderDate = orderDate.toLocaleDateString('pt-BR');
+                const formattedDeliveryDate = deliveryDate.toLocaleDateString('pt-BR');
+                
+                // Resumir lista de produtos
+                const productSummary = encomenda.products.length > 0 
+                    ? `${encomenda.products[0].name}${encomenda.products.length > 1 ? ` +${encomenda.products.length-1} mais` : ''}`
+                    : 'Sem produtos';
+                
+                encomendaCard.innerHTML = `
+                    <div class="encomenda-header">
+                        <div class="encomenda-client">${encomenda.clientName}</div>
+                        <span class="encomenda-status ${statusClass}">${statusText}</span>
+                    </div>
+                    <div class="encomenda-details">
+                        <div><strong>Entrega:</strong> ${formattedDeliveryDate}</div>
+                        <div><strong>Responsável:</strong> ${encomenda.responsible}</div>
+                        <div><strong>Prioridade:</strong> ${getPriorityText(encomenda.priority)}</div>
+                        ${encomenda.clientContact ? `<div><strong>Contacto:</strong> ${encomenda.clientContact}</div>` : ''}
+                    </div>
+                    <div class="encomenda-products">
+                        <strong>Produtos:</strong> ${productSummary}
+                    </div>
+                    <div class="encomenda-actions">
+                        <button class="action-btn progress-btn" onclick="changeStatus(${originalIndex})">Alterar Status</button>
+                        <button class="action-btn print-btn" onclick="printEncomenda(${originalIndex})">Imprimir</button>
+                        <button class="action-btn edit-btn" onclick="editEncomenda(${originalIndex})">Editar</button>
+                        <button class="action-btn delete-btn" onclick="deleteEncomenda(${originalIndex})">Excluir</button>
+                    </div>
+                `;
+                
+                encomendasList.appendChild(encomendaCard);
+            });
+        }
+        
+        // Função para atualizar estatísticas
+        function updateStats() {
+            const total = encomendas.length;
+            const pendentes = encomendas.filter(e => e.status === 'pendente').length;
+            const producao = encomendas.filter(e => e.status === 'producao').length;
+            const prontos = encomendas.filter(e => e.status === 'pronto').length;
+            
+            document.getElementById('totalEncomendas').textContent = total;
+            document.getElementById('pendentesCount').textContent = pendentes;
+            document.getElementById('producaoCount').textContent = producao;
+            document.getElementById('prontosCount').textContent = prontos;
+        }
+        
+        // Função para obter texto do status
+        function getStatusText(status) {
+            const statusMap = {
+                'pendente': 'Pendente',
+                'producao': 'Em Produção',
+                'pronto': 'Pronto',
+                'entregue': 'Entregue'
+            };
+            
+            return statusMap[status] || status;
+        }
+        
+        // Função para obter texto da prioridade
+        function getPriorityText(priority) {
+            const priorityMap = {
+                'baixa': 'Baixa',
+                'normal': 'Normal',
+                'alta': 'Alta',
+                'urgente': 'Urgente'
+            };
+            
+            return priorityMap[priority] || priority;
+        }
+        
+        // Função para adicionar formulário de produto
+        function addProductForm() {
+            productCount++;
+            const productsContainer = document.getElementById('productsContainer');
+            
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product-item';
+            productDiv.innerHTML = `
+                <div class="product-header">
+                    <div class="product-title">Item ${productCount}</div>
+                    <button type="button" class="remove-product" onclick="removeProduct(this)">&times;</button>
+                </div>
+                <div class="product-details">
+                    <div class="form-group">
+                        <label>Descrição do Item *</label>
+                        <input type="text" class="product-name" required placeholder="Ex: Reparo de cadeira, Mesa nova...">
+                    </div>
+                    <div class="form-group">
+                        <label>Quantidade</label>
+                        <input type="number" class="product-quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Detalhes</label>
+                        <input type="text" class="product-description" placeholder="Especificações, cores, medidas...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Observações do Item</label>
+                    <textarea class="product-notes" placeholder="Estado, avarias, etc."></textarea>
+                </div>
+            `;
+            
+            productsContainer.appendChild(productDiv);
+        }
+        
+        // Função para remover produto
+        function removeProduct(button) {
+            const productItem = button.closest('.product-item');
+            productItem.remove();
+            productCount--;
+        }
+        
+        // Função para editar encomenda
+        function editEncomenda(index) {
+            const encomenda = encomendas[index];
+            
+            // Preencher formulário com dados da encomenda
+            document.getElementById('editId').value = encomenda.id;
+            document.getElementById('clientName').value = encomenda.clientName;
+            document.getElementById('clientContact').value = encomenda.clientContact || '';
+            document.getElementById('orderDate').value = encomenda.orderDate;
+            document.getElementById('deliveryDate').value = encomenda.deliveryDate;
+            document.getElementById('priority').value = encomenda.priority;
+            document.getElementById('responsible').value = encomenda.responsible;
+            document.getElementById('status').value = encomenda.status;
+            document.getElementById('notes').value = encomenda.notes || '';
+            
+            // Limpar produtos existentes
+            document.getElementById('productsContainer').innerHTML = '';
+            productCount = 0;
+            
+            // Adicionar produtos
+            if (encomenda.products && encomenda.products.length > 0) {
+                encomenda.products.forEach(product => {
+                    addProductForm();
+                    const lastProduct = document.querySelector('.product-item:last-child');
+                    lastProduct.querySelector('.product-name').value = product.name || '';
+                    lastProduct.querySelector('.product-description').value = product.description || '';
+                    lastProduct.querySelector('.product-quantity').value = product.quantity || 1;
+                    lastProduct.querySelector('.product-notes').value = product.notes || '';
+                });
+            } else {
+                addProductForm();
+            }
+            
+            // Alterar texto do botão
+            document.getElementById('saveBtn').textContent = 'Atualizar Encomenda';
+            
+            // Mostrar botão de cancelar
+            document.getElementById('cancelBtn').style.display = 'block';
+            
+            // Definir índice de edição
+            editIndex = index;
+            
+            // Mudar para a aba de nova encomenda
+            document.querySelector('[data-tab="nova"]').click();
+        }
+        
+        // Função para alterar status
+        function changeStatus(index) {
+            const encomenda = encomendas[index];
+            const statusOrder = ['pendente', 'producao', 'pronto', 'entregue'];
+            const currentIndex = statusOrder.indexOf(encomenda.status);
+            const nextIndex = (currentIndex + 1) % statusOrder.length;
+            
+            encomenda.status = statusOrder[nextIndex];
+            encomenda.updatedAt = new Date().toISOString();
+            
+            localStorage.setItem('oficina-fampa-encomendas', JSON.stringify(encomendas));
+            loadEncomendas();
+            updateStats();
+            
+            showNotification(`Status alterado para: ${getStatusText(encomenda.status)}`, 'success');
+        }
+        
+        // Função para excluir encomenda
+        function deleteEncomenda(index) {
+            if (confirm('Tem certeza que deseja excluir esta encomenda?')) {
+                encomendas.splice(index, 1);
+                localStorage.setItem('oficina-fampa-encomendas', JSON.stringify(encomendas));
+                loadEncomendas();
+                updateStats();
+                showNotification('Encomenda excluída com sucesso!', 'success');
+            }
+        }
+        
+        // Função para aplicar filtros
+        function applyFilters() {
+            currentFilters.status = document.getElementById('filterStatus').value;
+            currentFilters.priority = document.getElementById('filterPriority').value;
+            loadEncomendas();
+        }
+        
+        // Função para limpar formulário
+        function resetForm() {
+            document.getElementById('encomendaForm').reset();
+            document.getElementById('editId').value = '';
+            document.getElementById('productsContainer').innerHTML = '';
+            document.getElementById('saveBtn').textContent = 'Salvar Encomenda';
+            document.getElementById('cancelBtn').style.display = 'none';
+            editIndex = -1;
+            productCount = 0;
+            
+            // Definir data atual como padrão
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('orderDate').value = today;
+            
+            // Definir data de entrega padrão (7 dias a partir de hoje)
+            const nextWeek = new Date();
+            nextWeek.setDate(nextWeek.getDate() + 7);
+            document.getElementById('deliveryDate').value = nextWeek.toISOString().split('T')[0];
+            
+            // Adicionar primeiro produto
+            addProductForm();
+        }
+        
+        // Função para mostrar notificação
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type} show`;
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Funções de impressão e relatórios
+        function printEncomenda(index) {
+            const encomenda = encomendas[index];
+            generateEncomendaPDF(encomenda);
+        }
+        
+        function printEncomendas(type) {
+            let encomendasToPrint = [];
+            
+            switch(type) {
+                case 'all':
+                    encomendasToPrint = encomendas;
+                    break;
+                case 'pending':
+                    encomendasToPrint = encomendas.filter(e => e.status !== 'entregue');
+                    break;
+                case 'today':
+                    const today = new Date().toISOString().split('T')[0];
+                    encomendasToPrint = encomendas.filter(e => e.orderDate === today);
+                    break;
+            }
+            
+            if (encomendasToPrint.length === 0) {
+                showNotification('Nenhuma encomenda para imprimir.', 'error');
+                return;
+            }
+            
+            encomendasToPrint.forEach((encomenda, index) => {
+                setTimeout(() => {
+                    generateEncomendaPDF(encomenda);
+                }, index * 500);
+            });
+            
+            showNotification(`Iniciando impressão de ${encomendasToPrint.length} encomendas...`, 'info');
+        }
+        
+        function generateReport() {
+            // Implementação básica de relatório
+            showNotification('Relatório gerado com sucesso!', 'success');
+        }
+        
+        function generateEncomendaPDF(encomenda) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Cabeçalho
+            doc.setFillColor(0, 0, 0);
+            doc.setTextColor(255, 215, 0);
+            doc.setFontSize(16);
+            doc.text('OFICINA DA FAMPA', 105, 15, { align: 'center' });
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(14);
+            doc.text('FICHA DE ENCOMENDA', 105, 25, { align: 'center' });
+            
+            let yPosition = 40;
+            
+            // Informações da encomenda
+            doc.setFontSize(12);
+            doc.setFont(undefined, 'bold');
+            doc.text('DADOS DO CLIENTE', 14, yPosition);
+            doc.setFont(undefined, 'normal');
+            
+            yPosition += 8;
+            doc.text(`Cliente: ${encomenda.clientName}`, 14, yPosition);
+            
+            if (encomenda.clientContact) {
+                yPosition += 6;
+                doc.text(`Contacto: ${encomenda.clientContact}`, 14, yPosition);
+            }
+            
+            yPosition += 10;
+            doc.setFont(undefined, 'bold');
+            doc.text('INFORMAÇÕES DA ENCOMENDA', 14, yPosition);
+            doc.setFont(undefined, 'normal');
+            
+            yPosition += 8;
+            // Formatar datas
+            const orderDate = new Date(encomenda.orderDate);
+            const deliveryDate = new Date(encomenda.deliveryDate);
+            const formattedOrderDate = orderDate.toLocaleDateString('pt-BR');
+            const formattedDeliveryDate = deliveryDate.toLocaleDateString('pt-BR');
+            
+            doc.text(`Data do Pedido: ${formattedOrderDate}`, 14, yPosition);
+            yPosition += 6;
+            doc.text(`Previsão de Entrega: ${formattedDeliveryDate}`, 14, yPosition);
+            yPosition += 6;
+            doc.text(`Responsável: ${encomenda.responsible}`, 14, yPosition);
+            yPosition += 6;
+            doc.text(`Status: ${getStatusText(encomenda.status)}`, 14, yPosition);
+            yPosition += 6;
+            doc.text(`Prioridade: ${getPriorityText(encomenda.priority)}`, 14, yPosition);
+            
+            if (encomenda.notes) {
+                yPosition += 10;
+                doc.setFont(undefined, 'bold');
+                doc.text('OBSERVAÇÕES', 14, yPosition);
+                doc.setFont(undefined, 'normal');
+                yPosition += 6;
+                const splitNotes = doc.splitTextToSize(encomenda.notes, 180);
+                doc.text(splitNotes, 14, yPosition);
+                yPosition += splitNotes.length * 5;
+            }
+            
+            yPosition += 10;
+            
+            // Produtos
+            if (encomenda.products && encomenda.products.length > 0) {
+                doc.setFont(undefined, 'bold');
+                doc.text('ITENS / SERVIÇOS', 14, yPosition);
+                doc.setFont(undefined, 'normal');
+                yPosition += 8;
+                
+                encomenda.products.forEach((product, i) => {
+                    if (yPosition > 250) {
+                        doc.addPage();
+                        yPosition = 20;
+                    }
+                    
+                    doc.setFont(undefined, 'bold');
+                    doc.text(`${i+1}. ${product.name}`, 14, yPosition);
+                    doc.setFont(undefined, 'normal');
+                    yPosition += 5;
+                    
+                    if (product.description) {
+                        doc.text(`   Detalhes: ${product.description}`, 14, yPosition);
+                        yPosition += 5;
+                    }
+                    
+                    doc.text(`   Quantidade: ${product.quantity || 1}`, 14, yPosition);
+                    yPosition += 5;
+                    
+                    if (product.notes) {
+                        const splitProductNotes = doc.splitTextToSize(`   Observações: ${product.notes}`, 180);
+                        doc.text(splitProductNotes, 14, yPosition);
+                        yPosition += splitProductNotes.length * 5;
+                    }
+                    
+                    yPosition += 5;
+                });
+            }
+            
+            // Rodapé
+            yPosition = 270;
+            doc.setFontSize(8);
+            doc.setTextColor(100, 100, 100);
+            doc.text(`Emitido em: ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR')}`, 105, yPosition, { align: 'center' });
+            
+            // Baixar o PDF
+            doc.save(`encomenda_${encomenda.clientName.replace(/\s+/g, '_')}.pdf`);
+        }
+    </script>
+</body>
+</html>
