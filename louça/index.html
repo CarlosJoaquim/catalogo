@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAHWEH EMPRENDIMENTOS - Catálogo de Louças</title>
+    <style>
+        :root {
+            --branco: #ffffff;
+            --dourado: #d4af37;
+            --preto: #1a1a1a;
+            --cinza-escuro: #2d2d2d;
+            --cinza-claro: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--branco);
+            color: var(--preto);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--preto) 0%, var(--cinza-escuro) 100%);
+            color: var(--branco);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--dourado);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--cinza-escuro);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--branco);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--dourado);
+            color: var(--preto);
+            transform: translateY(-2px);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            min-height: 60vh;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--preto);
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-size: 1.8rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--dourado) 0%, var(--preto) 100%);
+            border-radius: 2px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .card-content {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: var(--preto);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .card-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--dourado);
+            margin-bottom: 0.6rem;
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 0.4rem;
+            border-radius: 5px;
+        }
+        
+        .card-description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            overflow: auto;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: 2% auto;
+            max-width: 95%;
+            max-height: 96%;
+            background-color: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            display: block;
+            background-color: var(--cinza-claro);
+        }
+        
+        .modal-video {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            display: block;
+            background-color: var(--preto);
+        }
+        
+        .modal-info {
+            padding: 1.5rem;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--preto);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .modal-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dourado);
+            margin-bottom: 1rem;
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 0.6rem;
+            border-radius: 6px;
+        }
+        
+        .modal-description {
+            margin-bottom: 1rem;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .contact-info {
+            background-color: rgba(212, 175, 55, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--dourado);
+            margin-top: 1rem;
+        }
+        
+        .contact-info h4 {
+            color: var(--preto);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info p {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--preto);
+            color: var(--branco);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .close-btn:hover {
+            background-color: var(--dourado);
+            color: var(--preto);
+            transform: rotate(90deg);
+        }
+        
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .video-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, var(--cinza-escuro) 0%, var(--preto) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.2) 0%, transparent 100%);
+        }
+        
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(212, 175, 55, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--preto);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .video-card:hover .play-icon {
+            transform: scale(1.1);
+            background-color: var(--dourado);
+        }
+        
+        .video-content {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: var(--preto);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .video-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--dourado);
+            margin-bottom: 0.6rem;
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 0.4rem;
+            border-radius: 5px;
+        }
+        
+        .video-description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-style: italic;
+            font-size: 1.1rem;
+            grid-column: 1 / -1;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--preto) 0%, var(--cinza-escuro) 100%);
+            color: var(--branco);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .contact-footer {
+            margin-bottom: 1rem;
+        }
+        
+        .contact-footer h3 {
+            color: var(--dourado);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-footer p {
+            margin-bottom: 0.3rem;
+            opacity: 0.9;
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .gallery, .video-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.2rem;
+            }
+            
+            .modal-content {
+                margin: 3% auto;
+                max-width: 96%;
+            }
+            
+            .modal-img, .modal-video {
+                max-height: 300px;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .card-img, .video-thumbnail {
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery, .video-gallery {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .modal-content {
+                margin: 1% auto;
+                max-width: 98%;
+            }
+            
+            .modal-img, .modal-video {
+                max-height: 250px;
+            }
+            
+            .modal-info {
+                padding: 1.2rem;
+            }
+            
+            .modal-title {
+                font-size: 1.3rem;
+            }
+            
+            .card-content, .video-content {
+                padding: 1rem;
+            }
+            
+            .card-img, .video-thumbnail {
+                height: 140px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .gallery, .video-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-content, .video-content {
+                padding: 0.8rem;
+            }
+            
+            .card-title, .video-title {
+                font-size: 1rem;
+            }
+            
+            .card-price, .video-price {
+                font-size: 1rem;
+            }
+            
+            .card-description, .video-description {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">YAHWEH EMPRENDIMENTOS, LDA</div>
+        <div class="subtitle">Catálogo de Louças</div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <button class="nav-btn active" data-target="imagens">Imagens</button>
+            <button class="nav-btn" data-target="videos">Vídeos</button>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="imagens" class="content-section active">
+            <h2 class="section-title">Nossas Louças</h2>
+            <div class="gallery" id="image-gallery">
+                <!-- As imagens serão carregadas via JavaScript -->
+            </div>
+        </section>
+        
+        <section id="videos" class="content-section">
+            <h2 class="section-title">Vídeos das Nossas Louças</h2>
+            <div class="video-gallery" id="video-gallery">
+                <!-- Os vídeos serão carregados via JavaScript -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal para Imagens -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <img class="modal-img" src="" alt="Imagem da Louça">
+            <div class="modal-info">
+                <h3 class="modal-title">Título da Louça</h3>
+                <div class="modal-price">Preço: <span id="modal-price-value">0,00 kz</span></div>
+                <p class="modal-description">Descrição detalhada da louça.</p>
+                <div class="contact-info">
+                    <h4>Interessado neste produto?</h4>
+                    <p>📞 +244 123 456 789</p>
+                    <p>✉️ yahweh@empreendimentos.ao</p>
+                    <p>📍 Luanda, Angola</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Vídeos -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <video class="modal-video" controls>
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <div class="modal-info">
+                <h3 class="modal-title">Título do Vídeo</h3>
+                <div class="modal-price">Preço: <span id="video-modal-price-value">0,00 kz</span></div>
+                <p class="modal-description">Descrição detalhada da louça apresentada no vídeo.</p>
+              
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            
+            <div class="copyright">
+                <p>&copy; 2023 YAHWEH EMPRENDIMENTOS, LDA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dados das imagens e vídeos
+        const imageData = [
+            { 
+                id: 1, 
+                title: "Aparelho de Jantar", 
+                description: "12 pratos/raso/sopa e entrada + 1 bule + 1 açucareiro + 8 chávenas + 8 pires + 8 pratos de pão", 
+                price: "1.340.000,00 kz" 
+            },
+            { 
+                id: 2, 
+                title: "Conjunto de chá porcelana Porcell", 
+                description: "Conjunto de chá porcelana Porcell - 10 lugares - chávenas de chá + pires/bule/leiteira e açucareiro", 
+                price: "569.000 kz" 
+            },
+            { 
+                id: 3, 
+                title: "Prato de Sobremesa Decorativo", 
+                description: "Prato de sobremesa com padrão floral, ideal para servir doces finos.", 
+                price: "569.000 kz" 
+            },
+            { 
+                id: 4, 
+                title: "Conjunto de Café da Manhã", 
+                description: "Conjunto completo para café da manhã com 4 peças, incluindo pires e xícara.", 
+                price: "Preço a consultar" 
+            },
+            { 
+                id: 5, 
+                title: "Jogo de Pratos para Salada", 
+                description: "Conjunto de 6 pratos para salada com design moderno e elegante.", 
+                price: "Preço a consultar" 
+            }
+        ];
+        
+        const videoData = [
+            { 
+                id: 1, 
+                title: "Aparelho de Jantar", 
+                description: "12 lugares - prato de bolo/açucareiro/bule/leiteira/pratos de sobremesa.", 
+                price: "376.000 kz" 
+            },
+            { 
+                id: 2, 
+                title: "Conjunto de Chá Premium", 
+                description: "12 lugares - bule/açucareiro/leiteira/pratos de sobremesa/chávenas e pires", 
+                price: "375.000 kz" 
+            },
+            { 
+                id: 3, 
+                title: "Aparelho de jantar", 
+                description: "10 Lugares.", 
+                price: "394.000 kz" 
+            },
+            { 
+                id: 4, 
+                title: "Aparelho de Jantar", 
+                description: "Apresentação do conjunto completo 12 lugares.", 
+                price: "1.430.000 kz" 
+            },
+            { 
+                id: 5, 
+                title: "Conjunto Completo", 
+                description: "12 lugares - pratos: raso/sopa e entrada; chávenas + pires; bule/açucareiro/molheira/terrina e tigela", 
+                price: "867.000,00 kz" 
+            },
+            
+         
+        ];
+        
+        // Elementos DOM
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const contentSections = document.querySelectorAll('.content-section');
+        const imageGallery = document.getElementById('image-gallery');
+        const videoGallery = document.getElementById('video-gallery');
+        const imageModal = document.getElementById('image-modal');
+        const videoModal = document.getElementById('video-modal');
+        const closeBtns = document.querySelectorAll('.close-btn');
+        
+        // Carregar galeria de imagens
+        function loadImageGallery() {
+            imageGallery.innerHTML = '';
+            
+            if (imageData.length === 0) {
+                imageGallery.innerHTML = '<div class="empty-message">Nenhuma imagem disponível no momento.</div>';
+                return;
+            }
+            
+            imageData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.setAttribute('data-id', item.id);
+                
+                card.innerHTML = `
+                    <img src="img/${item.id}.jpg" alt="${item.title}" class="card-img" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22180%22 viewBox=%220 0 280 180%22%3E%3Crect fill=%22%23f5f5f5%22 width=%22280%22 height=%22180%22/%3E%3Ctext fill=%22%23555%22 font-family=%22Arial%22 font-size=%2216%22 text-anchor=%22middle%22 x=%22140%22 y=%22100%22%3EImagem ${item.id}%3C/text%3E%3C/svg%3E'">
+                    <div class="card-content">
+                        <h3 class="card-title">${item.title}</h3>
+                        <div class="card-price">${item.price}</div>
+                        <p class="card-description">${item.description}</p>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => openImageModal(item.id));
+                imageGallery.appendChild(card);
+            });
+        }
+        
+        // Carregar galeria de vídeos
+        function loadVideoGallery() {
+            videoGallery.innerHTML = '';
+            
+            if (videoData.length === 0) {
+                videoGallery.innerHTML = '<div class="empty-message">Nenhum vídeo disponível no momento.</div>';
+                return;
+            }
+            
+            videoData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                card.setAttribute('data-id', item.id);
+                
+                card.innerHTML = `
+                    <div class="video-thumbnail">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">${item.title}</h3>
+                        <div class="video-price">${item.price}</div>
+                        <p class="video-description">${item.description}</p>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => openVideoModal(item.id));
+                videoGallery.appendChild(card);
+            });
+        }
+        
+        // Abrir modal de imagem
+        function openImageModal(id) {
+            const item = imageData.find(img => img.id === id);
+            if (!item) return;
+            
+            const modalImg = imageModal.querySelector('.modal-img');
+            const modalTitle = imageModal.querySelector('.modal-title');
+            const modalPrice = imageModal.querySelector('#modal-price-value');
+            const modalDescription = imageModal.querySelector('.modal-description');
+            
+            modalImg.src = `img/${id}.jpg`;
+            modalImg.alt = item.title;
+            modalTitle.textContent = item.title;
+            modalPrice.textContent = item.price;
+            modalDescription.textContent = item.description;
+            
+            imageModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Abrir modal de vídeo
+        function openVideoModal(id) {
+            const item = videoData.find(vid => vid.id === id);
+            if (!item) return;
+            
+            const modalVideo = videoModal.querySelector('.modal-video');
+            const modalTitle = videoModal.querySelector('.modal-title');
+            const modalPrice = videoModal.querySelector('#video-modal-price-value');
+            const modalDescription = videoModal.querySelector('.modal-description');
+            
+            // Limpar fontes anteriores
+            while (modalVideo.firstChild) {
+                modalVideo.removeChild(modalVideo.firstChild);
+            }
+            
+            // Adicionar nova fonte de vídeo
+            const source = document.createElement('source');
+            source.src = `video/${id}.mp4`;
+            source.type = 'video/mp4';
+            modalVideo.appendChild(source);
+            
+            // Adicionar mensagem de fallback
+            const fallbackText = document.createTextNode('Seu navegador não suporta o elemento de vídeo.');
+            modalVideo.appendChild(fallbackText);
+            
+            modalVideo.load();
+            modalTitle.textContent = item.title;
+            modalPrice.textContent = item.price;
+            modalDescription.textContent = item.description;
+            
+            videoModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Fechar modais
+        function closeModals() {
+            imageModal.style.display = 'none';
+            videoModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Pausar vídeo quando o modal for fechado
+            const modalVideo = videoModal.querySelector('.modal-video');
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        }
+        
+        // Navegação entre seções
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const target = this.getAttribute('data-target');
+                
+                // Atualizar botões ativos
+                navBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Mostrar seção correspondente
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === target) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Fechar modais ao clicar no botão de fechar
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', closeModals);
+        });
+        
+        // Fechar modais ao clicar fora do conteúdo
+        window.addEventListener('click', function(event) {
+            if (event.target === imageModal || event.target === videoModal) {
+                closeModals();
+            }
+        });
+        
+        // Fechar modais com a tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModals();
+            }
+        });
+        
+        // Inicializar a galeria
+        loadImageGallery();
+        loadVideoGallery();
+        
+        // Adicionar funcionalidade de busca (opcional)
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Catálogo YAHWEH EMPRENDIMENTOS carregado com sucesso!');
+            console.log(`Total de imagens: ${imageData.length}`);
+            console.log(`Total de vídeos: ${videoData.length}`);
+        });
+    </script>
+</body>
+</html>
