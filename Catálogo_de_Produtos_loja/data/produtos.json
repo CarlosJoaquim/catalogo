@@ -3,16 +3,16 @@
     {
       "id": 1,
       "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
+      "description": "20.000 kz",
+      "price": "20.000 kz",
       "image": "imagens/jogos-americanos-richelieu/1.jpg",
       "ref": "JAR001"
     },
     {
       "id": 2,
       "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
+      "description": "20.000 kz",
+      "price": "20.000 kz",
       "image": "imagens/jogos-americanos-richelieu/2.jpeg",
       "ref": "JAR002"
     },
@@ -20,105 +20,33 @@
       "id": 3,
       "title": "Base + Guardanapo Richelieu ",
       "description": "",
-      "price": "19.000 Kz",
-      "image": "imagens/jogos-americanos-richelieu/.jpeg",
+      "price": "26.000 Kz",
+      "image": "imagens/jogos-americanos-richelieu/5.jpeg",
       "ref": "JAR003"
     },
     {
       "id": 4,
       "title": "Base + Guardanapo Richelieu ",
       "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/4.jpeg",
+      "price": "18.000 kz",
+      "image": "imagens/jogos-americanos-richelieu/4.jpg",
       "ref": "JAR004"
-    },
-    {
-      "id": 5,
-      "title": "Base + Guardanapo Richelieu Royal",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/5.jpeg",
-      "ref": "JAR005"
     },
     {
       "id": 6,
       "title": "Base + Guardanapo Richelieu ",
       "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/6.jpeg",
+      "price": "18.000 kz",
+      "image": "imagens/jogos-americanos-richelieu/7.jpg",
       "ref": "JAR006"
     },
     {
       "id": 7,
       "title": "Base + Guardanapo Richelieu ",
       "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/7.jpeg",
-      "ref": "JAR007"
-    },
-    {
-      "id": 8,
-      "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
+      "price": "18.000 kz",
       "image": "imagens/jogos-americanos-richelieu/8.jpeg",
-      "ref": "JAR008"
-    },
-    {
-      "id": 9,
-      "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/9.jpg",
-      "ref": "JAR009"
-    },
-    {
-      "id": 10,
-      "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/10.jpg",
-      "ref": "JAR010"
-    },
-    {
-      "id": 11,
-      "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/11.jpg",
-      "ref": "JAR011"
-    },
-    {
-      "id": 12,
-      "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/12.jpg",
-      "ref": "JAR012"
-    },
-    {
-      "id": 13,
-      "title": "Base + Guardanapo Richelieu",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/13.jpg",
-      "ref": "JAR013"
-    },
-    {
-      "id": 14,
-      "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/14.jpg",
-      "ref": "JAR014"
-    },
-    {
-      "id": 15,
-      "title": "Base + Guardanapo Richelieu ",
-      "description": "",
-      "price": "",
-      "image": "imagens/jogos-americanos-richelieu/15.jpg",
-      "ref": "JAR015"
+      "ref": "JAR007"
     }
   ],
   "jogos-americanos-linho-com-renda": [
@@ -130,19 +58,12 @@
       "image": "imagens/jogos-americanos-linho-com-renda/1.jpg",
       "ref": "JALR001"
     },
-    {
-      "id": 2,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "25.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/2.jpg",
-      "ref": "JALR002"
-    },
+    
     {
       "id": 3,
       "title": "Base + Guardanapo Linho Renda ",
       "description": "",
-      "price": "24.000 Kz",
+      "price": "22.000 Kz",
       "image": "imagens/jogos-americanos-linho-com-renda/3.jpg",
       "ref": "JALR003"
     },
@@ -158,89 +79,9 @@
       "id": 5,
       "title": "Base + Guardanapo Linho Renda ",
       "description": "",
-      "price": "32.000 Kz",
+      "price": "24.000 Kz",
       "image": "imagens/jogos-americanos-linho-com-renda/5.jpg",
       "ref": "JALR005"
-    },
-    {
-      "id": 6,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "m",
-      "price": "26.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/6.jpg",
-      "ref": "JALR006"
-    },
-    {
-      "id": 7,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "29.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/7.jpg",
-      "ref": "JALR007"
-    },
-    {
-      "id": 8,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "35.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/8.jpg",
-      "ref": "JALR008"
-    },
-    {
-      "id": 9,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "38.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/9.jpg",
-      "ref": "JALR009"
-    },
-    {
-      "id": 10,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "42.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/10.jpg",
-      "ref": "JALR010"
-    },
-    {
-      "id": 11,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "45.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/11.jpg",
-      "ref": "JALR011"
-    },
-    {
-      "id": 12,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "48.000 Kz",
-      "image": "imagens/jogos-americanos-linho-com-renda/12.jpg",
-      "ref": "JALR012"
-    },
-    {
-      "id": 13,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "40.000 Kz",
-      "image": "../imagens/jogos-americanos-linho-com-renda/13.jpg",
-      "ref": "JALR013"
-    },
-    {
-      "id": 14,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "43.000 Kz",
-      "image": "../imagens/jogos-americanos-linho-com-renda/14.jpg",
-      "ref": "JALR014"
-    },
-    {
-      "id": 15,
-      "title": "Base + Guardanapo Linho Renda ",
-      "description": "",
-      "price": "46.000 Kz",
-      "image": "../imagens/jogos-americanos-linho-com-renda/15.jpg",
-      "ref": "JALR015"
     }
   ],
   "jogos-americanos-toile-de-jouy": [
@@ -248,7 +89,7 @@
       "id": 1,
       "title": "Base + Guardanapo Toile de Jouy ",
       "description": "",
-      "price": "18.000 Kz",
+      "price": "20.000 Kz",
       "image": "imagens/jogos-americanos-toile-de-jouy/1.jpeg",
       "ref": "JATJ001"
     },
@@ -275,108 +116,13 @@
       "price": "18.400 Kz",
       "image": "imagens/jogos-americanos-toile-de-jouy/4.jpg",
       "ref": "JATJ004"
-    },
-    {
-      "id": 5,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "42.000 Kz",
-      "image": "imagens/jogos-americanos-toile-de-jouy/5.jpg",
-      "ref": "JATJ005"
-    },
-    {
-      "id": 6,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "30.000 Kz",
-      "image": "imagens/jogos-americanos-toile-de-jouy/6.jpg",
-      "ref": "JATJ006"
-    },
-    {
-      "id": 7,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "40.000 Kz",
-      "image": "imagens/jogos-americanos-toile-de-jouy/7.jpg",
-      "ref": "JATJ007"
-    },
-    {
-      "id": 8,
-      "title": "Base + Guardanapo ",
-      "description": "",
-      "price": "45.000 Kz",
-      "image": "imagens/jogos-americanos-toile-de-jouy/8.jpg",
-      "ref": "JATJ008"
-    },
-    {
-      "id": 9,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "48.000 Kz",
-      "image": "imagens/jogos-americanos-toile-de-jouy/9.jpg",
-      "ref": "JATJ009"
-    },
-    {
-      "id": 10,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "50.000 Kz",
-      "image": "../imagens/jogos-americanos-toile-de-jouy/10.jpg",
-      "ref": "JATJ010"
-    },
-    {
-      "id": 11,
-      "title": "Base + Guardanapo Toile de Jouy Diamond",
-      "description": "",
-      "price": "52.000 Kz",
-      "image": "../imagens/jogos-americanos-toile-de-jouy/11.jpg",
-      "ref": "JATJ011"
-    },
-    {
-      "id": 12,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "46.000 Kz",
-      "image": "../imagens/jogos-americanos-toile-de-jouy/12.jpg",
-      "ref": "JATJ012"
-    },
-    {
-      "id": 13,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "44.000 Kz",
-      "image": "../imagens/jogos-americanos-toile-de-jouy/13.jpg",
-      "ref": "JATJ013"
-    },
-    {
-      "id": 14,
-      "title": "Base + Guardanapo Toile de Jouy ",
-      "description": "",
-      "price": "49.000 Kz",
-      "image": "../imagens/jogos-americanos-toile-de-jouy/14.jpg",
-      "ref": "JATJ014"
-    },
-    {
-      "id": 15,
-      "title": "Base + Guardanapo Toile de Jouy",
-      "description": "",
-      "price": "51.000 Kz",
-      "image": "../imagens/jogos-americanos-toile-de-jouy/15.jpg",
-      "ref": "JATJ015"
     }
   ]
 ,
 
 
   "jogos-americanos-linho": [
-    {
-      "id": 1,
-      "title": "Base + Guardanapo Linho  ",
-      "description": "",
-      "price": "18.000 Kz",
-      "image": "imagens/Linho/1.jpg",
-      "ref": "JATJ001"
-    },
+    
      {
       "id": 2,
       "title": "Base + Guardanapo Linho  ",
