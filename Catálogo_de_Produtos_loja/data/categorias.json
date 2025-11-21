@@ -40,28 +40,6 @@
       "preco_minimo": "18.000 kz",
       "preco_maximo": "42.000 kz",
       "materiais": ["Algodão", "Linho", "Tecido Misto"]
-    },
-    {
-      "id": "toalhas-mesa",
-      "nome": "Toalhas de Mesa",
-      "descricao": "Toalhas de mesa para diversos números de lugares, desde 4 até 14 lugares. Produzidas em materiais premium como algodão egípcio, linho e tecidos com fio dourado para ocasiões especiais.",
-      "imagem": "https://placehold.co/400x300/FFFFFF/D4AF37?text=Toalhas+de+Mesa",
-      "quantidade": 30,
-      "preco_minimo": "187.000 Kz",
-      "preco_maximo": "550.000 Kz",
-      "tamanhos": ["4 lugares", "6 lugares", "8 lugares", "10 lugares", "12 lugares", "14 lugares"],
-      "formatos": ["Retangular", "Redonda", "Oval", "Quadrada"]
-    },
-    {
-      "id": "loucas",
-      "nome": "Louças",
-      "descricao": "Conjuntos de louças das melhores marcas como Wolf, Boehemia e Vista Alegre. Inclui conjuntos de jantar, chá, café, taças de cristal e peças de serviço de alta qualidade.",
-      "imagem": "https://placehold.co/400x300/FFFFFF/D4AF37?text=Louças",
-      "quantidade": 30,
-      "preco_minimo": "390.000 Kz",
-      "preco_maximo": "2.200.000 Kz",
-      "marcas": ["Wolf", "Boehemia", "Vista Alegre", "Costa Verde", "Herend", "Royal Copenhagen"],
-      "tipos": ["Conjuntos de Jantar", "Conjuntos de Chá", "Conjuntos de Café", "Taças de Cristal", "Pratos de Serviço", "Saladeiras"]
     }
   ],
   "empresa": {
