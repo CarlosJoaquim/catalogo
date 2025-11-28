@@ -14,7 +14,7 @@
 "masculino": [
     {
       "id": 1,
-      "title": " ",
+      "title": "120.000 KZ ",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/homem/1.png",
@@ -27,16 +27,16 @@
   "toalha": [
     {
       "id": 1,
-      "title": " ",
-      "description": "",
+      "title": "218.000 KZ ",
+      "description": " 8 Lugares",
       "price": "Modelo: 001",
       "image": "imagens/toalhas-mesa/1.jpeg",
       "ref": "JATJ001"
     },
      {
       "id": 2,
-      "title": "  ",
-      "description": "",
+      "title": " 212.000 kz ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 002",
       "image": "imagens/toalhas-mesa/2.png",
       "ref": "JATJ001"
@@ -44,8 +44,8 @@
     ,
      {
       "id": 3,
-      "title": " ",
-      "description": "",
+      "title": "234.000 KZ ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 003",
       "image": "imagens/toalhas-mesa/3.png",
       "ref": "JATJ001"
@@ -53,8 +53,8 @@
     ,
      {
       "id": 4,
-      "title": "  ",
-      "description": "",
+      "title": " 243.000 KZ ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 004",
       "image": "imagens/toalhas-mesa/4.jpg",
       "ref": "JATJ001"
@@ -62,8 +62,8 @@
     ,
      {
       "id": 4,
-      "title": "  ",
-      "description": "",
+      "title": "234.000 KZ ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 005",
       "image": "imagens/toalhas-mesa/5.jpeg",
       "ref": "JATJ001"
@@ -71,8 +71,8 @@
     ,
      {
       "id": 5,
-      "title": "  ",
-      "description": "",
+      "title": " 230.000 kz ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 006",
       "image": "imagens/toalhas-mesa/6.jpeg",
       "ref": "JATJ001"
@@ -80,8 +80,8 @@
      ,
      {
       "id": 6,
-      "title": " ",
-      "description": "",
+      "title": "268.000 KZ ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 007",
       "image": "imagens/toalhas-mesa/7.jpeg",
       "ref": "JATJ001"
@@ -89,8 +89,8 @@
      ,
      {
       "id": 7,
-      "title": "  ",
-      "description": "",
+      "title": " 234.000 KZ ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 008",
       "image": "imagens/toalhas-mesa/8.jpg",
       "ref": "JATJ001"
@@ -98,8 +98,8 @@
      ,
      {
       "id": 8,
-      "title": "  ",
-      "description": "",
+      "title": "220.000 KZ  ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 009",
       "image": "imagens/toalhas-mesa/9.jpeg",
       "ref": "JATJ001"
@@ -107,8 +107,8 @@
      ,
      {
       "id": 9,
-      "title": "T  ",
-      "description": "",
+      "title": "268.000 KZ ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 010",
       "image": "imagens/toalhas-mesa/10.jpeg",
       "ref": "JATJ001"
@@ -116,8 +116,8 @@
      ,
      {
       "id": 5,
-      "title": "  ",
-      "description": "",
+      "title": "312.000 KZ  ",
+      "description": "Toalha de 12 Luagres",
       "price": "Modelo: 012",
       "image": "imagens/toalhas-mesa/11.jpeg",
       "ref": "JATJ001"
@@ -125,36 +125,28 @@
      ,
      {
       "id": 5,
-      "title": "  ",
-      "description": "",
+      "title": " 216.000 kz ",
+      "description": "Toalha de 8 Luagres",
       "price": "Modelo: 013",
       "image": "imagens/toalhas-mesa/12.jpeg",
       "ref": "JATJ001"
     }
-    ,
-     {
-      "id": 5,
-      "title": "  ",
-      "description": "",
-      "price": "Modelo: 014",
-      "image": "imagens/toalhas-mesa/13.jpeg",
-      "ref": "JATJ001"
-    }
+   
   ],
 
   "social": [
     {
       "id": 1,
-      "title": " ",
-      "description": "",
+      "title": "200.000 KZ ",
+      "description": "Blazer / Calça",
       "price": "Modelo: 001",
       "image": "imagens/social/1.png",
       "ref": "JATJ001"
     },
     {
       "id": 1,
-      "title": "",
-      "description": "",
+      "title": "198.000 KZ",
+      "description": "Blazer / Calça",
       "price": "Modelo: 002",
       "image": "imagens/social/2.jpg",
       "ref": "JATJ001"
@@ -162,8 +154,8 @@
     ,
     {
       "id": 1,
-      "title": "",
-      "description": "",
+      "title": "185.000 KZ",
+      "description": "Blazer / Calça",
       "price": "Modelo: 003",
       "image": "imagens/social/3.jpg",
       "ref": "JATJ001"
@@ -171,7 +163,7 @@
     ,
     {
       "id": 1,
-      "title": " ",
+      "title": " 210.000 KZ",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/social/4.jpg",
@@ -180,8 +172,8 @@
     ,
     {
       "id": 1,
-      "title": " ",
-      "description": "",
+      "title": "180.000 KZ ",
+      "description": "Fato Safari - Blazer / Calça",
       "price": "Modelo: 005",
       "image": "imagens/social/5.jpg",
       "ref": "JATJ001"
@@ -189,8 +181,8 @@
     ,
     {
       "id": 1,
-      "title": " ",
-      "description": "",
+      "title": "210.000 KZ ",
+      "description": "Blazer / Calça",
       "price": "Modelo: 006",
       "image": "imagens/social/6.jpg",
       "ref": "JATJ001"
@@ -198,8 +190,8 @@
     ,
     {
       "id": 1,
-      "title": " ",
-      "description": "",
+      "title": " 198.000 KZ",
+      "description": "Blazer / Calça",
       "price": "Modelo: 007",
       "image": "imagens/social/7.jpg",
       "ref": "JATJ001"
@@ -208,7 +200,7 @@
   "social-feminino": [
     {
       "id": 1,
-      "title": " ",
+      "title": " 197.000 KZ",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/social-femenino/1.jpg",
@@ -216,7 +208,7 @@
     },
     {
       "id": 1,
-      "title": " ",
+      "title": " 160.000 KZ",
       "description": "",
       "price": "Modelo: 002",
       "image": "imagens/social-femenino/2.jpg",
@@ -225,7 +217,7 @@
     ,
     {
       "id": 1,
-      "title": "",
+      "title": "170.000 KZ",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/social-femenino/3.jpg",
@@ -234,25 +226,17 @@
     ,
     {
       "id": 1,
-      "title": " ",
+      "title": "194.000 KZ ",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/social-femenino/4.jpg",
       "ref": "JATJ001"
     }
+    
     ,
     {
       "id": 1,
-      "title": " ",
-      "description": "",
-      "price": "Modelo: 005",
-      "image": "imagens/social-femenino/5.jpg",
-      "ref": "JATJ001"
-    }
-    ,
-    {
-      "id": 1,
-      "title": "",
+      "title": "198.000 KZ",
       "description": "",
       "price": "Modelo: 006",
       "image": "imagens/social-femenino/6.jpg",
@@ -261,7 +245,7 @@
     ,
     {
       "id": 1,
-      "title": "",
+      "title": "192.000 KZ",
       "description": "",
       "price": "Modelo: 007",
       "image": "imagens/social-femenino/7.jpg",
@@ -273,8 +257,8 @@
      
     {
       "id": 1,
-      "title": " ",
-      "description": "",
+      "title": " 32.000 KZ",
+      "description": "Babete Masculino / com bordado",
       "price": "Modelo: 001",
       "image": "imagens/texte/9.jpg",
       "ref": "JATJ001"
@@ -510,7 +494,7 @@
   "administracao-masculino": [
      {
       "id": 1,
-      "title": "",
+      "title": "83.000 KZ",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/homem/1.png",
@@ -518,8 +502,8 @@
     },
      {
       "id": 1,
-      "title": "",
-      "description": "",
+      "title": "43.000 KZ",
+      "description": "Camisa / com bordado",
       "price": "Modelo: 002",
       "image": "imagens/homem/25.jpg",
       "ref": "JATJ001"
@@ -527,7 +511,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "87.000 KZ",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/homem/13.jpg",
@@ -536,7 +520,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "84.000 KZ",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/homem/uu.jpg",
@@ -545,7 +529,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "79.000 KZ",
       "description": "",
       "price": "Modelo: 005",
       "image": "imagens/homem/2.png",
@@ -554,8 +538,8 @@
     ,
      {
       "id": 1,
-      "title": " ",
-      "description": "",
+      "title": " 42.000 KZ",
+      "description": "Camisa / com bordado",
       "price": "Modelo: 006",
       "image": "imagens/homem/d.jpg",
       "ref": "JATJ001"
@@ -569,15 +553,15 @@
 "saude-masculino": [
      {
       "id": 1,
-      "title": "",
-      "description": "",
+      "title": "38.000 KZ",
+      "description": "Bta / Calça",
       "price": "Modelo: 001",
       "image": "imagens/homem/13.png",
       "ref": "JATJ001"
     },
      {
       "id": 1,
-      "title": "",
+      "title": "38.000 KZ",
       "description": "",
       "price": "Modelo: 002",
       "image": "imagens/homem/14.jpg",
@@ -586,7 +570,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "39.000 KZ",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/homem/16.jpg",
@@ -595,7 +579,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "41.000 KZ",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/homem/17.jpg",
@@ -604,7 +588,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 005",
       "image": "imagens/homem/18.jpg",
@@ -613,7 +597,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 006",
       "image": "imagens/homem/15.png",
@@ -626,7 +610,7 @@
 "seguranca-masculino": [
      {
       "id": 1,
-      "title": "",
+      "title": "84.000 KZ",
       "description": "",
       "price": "Modelo: 001",
       "image": "https://i.pinimg.com/736x/99/53/e4/9953e4c72822f4ba493cae7fdff32bfd.jpg",
@@ -634,7 +618,7 @@
     },
      {
       "id": 1,
-      "title": "",
+      "title": "88.000 KZ",
       "description": "",
       "price": "Modelo: 002",
       "image": "https://i.pinimg.com/1200x/ca/50/da/ca50da72b43f47b4221c4eb13f1593ba.jpg",
@@ -643,7 +627,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "73.000 KZ",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/homem/778.jpg",
@@ -652,7 +636,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "73.000 KZ",
       "description": "",
       "price": "Modelo: 004",
       "image": "https://i.pinimg.com/736x/e4/a5/e2/e4a5e225711805733e0e5d3794d2a360.jpg",
@@ -661,7 +645,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "87.000 KZ",
       "description": "",
       "price": "Modelo: 005",
       "image": "https://i.pinimg.com/736x/4c/9c/d3/4c9cd35d6c29062ec9925e5924ae9eeb.jpg",
@@ -670,7 +654,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "87.000 KZ",
       "description": "",
       "price": "Modelo: 006",
       "image": "https://i.pinimg.com/736x/3e/e8/85/3ee8859661df92e91b5bb6f85320711f.jpg",
@@ -682,7 +666,7 @@
 "cozinha": [
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/homem/cc.jpg",
@@ -690,7 +674,7 @@
     },
      {
       "id": 1,
-      "title": "",
+      "title": "27.000 KZ",
       "description": "",
       "price": "Modelo: 002",
       "image": "imagens/homem/10.jpg",
@@ -699,7 +683,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "24.000 KZ",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/homem/11.jpg",
@@ -708,7 +692,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/homem/12.jpg",
@@ -717,7 +701,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "22.000 KZ",
       "description": "",
       "price": "Modelo: 005",
       "image": "imagens/homem/8.jpg",
@@ -726,7 +710,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "48.000 KZ",
       "description": "",
       "price": "Modelo: 006",
       "image": "imagens/homem/2.jpg",
@@ -741,7 +725,7 @@
 "colete": [
      {
       "id": 1,
-      "title": "",
+      "title": "34.000 KZ",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/homem/24.jpg",
@@ -749,7 +733,7 @@
     },
      {
       "id": 1,
-      "title": "",
+      "title": "34.000 KZ",
       "description": "",
       "price": "Modelo: 002",
       "image": "imagens/homem/20.jpg",
@@ -758,7 +742,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "37.000 KZ",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/homem/21.jpg",
@@ -767,7 +751,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "32.000 KZ",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/homem/26.jpg",
@@ -835,7 +819,7 @@
 "administracao-feminino": [
      {
       "id": 1,
-      "title": "",
+      "title": "83.000 kz",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/femenino/23.jpg",
@@ -843,7 +827,7 @@
     },
      {
       "id": 1,
-      "title": "",
+      "title": "110.000 kz",
       "description": "",
       "price": "Modelo: 002",
       "image": "imagens/femenino/2.jpg",
@@ -852,7 +836,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "96.000 kz",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/femenino/21.jpg",
@@ -861,7 +845,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "96.000 kz",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/femenino/33.jpg",
@@ -870,8 +854,8 @@
     ,
      {
       "id": 1,
-      "title": "",
-      "description": "",
+      "title": "97.000 kz",
+      "description": "Uniforme com renda",
       "price": "Modelo: 004",
       "image": "imagens/femenino/29.jpg",
       "ref": "JATJ001"
@@ -879,7 +863,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "96.000 kz",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/femenino/66.jpg",
@@ -895,7 +879,7 @@
 "saude-feminino": [
      {
       "id": 1,
-      "title": "",
+      "title": "38.000 kz",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/femenino/18.jpg",
@@ -903,7 +887,7 @@
     },
      {
       "id": 1,
-      "title": "",
+      "title": "34.000 kz",
       "description": "",
       "price": "Modelo: 002",
       "image": "imagens/femenino/24.jpg",
@@ -912,7 +896,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "39.000 kz",
       "description": "",
       "price": "Modelo: 003",
       "image": "imagens/femenino/14.jpg",
@@ -921,7 +905,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "40.000 kz",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/femenino/8.jpg",
@@ -933,7 +917,7 @@
   "cozinha-feminino": [
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/femenino/20.jpg",
@@ -942,8 +926,8 @@
     ,
      {
       "id": 1,
-      "title": "",
-      "description": "",
+      "title": "32.000 kz",
+      "description": "Jaleco/ sem calça",
       "price": "Modelo: 003",
       "image": "imagens/femenino/17.jpg",
       "ref": "JATJ001"
@@ -951,7 +935,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 004",
       "image": "imagens/femenino/10.jpg",
@@ -960,7 +944,7 @@
      ,
      {
       "id": 1,
-      "title": "",
+      "title": "38.000 kz",
       "description": "",
       "price": "Modelo: 005",
       "image": "imagens/femenino/28.jpg",
@@ -969,7 +953,7 @@
      ,
      {
       "id": 1,
-      "title": "",
+      "title": "38.000 KZ",
       "description": "",
       "price": "Modelo: 006",
       "image": "imagens/femenino/7.jpg",
@@ -979,7 +963,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 007",
       "image": "imagens/femenino/cozinha/1.jpg",
@@ -988,7 +972,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 008",
       "image": "imagens/femenino/cozinha/2.jpg",
@@ -997,7 +981,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "44.000 KZ",
       "description": "",
       "price": "Modelo: 008",
       "image": "imagens/femenino/cozinha/3.jpg",
@@ -1006,7 +990,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "44.000 kz",
       "description": "",
       "price": "Modelo: 009",
       "image": "imagens/femenino/cozinha/4.jpg",
@@ -1015,25 +999,17 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "39.000 KZ",
       "description": "",
       "price": "Modelo: 010",
       "image": "imagens/femenino/cozinha/5.jpg",
       "ref": "JATJ001"
     } 
+     
     ,
      {
       "id": 1,
-      "title": "",
-      "description": "",
-      "price": "Modelo: 011",
-      "image": "imagens/femenino/cozinha/6.jpg",
-      "ref": "JATJ001"
-    } 
-    ,
-     {
-      "id": 1,
-      "title": "",
+      "title": "38.000 KZ",
       "description": "",
       "price": "Modelo: 012",
       "image": "imagens/femenino/cozinha/7.jpg",
@@ -1042,7 +1018,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 013",
       "image": "imagens/femenino/cozinha/8.jpg",
@@ -1051,7 +1027,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 014",
       "image": "imagens/femenino/cozinha/9.jpg",
@@ -1060,7 +1036,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 015",
       "image": "imagens/femenino/cozinha/10.jpg",
@@ -1069,7 +1045,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 016",
       "image": "imagens/femenino/cozinha/11.jpg",
@@ -1078,7 +1054,7 @@
     ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 017",
       "image": "imagens/femenino/cozinha/12.jpg",
@@ -1090,27 +1066,17 @@
   "diversos-feminino": [
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 001",
       "image": "imagens/femenino/9.jpg",
       "ref": "JATJ001"
     }
    
-   
     ,
      {
       "id": 1,
-      "title": "",
-      "description": "",
-      "price": "Modelo: 005",
-      "image": "imagens/femenino/13.jpg",
-      "ref": "JATJ001"
-    }  
-    ,
-     {
-      "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 006",
       "image": "imagens/femenino/26.jpg",
@@ -1120,7 +1086,7 @@
      ,
      {
       "id": 1,
-      "title": "",
+      "title": "42.000 KZ",
       "description": "",
       "price": "Modelo: 007",
       "image": "imagens/femenino/30.jpg",
@@ -1129,7 +1095,7 @@
      ,
      {
       "id": 1,
-      "title": "",
+      "title": "40.000 kz",
       "description": "",
       "price": "Modelo: 007",
       "image": "imagens/femenino/16.jpg",
